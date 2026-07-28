@@ -1,6 +1,6 @@
 /**
- * Estilos personalizados - Plantilla FFT México
- * Estilos base para nuevos formularios
+ * Estilos personalizados - Autoevaluación de los fabricantes
+ * Documento: 08015p22 | Rev.: 5
  * Complementa Bootstrap 5.3.2
  */
 
@@ -35,6 +35,14 @@ body {
 
 .text-justify {
   text-align: justify;
+}
+
+.doc-meta {
+  letter-spacing: 0.01em;
+}
+
+.bg-fft-green {
+  background-color: var(--fft-green) !important;
 }
 
 /* ========== Navbar ========== */
@@ -107,9 +115,17 @@ body {
   color: #fff;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:disabled {
   background: linear-gradient(135deg, var(--fft-green-dark) 0%, #005544 100%);
   border-color: var(--fft-green-dark);
+  color: #fff;
+}
+
+.btn-primary:disabled {
+  opacity: 0.75;
+  transform: none;
+  cursor: not-allowed;
 }
 
 .btn-primary:focus,
@@ -132,8 +148,9 @@ body {
 }
 
 .btn-outline-secondary {
-  border-color: var(--fft-gray-light);
+  border: 1px solid var(--fft-gray-light);
   color: var(--fft-gray);
+  background: #fff;
 }
 
 .btn-outline-secondary:hover {
@@ -165,9 +182,223 @@ body {
   color: #856404;
 }
 
+.alert-success {
+  background: linear-gradient(135deg, #d1e7dd 0%, #badbcc 100%);
+  color: #0f5132;
+}
+
+.alert-danger {
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c2c7 100%);
+  color: #842029;
+}
+
 .alert-heading {
   font-weight: 600;
   margin-bottom: 0.5rem;
+}
+
+/* ========== Formulario: progreso y pasos ========== */
+.form-progress-card {
+  border-radius: 1rem;
+  background: #fff;
+  position: sticky;
+  top: 70px;
+  z-index: 100;
+}
+
+.form-progress-card .progress {
+  height: 0.65rem;
+  border-radius: 999px;
+  background-color: var(--fft-gray-lighter);
+}
+
+.form-progress-card .progress-bar {
+  background: linear-gradient(90deg, var(--fft-green) 0%, var(--fft-green-light) 100%);
+  border-radius: 999px;
+  transition: width 0.35s ease;
+}
+
+.step-list {
+  gap: 0.35rem;
+  justify-content: space-between;
+}
+
+.step-item {
+  flex: 1;
+  text-align: center;
+  color: var(--fft-gray);
+  font-size: 0.7rem;
+}
+
+.step-item span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: 0 auto 0.25rem;
+  border-radius: 50%;
+  background: var(--fft-gray-lighter);
+  color: var(--fft-gray);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.step-item.active span,
+.step-item.completed span {
+  background: var(--fft-green);
+  color: #fff;
+}
+
+.step-item.active {
+  color: var(--fft-green-dark);
+  font-weight: 600;
+}
+
+.step-item.completed {
+  color: var(--fft-green);
+}
+
+.form-step {
+  border-radius: 1rem;
+  background: #fff;
+  scroll-margin-top: 140px;
+}
+
+.section-header {
+  background: linear-gradient(135deg, rgba(0, 157, 128, 0.08) 0%, rgba(0, 157, 128, 0.02) 100%);
+  border-bottom: 1px solid rgba(0, 157, 128, 0.15);
+  border-radius: 1rem 1rem 0 0 !important;
+  padding: 1rem 1.25rem;
+  color: var(--fft-green-dark);
+}
+
+.question-block {
+  padding: 1.15rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.question-block:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.question-block > .form-label,
+.question-block > fieldset > legend {
+  color: #2b2b2b;
+  margin-bottom: 0.65rem;
+}
+
+.checkbox-group.is-invalid .form-check-input {
+  border-color: #dc3545;
+}
+
+.checkbox-group .checkbox-group-feedback {
+  margin-top: 0.5rem;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.cert-item {
+  background: var(--fft-gray-lighter);
+  border-radius: 0.75rem;
+  padding: 0.85rem 1rem;
+}
+
+.conditional-field {
+  border-left: 3px solid var(--fft-green);
+  padding-left: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+.file-upload-area {
+  background: #f7fbfa;
+  border: 1px dashed var(--fft-green);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.file-upload-area .form-control {
+  background: #fff;
+}
+
+.score-scale-list {
+  padding-left: 1.1rem;
+}
+
+.score-scale-list li {
+  margin-bottom: 0.35rem;
+}
+
+.subtotal-box {
+  background: linear-gradient(135deg, rgba(0, 157, 128, 0.1) 0%, rgba(0, 157, 128, 0.04) 100%);
+  border: 1px solid rgba(0, 157, 128, 0.25);
+  border-radius: 0.85rem;
+  padding: 1rem 1.25rem;
+}
+
+.subtotal-box .form-control {
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--fft-green-dark);
+  background: #fff;
+}
+
+.form-navigation {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  bottom: 0.75rem;
+  z-index: 90;
+}
+
+.form-message {
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-message.success {
+  background: linear-gradient(135deg, #d1e7dd 0%, #badbcc 100%);
+  color: #0f5132;
+  border: 1px solid #a3cfbb;
+}
+
+.form-message.error {
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c2c7 100%);
+  color: #842029;
+  border: 1px solid #f1aeb5;
+}
+
+.form-message.info {
+  background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+  color: #0c5460;
+  border: 1px solid #9eeaf9;
+}
+
+/* Feedback de radios: Bootstrap no lo muestra bien en grupos */
+.was-validated .form-check-input:invalid ~ .invalid-feedback,
+.form-check-input.is-invalid ~ .invalid-feedback,
+fieldset:has(.form-check-input.is-invalid) > .invalid-feedback,
+fieldset:has(.form-check-input:invalid) > .invalid-feedback {
+  display: block;
+}
+
+.was-validated fieldset:has(input[type="radio"]:invalid) > .invalid-feedback {
+  display: block;
+}
+
+/* Feedback cuando el control está dentro de un input-group */
+.was-validated .input-group:has(.form-control:invalid) ~ .invalid-feedback,
+.input-group:has(.form-control.is-invalid) ~ .invalid-feedback {
+  display: block;
 }
 
 /* ========== Footer ========== */
@@ -238,7 +469,17 @@ a.breadcrumb-item {
   padding: 0.5rem 0.75rem;
 }
 
-/* ========== Responsive Adjustments ========== */
+/* ========== Responsive ========== */
+@media (max-width: 992px) {
+  .form-progress-card {
+    position: static;
+  }
+
+  .form-navigation {
+    position: static;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding-left: 1rem;
@@ -270,6 +511,28 @@ a.breadcrumb-item {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
+
+  .form-step .card-body {
+    padding: 1rem;
+  }
+
+  .question-block {
+    padding: 0.9rem 0;
+  }
+
+  .form-navigation {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+
+  .form-navigation .ms-auto {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+
+  .form-navigation .btn {
+    width: 100%;
+  }
 }
 
 @media (max-width: 576px) {
@@ -285,18 +548,32 @@ a.breadcrumb-item {
     padding: 0.75rem 1rem;
     font-size: 0.875rem;
   }
+
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .subtotal-box .form-control {
+    font-size: 1.15rem;
+  }
 }
 
 /* ========== Print Styles ========== */
 @media print {
   .navbar,
   .btn,
-  footer {
+  footer,
+  .form-navigation,
+  .form-progress-card {
     display: none !important;
   }
 
   body {
     background: white;
+  }
+
+  .form-step.d-none {
+    display: block !important;
   }
 }
 
@@ -306,14 +583,19 @@ a.breadcrumb-item {
   outline-offset: 2px;
 }
 
-/* Mejora de contraste para usuarios con necesidades especiales */
 @media (prefers-contrast: high) {
   .btn {
     border: 2px solid currentColor;
   }
+
+  .section-header,
+  .subtotal-box,
+  .file-upload-area,
+  .cert-item {
+    border: 2px solid currentColor;
+  }
 }
 
-/* Reducción de movimiento para usuarios sensibles */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -336,7 +618,6 @@ a.breadcrumb-item {
   color: white;
 }
 
-/* Scrollbar personalizado (navegadores Webkit) */
 ::-webkit-scrollbar {
   width: 12px;
 }
