@@ -1,0 +1,355 @@
+/**
+ * Estilos personalizados - Plantilla FFT México
+ * Estilos base para nuevos formularios
+ * Complementa Bootstrap 5.3.2
+ */
+
+/* ========== Variables CSS ========== */
+:root {
+  --fft-green: #009d80;
+  --fft-green-dark: #006b57;
+  --fft-green-light: #00b893;
+  --fft-gray: #575756;
+  --fft-gray-light: #D0D0D0;
+  --fft-gray-lighter: #F5F5F5;
+  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  --transition-base: all 0.3s ease;
+}
+
+/* ========== Tipografía y Layout Base ========== */
+body {
+  background: linear-gradient(180deg, #eef7f5 0%, #ffffff 150px, #ffffff 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1140px;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/* ========== Navbar ========== */
+.navbar {
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand img {
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+  transform: scale(1.05);
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+  font-weight: 500;
+  transition: var(--transition-base);
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 80%;
+}
+
+/* ========== Botones ========== */
+.btn {
+  border-radius: 0.5rem;
+  font-weight: 500;
+  padding: 0.625rem 1.5rem;
+  transition: var(--transition-base);
+  border: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--fft-green) 0%, var(--fft-green-dark) 100%);
+  border-color: var(--fft-green);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--fft-green-dark) 0%, #005544 100%);
+  border-color: var(--fft-green-dark);
+}
+
+.btn-primary:focus,
+.btn-primary:active {
+  background: var(--fft-green-dark);
+  border-color: var(--fft-green-dark);
+  box-shadow: 0 0 0 0.25rem rgba(0, 157, 128, 0.25);
+}
+
+.btn-secondary {
+  background-color: var(--fft-gray-light);
+  border-color: var(--fft-gray-light);
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background-color: var(--fft-gray);
+  border-color: var(--fft-gray);
+  color: #fff;
+}
+
+.btn-outline-secondary {
+  border-color: var(--fft-gray-light);
+  color: var(--fft-gray);
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--fft-gray);
+  border-color: var(--fft-gray);
+  color: #fff;
+}
+
+.btn-lg {
+  padding: 0.875rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* ========== Alerts ========== */
+.alert {
+  border-radius: 0.75rem;
+  border: none;
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+}
+
+.alert-info {
+  background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+  color: #0c5460;
+}
+
+.alert-warning {
+  background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%);
+  color: #856404;
+}
+
+.alert-heading {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* ========== Footer ========== */
+footer {
+  background: linear-gradient(135deg, var(--fft-gray) 0%, #3d3d3c 100%);
+  color: #f0f0f0;
+  padding: 2rem 0;
+  margin-top: auto;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ========== Utilidades ========== */
+.shadow-sm {
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.shadow {
+  box-shadow: var(--shadow-md) !important;
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.rounded-4 {
+  border-radius: 1rem !important;
+}
+
+.border-bottom {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+/* ========== Enlaces ========== */
+.list-unstyled a {
+  color: var(--fft-green);
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+.list-unstyled a:hover {
+  color: var(--fft-green-dark);
+  text-decoration: underline;
+}
+
+a.breadcrumb-item {
+  font-size: small;
+  color: var(--fft-green);
+  text-decoration: none;
+}
+
+/* ========== Iconos de Bootstrap ========== */
+.bi {
+  vertical-align: -0.125em;
+}
+
+/* ========== Tooltips ========== */
+.tooltip {
+  font-size: 0.875rem;
+}
+
+.tooltip-inner {
+  background-color: var(--fft-gray);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+}
+
+/* ========== Responsive Adjustments ========== */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  .display-5 {
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+  }
+
+  .btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .navbar {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  h1, .h1 {
+    font-size: 1.5rem;
+  }
+
+  .display-5 {
+    font-size: 1.75rem;
+  }
+
+  .alert {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* ========== Print Styles ========== */
+@media print {
+  .navbar,
+  .btn,
+  footer {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+}
+
+/* ========== Accessibility ========== */
+*:focus-visible {
+  outline: 3px solid var(--fft-green);
+  outline-offset: 2px;
+}
+
+/* Mejora de contraste para usuarios con necesidades especiales */
+@media (prefers-contrast: high) {
+  .btn {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reducción de movimiento para usuarios sensibles */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ========== Mejoras visuales adicionales ========== */
+::selection {
+  background-color: var(--fft-green);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: var(--fft-green);
+  color: white;
+}
+
+/* Scrollbar personalizado (navegadores Webkit) */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--fft-gray-lighter);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--fft-gray-light);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fft-gray);
+}
