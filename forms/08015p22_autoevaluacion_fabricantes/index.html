@@ -225,83 +225,100 @@
 
               <div class="question-block" data-question="6">
                 <fieldset>
-                  <legend class="form-label fw-semibold">6. Por favor indique si su empresa está certificada de acuerdo con alguno de los siguientes certificados y desde cuándo (MM/AA):</legend>
-                  <p class="form-text mb-2">Marque los certificados aplicables. Si marca uno, deberá indicar la fecha.</p>
+                  <legend class="form-label fw-semibold">6. Por favor indique si su empresa está certificada de acuerdo con alguno de los siguientes certificados y la vigencia de cada certificación:</legend>
+                  <p class="form-text mb-2">Marque los certificados aplicables. Por cada certificado seleccionado, indique hasta qué mes y año se encuentra vigente.</p>
                   <div class="cert-grid">
                     <div class="cert-item">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="p06_certificados" id="p06_iso9001" value="ISO 9001" data-conditional-trigger="p06_fecha_iso9001">
+                        <input class="form-check-input" type="checkbox" name="p06_iso9001" id="p06_iso9001" value="Sí" data-conditional-trigger="p06_iso9001_vigencia">
                         <label class="form-check-label" for="p06_iso9001">ISO 9001</label>
                       </div>
-                      <div class="conditional-field d-none mt-2" data-conditional="p06_fecha_iso9001">
-                        <label for="p06_fecha_iso9001" class="form-label">Desde (MM/AA) <span class="text-danger" aria-hidden="true">*</span></label>
-                        <input type="month" class="form-control" id="p06_fecha_iso9001" name="p06_fecha_iso9001">
-                        <div class="invalid-feedback">Indique la fecha de certificación ISO 9001.</div>
+                      <div class="conditional-field d-none mt-2" data-conditional="p06_iso9001_vigencia">
+                        <label for="p06_iso9001_vigencia" class="form-label">Vigente hasta (MM/AA) <span class="text-danger" aria-hidden="true">*</span></label>
+                        <input type="month" class="form-control" id="p06_iso9001_vigencia" name="p06_iso9001_vigencia">
+                        <div class="invalid-feedback">Indique la vigencia de ISO 9001.</div>
                       </div>
                     </div>
                     <div class="cert-item">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="p06_certificados" id="p06_iso45001" value="ISO 45001" data-conditional-trigger="p06_fecha_iso45001">
+                        <input class="form-check-input" type="checkbox" name="p06_iso45001" id="p06_iso45001" value="Sí" data-conditional-trigger="p06_iso45001_vigencia">
                         <label class="form-check-label" for="p06_iso45001">ISO 45001</label>
                       </div>
-                      <div class="conditional-field d-none mt-2" data-conditional="p06_fecha_iso45001">
-                        <label for="p06_fecha_iso45001" class="form-label">Desde (MM/AA) <span class="text-danger" aria-hidden="true">*</span></label>
-                        <input type="month" class="form-control" id="p06_fecha_iso45001" name="p06_fecha_iso45001">
-                        <div class="invalid-feedback">Indique la fecha de certificación ISO 45001.</div>
+                      <div class="conditional-field d-none mt-2" data-conditional="p06_iso45001_vigencia">
+                        <label for="p06_iso45001_vigencia" class="form-label">Vigente hasta (MM/AA) <span class="text-danger" aria-hidden="true">*</span></label>
+                        <input type="month" class="form-control" id="p06_iso45001_vigencia" name="p06_iso45001_vigencia">
+                        <div class="invalid-feedback">Indique la vigencia de ISO 45001.</div>
                       </div>
                     </div>
                     <div class="cert-item">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="p06_certificados" id="p06_iso14001" value="ISO 14001" data-conditional-trigger="p06_fecha_iso14001">
+                        <input class="form-check-input" type="checkbox" name="p06_iso14001" id="p06_iso14001" value="Sí" data-conditional-trigger="p06_iso14001_vigencia">
                         <label class="form-check-label" for="p06_iso14001">ISO 14001</label>
                       </div>
-                      <div class="conditional-field d-none mt-2" data-conditional="p06_fecha_iso14001">
-                        <label for="p06_fecha_iso14001" class="form-label">Desde (MM/AA) <span class="text-danger" aria-hidden="true">*</span></label>
-                        <input type="month" class="form-control" id="p06_fecha_iso14001" name="p06_fecha_iso14001">
-                        <div class="invalid-feedback">Indique la fecha de certificación ISO 14001.</div>
+                      <div class="conditional-field d-none mt-2" data-conditional="p06_iso14001_vigencia">
+                        <label for="p06_iso14001_vigencia" class="form-label">Vigente hasta (MM/AA) <span class="text-danger" aria-hidden="true">*</span></label>
+                        <input type="month" class="form-control" id="p06_iso14001_vigencia" name="p06_iso14001_vigencia">
+                        <div class="invalid-feedback">Indique la vigencia de ISO 14001.</div>
                       </div>
                     </div>
                     <div class="cert-item">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="p06_certificados" id="p06_vda64" value="VDA 6.4" data-conditional-trigger="p06_fecha_vda64">
+                        <input class="form-check-input" type="checkbox" name="p06_vda64" id="p06_vda64" value="Sí" data-conditional-trigger="p06_vda64_vigencia">
                         <label class="form-check-label" for="p06_vda64">VDA 6.4</label>
                       </div>
-                      <div class="conditional-field d-none mt-2" data-conditional="p06_fecha_vda64">
-                        <label for="p06_fecha_vda64" class="form-label">Desde (MM/AA) <span class="text-danger" aria-hidden="true">*</span></label>
-                        <input type="month" class="form-control" id="p06_fecha_vda64" name="p06_fecha_vda64">
-                        <div class="invalid-feedback">Indique la fecha de certificación VDA 6.4.</div>
+                      <div class="conditional-field d-none mt-2" data-conditional="p06_vda64_vigencia">
+                        <label for="p06_vda64_vigencia" class="form-label">Vigente hasta (MM/AA) <span class="text-danger" aria-hidden="true">*</span></label>
+                        <input type="month" class="form-control" id="p06_vda64_vigencia" name="p06_vda64_vigencia">
+                        <div class="invalid-feedback">Indique la vigencia de VDA 6.4.</div>
                       </div>
                     </div>
                     <div class="cert-item">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="p06_certificados" id="p06_tisax" value="Tisax" data-conditional-trigger="p06_fecha_tisax">
-                        <label class="form-check-label" for="p06_tisax">Tisax</label>
+                        <input class="form-check-input" type="checkbox" name="p06_tisax" id="p06_tisax" value="Sí" data-conditional-trigger="p06_tisax_vigencia">
+                        <label class="form-check-label" for="p06_tisax">TISAX</label>
                       </div>
-                      <div class="conditional-field d-none mt-2" data-conditional="p06_fecha_tisax">
-                        <label for="p06_fecha_tisax" class="form-label">Desde (MM/AA) <span class="text-danger" aria-hidden="true">*</span></label>
-                        <input type="month" class="form-control" id="p06_fecha_tisax" name="p06_fecha_tisax">
-                        <div class="invalid-feedback">Indique la fecha de certificación Tisax.</div>
+                      <div class="conditional-field d-none mt-2" data-conditional="p06_tisax_vigencia">
+                        <label for="p06_tisax_vigencia" class="form-label">Vigente hasta (MM/AA) <span class="text-danger" aria-hidden="true">*</span></label>
+                        <input type="month" class="form-control" id="p06_tisax_vigencia" name="p06_tisax_vigencia">
+                        <div class="invalid-feedback">Indique la vigencia de TISAX.</div>
                       </div>
                     </div>
                     <div class="cert-item">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="p06_certificados" id="p06_otros" value="Otros" data-conditional-trigger="p06_otros_certificados">
+                        <input class="form-check-input" type="checkbox" name="p06_otros" id="p06_otros" value="Sí" data-conditional-trigger="p06_otros_vigencia">
                         <label class="form-check-label" for="p06_otros">Otros</label>
                       </div>
-                      <div class="conditional-field d-none mt-2" data-conditional="p06_otros_certificados">
-                        <label for="p06_otros_certificados" class="form-label">Especifique otros certificados <span class="text-danger" aria-hidden="true">*</span></label>
-                        <input type="text" class="form-control" id="p06_otros_certificados" name="p06_otros_certificados">
+                      <div class="conditional-field d-none mt-2" data-conditional="p06_otros_vigencia">
+                        <label for="p06_otros_descripcion" class="form-label">Especifique otros certificados <span class="text-danger" aria-hidden="true">*</span></label>
+                        <input type="text" class="form-control mb-2" id="p06_otros_descripcion" name="p06_otros_descripcion">
                         <div class="invalid-feedback">Describa los otros certificados.</div>
+                        <label for="p06_otros_vigencia" class="form-label">Vigente hasta (MM/AA) <span class="text-danger" aria-hidden="true">*</span></label>
+                        <input type="month" class="form-control" id="p06_otros_vigencia" name="p06_otros_vigencia">
+                        <div class="invalid-feedback">Indique la vigencia de los otros certificados.</div>
                       </div>
                     </div>
                   </div>
                 </fieldset>
               </div>
 
-              <div class="question-block conditional-field" data-question="7" data-conditional="p07_plan_iso9001" data-show-when-unchecked="p06_iso9001">
-                <label for="p07_plan_iso9001" class="form-label fw-semibold">7. ¿En caso de no estar certificado según norma, hasta cuándo está planeado certificarse en ISO 9001? <span class="text-danger" aria-hidden="true">*</span></label>
-                <input type="month" class="form-control" id="p07_plan_iso9001" name="p07_plan_iso9001">
-                <div class="invalid-feedback">Indique la fecha planificada (MM/AA).</div>
+              <div class="question-block conditional-field" data-question="7" data-conditional="p07_planea_certificarse_iso9001" data-show-when-unchecked="p06_iso9001">
+                <fieldset>
+                  <legend class="form-label fw-semibold">7. ¿Tiene planeado certificarse en ISO 9001? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="p07_planea_certificarse_iso9001" id="p07_planea_si" value="Sí" data-conditional-trigger="p07_fecha_estimada_certificacion_iso9001">
+                    <label class="form-check-label" for="p07_planea_si">Sí</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="p07_planea_certificarse_iso9001" id="p07_planea_no" value="No">
+                    <label class="form-check-label" for="p07_planea_no">No</label>
+                  </div>
+                  <div class="invalid-feedback">Seleccione Sí o No.</div>
+                </fieldset>
+                <div class="conditional-field mt-3 d-none" data-conditional="p07_fecha_estimada_certificacion_iso9001" data-show-when-value="Sí">
+                  <label for="p07_fecha_estimada_certificacion_iso9001" class="form-label">Mes y año estimados para obtener la certificación ISO 9001 <span class="text-danger" aria-hidden="true">*</span></label>
+                  <input type="month" class="form-control" id="p07_fecha_estimada_certificacion_iso9001" name="p07_fecha_estimada_certificacion_iso9001">
+                  <div class="invalid-feedback">Indique el mes y año estimados (MM/AA).</div>
+                </div>
               </div>
 
               <div class="question-block" data-question="8">

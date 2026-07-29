@@ -448,13 +448,23 @@ function updateNestedConditionalByValue(radioName, conditionalKey, expectedValue
 
 function updateIso9001PlanVisibility() {
   const iso9001 = document.getElementById('p06_iso9001');
-  const target = document.querySelector('[data-conditional="p07_plan_iso9001"]');
+  const target = document.querySelector('[data-conditional="p07_planea_certificarse_iso9001"]');
   if (!iso9001 || !target) {
     return;
   }
 
-  // Visible y obligatorio cuando NO hay certificación ISO 9001
-  setConditionalVisibility(target, !iso9001.checked);
+  // Visible y obligatoria únicamente cuando ISO 9001 NO está seleccionada
+  const shouldShow = !iso9001.checked;
+  setConditionalVisibility(target, shouldShow);
+
+  if (shouldShow) {
+    // El campo de fecha estimada solo aplica si la respuesta es "Sí"
+    updateNestedConditionalByValue(
+      'p07_planea_certificarse_iso9001',
+      'p07_fecha_estimada_certificacion_iso9001',
+      'Sí'
+    );
+  }
 }
 
 function setConditionalVisibility(target, shouldShow) {
@@ -469,6 +479,11 @@ function setConditionalVisibility(target, shouldShow) {
   const handledRadioGroups = new Set();
 
   uniqueControls.forEach(function (field) {
+    // Al mostrar un bloque, no forzar required en campos anidados aún ocultos
+    if (shouldShow && isInsideHiddenNestedConditional(field, target)) {
+      return;
+    }
+
     if (shouldShow) {
       if (field.type === 'radio') {
         if (handledRadioGroups.has(field.name)) {
@@ -489,9 +504,21 @@ function setConditionalVisibility(target, shouldShow) {
     } else {
       clearFieldValue(field);
       field.required = false;
+      field.disabled = true;
       field.classList.remove('is-invalid', 'is-valid');
     }
   });
+}
+
+function isInsideHiddenNestedConditional(field, root) {
+  let node = field.parentElement;
+  while (node && node !== root) {
+    if (node.classList && node.classList.contains('d-none')) {
+      return true;
+    }
+    node = node.parentElement;
+  }
+  return false;
 }
 
 function clearFieldValue(field) {
