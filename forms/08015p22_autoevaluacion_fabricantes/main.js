@@ -4,7 +4,7 @@
  */
 
 // Sustituir REEMPLAZAR_ID por el ID proporcionado por Formspree.
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/REEMPLAZAR_ID';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mvkppyry';
 
 const STEP_NAMES = [
   'Datos de la empresa',
