@@ -2,38 +2,32 @@
 <html lang="es">
 
 <head>
-  <!-- Second release of Service
+  <!-- Autoevaluación de Maquinados
   Alejandro Sainz
   FFT México Internal Services
-  Enhanced by DeepAgent
-  V00.0.2 -->
+  Documento: 08015p22 | Rev.: 4 | Fecha: 20.06.2024
+  V01.0.0 -->
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Plantilla de pruebas para formularios</title>
-  <meta name="description" content="Portal de atención y prevención de violencia laboral, hostigamiento, acoso sexual y discriminación de FFT México">
+  <title>Autoevaluación de Maquinados | FFT México</title>
+  <meta name="description" content="Formulario permanente de autoevaluación de maquinados para proveedores de FFT México (documento 08015p22).">
 
-  <!-- Bootstrap 5.3.2 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  
-  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  
-  <!-- Main CSS stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <!-- Header -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top px-3 px-md-5" style="background-color: #009d80;">
       <div class="container-fluid">
         <a class="navbar-brand" href="#" aria-label="FFT México Logo">
           <img src="../../assets/img/primaryGreenBGLogo.png" alt="FFT México" height="30" class="d-inline-block align-text-top">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -51,53 +45,1647 @@
     <div class="container pt-5 mt-5">
       <div class="row">
         <div class="col-lg-10 mx-auto">
-          <h1 class="display-5 fw-bold mb-4">Plantilla de pruebas para formularios</h1>
-          
+          <h1 class="display-5 fw-bold mb-4">Autoevaluación de Maquinados</h1>
+
           <div class="alert alert-info border-0 shadow-sm" role="alert">
-            <i class="bi bi-shield-check fs-5 me-2"></i>
-            <strong>Plantilla de pruebas para formularios</strong> Plantilla de pruebas para formularios
+            <i class="bi bi-gear-wide-connected fs-5 me-2"></i>
+            <strong>Evaluación de proveedores de maquinados FFT México.</strong>
+            Formulario permanente para capturar capacidades operativas y de calidad.
           </div>
 
           <p class="lead text-justify mb-3">
-            Plantilla de pruebas para formularios
+            Complete esta autoevaluación con información vigente sobre las capacidades operativas, de calidad, experiencia, personal, infraestructura, envío y seguridad de la información de su empresa.
           </p>
 
-          <p class="text-muted mb-4">
-            Plantilla de pruebas para formularios
+          <div class="alert alert-success border-0 shadow-sm mb-3">
+            <i class="bi bi-clock-history me-1"></i>
+            Este formulario se encuentra disponible permanentemente. Antes de comenzar, tenga preparados los documentos y evidencias solicitados.
+          </div>
+
+          <p class="small text-muted mb-3 doc-meta">
+            Documento: <strong>08015p22</strong> &middot; Revisión: <strong>4</strong> &middot; Fecha origen: <strong>20.06.2024</strong> &middot; Clasificación: <strong>Interna</strong>
           </p>
 
-          <div class="alert alert-warning border-0 shadow-sm">
-            <i class="bi bi-asterisk text-danger"></i> <strong>Campos requeridos</strong>
+          <div class="alert alert-warning border-0 shadow-sm mb-0">
+            <i class="bi bi-asterisk text-danger"></i>
+            <strong>Campos requeridos</strong> — Todos los campos son obligatorios.
+            Los campos condicionales serán obligatorios únicamente cuando correspondan a la respuesta seleccionada.
           </div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Form Section -->
   <section id="_form" class="container py-5">
     <div class="row mb-5">
       <div class="col-lg-10 mx-auto">
-        <!-- Aquí va el contenido del formulario -->
+
+        <div id="formMessage" class="form-message d-none" role="status" aria-live="polite"></div>
+
+        <!-- Reemplazar REEMPLAZAR_ENDPOINT_FORMSPREE por el endpoint definitivo de Formspree -->
+        <form
+          id="autoevaluacionMaquinadosForm"
+          action="https://formspree.io/f/REEMPLAZAR_ENDPOINT_FORMSPREE"
+          method="POST"
+          enctype="multipart/form-data"
+          novalidate
+          autocomplete="on"
+        >
+          <input type="hidden" name="formulario_codigo" value="08015p22">
+          <input type="hidden" name="formulario_nombre" value="autoevaluacion_maquinados">
+          <input type="hidden" name="revision_documento_origen" value="4">
+          <input type="hidden" name="fecha_documento_origen" value="2024-06-20">
+          <input type="hidden" name="fecha_envio_iso" id="fecha_envio_iso" value="">
+          <input type="hidden" name="anio_referencia_accidentes" id="anio_referencia_accidentes" value="">
+          <input type="hidden" name="subtotal_seguridad_informacion" id="subtotal_seguridad_informacion" value="0">
+
+          <div class="form-progress-card card border-0 shadow-sm mb-4">
+            <div class="card-body">
+              <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                <div>
+                  <span id="stepIndicator" class="fw-semibold">Paso 1 de 10</span>
+                  <span class="text-muted mx-2" aria-hidden="true">|</span>
+                  <span id="stepName" class="text-muted">Datos de contacto</span>
+                </div>
+                <span id="progressPercent" class="badge bg-fft-green">10%</span>
+              </div>
+              <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10" aria-labelledby="stepIndicator">
+                <div id="progressBar" class="progress-bar" style="width: 10%;"></div>
+              </div>
+              <ol class="step-list list-unstyled d-none d-lg-flex mt-3 mb-0" aria-label="Secciones del formulario">
+                <li class="step-item active" data-step-label="0" aria-current="step"><span>1</span><small>Contacto</small></li>
+                <li class="step-item" data-step-label="1"><span>2</span><small>General</small></li>
+                <li class="step-item" data-step-label="2"><span>3</span><small>Operaciones</small></li>
+                <li class="step-item" data-step-label="3"><span>4</span><small>Experiencia</small></li>
+                <li class="step-item" data-step-label="4"><span>5</span><small>Personal</small></li>
+                <li class="step-item" data-step-label="5"><span>6</span><small>Ambiente</small></li>
+                <li class="step-item" data-step-label="6"><span>7</span><small>Envío</small></li>
+                <li class="step-item" data-step-label="7"><span>8</span><small>SI</small></li>
+                <li class="step-item" data-step-label="8"><span>9</span><small>Documentos</small></li>
+                <li class="step-item" data-step-label="9"><span>10</span><small>Enviar</small></li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- PASO 0: Contacto -->
+          <fieldset class="form-step card border-0 shadow-sm mb-4" data-step="0" aria-labelledby="step-title-0">
+            <div class="card-header section-header">
+              <h2 id="step-title-0" class="h4 mb-0"><i class="bi bi-person-lines-fill me-2"></i>Datos de contacto</h2>
+            </div>
+            <div class="card-body">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="contacto_nombre" class="form-label">Contacto <span class="text-danger" aria-hidden="true">*</span></label>
+                  <input type="text" class="form-control form-control-lg" id="contacto_nombre" name="contacto_nombre" required autocomplete="name">
+                  <div class="invalid-feedback">Indique el nombre del contacto.</div>
+                </div>
+                <div class="col-12">
+                  <label for="empresa_direccion" class="form-label">Dirección de empresa <span class="text-danger" aria-hidden="true">*</span></label>
+                  <textarea class="form-control form-control-lg" id="empresa_direccion" name="empresa_direccion" rows="3" required autocomplete="street-address"></textarea>
+                  <div class="invalid-feedback">Indique la dirección de la empresa.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="empresa_telefono" class="form-label">Teléfono <span class="text-danger" aria-hidden="true">*</span></label>
+                  <input type="tel" class="form-control form-control-lg" id="empresa_telefono" name="empresa_telefono" required autocomplete="tel">
+                  <div class="invalid-feedback">Indique un teléfono válido.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="empresa_email" class="form-label">E-mail <span class="text-danger" aria-hidden="true">*</span></label>
+                  <input type="email" class="form-control form-control-lg" id="empresa_email" name="empresa_email" required autocomplete="email">
+                  <div class="invalid-feedback">Indique un correo electrónico válido.</div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- PASO 1: General -->
+          <fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="1" aria-labelledby="step-title-1">
+            <div class="card-header section-header">
+              <h2 id="step-title-1" class="h4 mb-0"><i class="bi bi-list-ul me-2"></i>I. General</h2>
+            </div>
+            <div class="card-body">
+
+              <div class="question-block" data-question="1">
+                <label for="p01_numero_personas" class="form-label fw-semibold">1. ¿Cuántas personas están trabajando en su empresa? <span class="text-danger" aria-hidden="true">*</span></label>
+                <input type="number" class="form-control form-control-lg" id="p01_numero_personas" name="p01_numero_personas" min="1" step="1" required>
+                <div class="invalid-feedback">Indique un número entero igual o mayor a 1.</div>
+              </div>
+
+              <div class="question-block" data-question="2">
+                <label for="p02_numero_sucursales" class="form-label fw-semibold">2. ¿Cuántas sucursales tiene su empresa? <span class="text-danger" aria-hidden="true">*</span></label>
+                <input type="number" class="form-control form-control-lg" id="p02_numero_sucursales" name="p02_numero_sucursales" min="1" step="1" required>
+                <div class="invalid-feedback">Indique un número entero igual o mayor a 1.</div>
+              </div>
+
+              <div class="question-block" data-question="3">
+                <fieldset class="checkbox-group" data-checkbox-group="p03_giros_seleccionados[]">
+                  <legend class="form-label fw-semibold">3. ¿En qué giro(s) trabaja su empresa? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <p class="form-text mb-2">Seleccione al menos una opción.</p>
+                  <div class="row g-2">
+                    <div class="col-md-6">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="p03_giros_seleccionados[]" id="p03_corte_laser" value="corte_laser">
+                        <label class="form-check-label" for="p03_corte_laser">Corte Láser</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="p03_giros_seleccionados[]" id="p03_corte_pantografo" value="corte_pantografo">
+                        <label class="form-check-label" for="p03_corte_pantografo">Corte Pantógrafo</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="p03_giros_seleccionados[]" id="p03_corte_chorro_agua" value="corte_chorro_agua">
+                        <label class="form-check-label" for="p03_corte_chorro_agua">Corte Chorro de agua</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="p03_giros_seleccionados[]" id="p03_corte_oxigeno" value="corte_oxigeno">
+                        <label class="form-check-label" for="p03_corte_oxigeno">Corte oxígeno</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="p03_giros_seleccionados[]" id="p03_corte_sierra_cinta" value="corte_sierra_cinta">
+                        <label class="form-check-label" for="p03_corte_sierra_cinta">Corte sierra cinta</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="p03_giros_seleccionados[]" id="p03_doblez" value="doblez">
+                        <label class="form-check-label" for="p03_doblez">Doblez</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="p03_giros_seleccionados[]" id="p03_tratamientos_termicos" value="tratamientos_termicos">
+                        <label class="form-check-label" for="p03_tratamientos_termicos">Tratamientos térmicos</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="p03_giros_seleccionados[]" id="p03_maquinado_cnc" value="maquinado_cnc">
+                        <label class="form-check-label" for="p03_maquinado_cnc">Maquinado CNC</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="p03_giros_seleccionados[]" id="p03_maquinado_manual" value="maquinado_manual">
+                        <label class="form-check-label" for="p03_maquinado_manual">Maquinado Manual</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="p03_giros_seleccionados[]" id="p03_pintura" value="pintura">
+                        <label class="form-check-label" for="p03_pintura">Pintura</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="p03_giros_seleccionados[]" id="p03_otros" value="otros" data-conditional-trigger="p03_otros_descripcion">
+                        <label class="form-check-label" for="p03_otros">Otros</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback checkbox-group-feedback d-none">Seleccione al menos un giro.</div>
+                  <div class="conditional-field d-none mt-3" data-conditional="p03_otros_descripcion" id="cond_p03_otros_descripcion">
+                    <label for="p03_otros_descripcion" class="form-label">Especifique el giro <span class="text-danger" aria-hidden="true">*</span></label>
+                    <input type="text" class="form-control" id="p03_otros_descripcion" name="p03_otros_descripcion" disabled>
+                    <div class="invalid-feedback">Describa el giro.</div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="question-block" data-question="4">
+                <h3 class="form-label fw-semibold">4. Favor de enlistar la maquinaria con la que cuenta. <span class="text-danger" aria-hidden="true">*</span></h3>
+
+                <h4 class="subsection-title">A) Máquinas CNC</h4>
+                <p class="form-text">Tipos: Fresadora CNC, Centros de maquinado CNC, Mandriladora CNC, Torno CNC.</p>
+                <div class="machine-na-toggle">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="p04_cnc_no_aplica" name="p04_cnc_no_aplica" value="si">
+                    <label class="form-check-label" for="p04_cnc_no_aplica">No aplica — la empresa no cuenta con máquinas CNC</label>
+                  </div>
+                </div>
+                <div id="p04_cnc_table_block">
+                  <div class="dynamic-table-wrap">
+                    <table class="table table-bordered dynamic-table align-middle" id="p04_cnc_table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Tipo</th>
+                          <th scope="col">Marca</th>
+                          <th scope="col">Modelo</th>
+                          <th scope="col">Año</th>
+                          <th scope="col">Cantidad</th>
+                          <th scope="col">Dim. X</th>
+                          <th scope="col">Dim. Y</th>
+                          <th scope="col">Dim. Z</th>
+                          <th scope="col">Acción</th>
+                        </tr>
+                      </thead>
+                      <tbody id="p04_cnc_tbody"></tbody>
+                    </table>
+                  </div>
+                  <div class="table-actions">
+                    <button type="button" class="btn btn-add-row btn-sm" id="btnAddCncRow"><i class="bi bi-plus-circle me-1"></i>Agregar fila</button>
+                  </div>
+                </div>
+
+                <h4 class="subsection-title">B) Equipos de corte</h4>
+                <p class="form-text">Tipos: Pantógrafo, Láser, Plasma, Chorro de agua, Oxígeno.</p>
+                <div class="machine-na-toggle">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="p04_corte_no_aplica" name="p04_corte_no_aplica" value="si">
+                    <label class="form-check-label" for="p04_corte_no_aplica">No aplica — la empresa no cuenta con equipos de corte</label>
+                  </div>
+                </div>
+                <div id="p04_corte_table_block">
+                  <div class="dynamic-table-wrap">
+                    <table class="table table-bordered dynamic-table align-middle" id="p04_corte_table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Tipo</th>
+                          <th scope="col">Marca</th>
+                          <th scope="col">Modelo</th>
+                          <th scope="col">Año</th>
+                          <th scope="col">Cantidad</th>
+                          <th scope="col">Dimensiones</th>
+                          <th scope="col">Espesor mín.</th>
+                          <th scope="col">Espesor máx.</th>
+                          <th scope="col">Acción</th>
+                        </tr>
+                      </thead>
+                      <tbody id="p04_corte_tbody"></tbody>
+                    </table>
+                  </div>
+                  <div class="table-actions">
+                    <button type="button" class="btn btn-add-row btn-sm" id="btnAddCorteRow"><i class="bi bi-plus-circle me-1"></i>Agregar fila</button>
+                  </div>
+                </div>
+
+                <h4 class="subsection-title">Servicios de tratamientos térmicos o termoquímicos</h4>
+                <p class="form-text mb-3">Indique disponibilidad y, en su caso, las dimensiones de las piezas que pueden tratarse.</p>
+                <div class="row g-3">
+                <div class="col-md-6 col-lg-4">
+                  <div class="treatment-item">
+                    <fieldset>
+                      <legend class="form-label fw-semibold mb-2">Temple</legend>
+                      <div class="d-flex gap-3 mb-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="p04_tt_temple_disponible" id="p04_tt_temple_si" value="si" required data-conditional-trigger="p04_tt_temple_dimensiones">
+                          <label class="form-check-label" for="p04_tt_temple_si">Disponible</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="p04_tt_temple_disponible" id="p04_tt_temple_no" value="no" required>
+                          <label class="form-check-label" for="p04_tt_temple_no">No disponible</label>
+                        </div>
+                      </div>
+                      <div class="conditional-field d-none" data-conditional="p04_tt_temple_dimensiones" data-show-when-value="si" id="cond_p04_tt_temple_dimensiones">
+                        <label for="p04_tt_temple_dimensiones" class="form-label">Dimensiones de piezas <span class="text-danger" aria-hidden="true">*</span></label>
+                        <input type="text" class="form-control" id="p04_tt_temple_dimensiones" name="p04_tt_temple_dimensiones" disabled>
+                        <div class="invalid-feedback">Indique las dimensiones.</div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="treatment-item">
+                    <fieldset>
+                      <legend class="form-label fw-semibold mb-2">Revenido</legend>
+                      <div class="d-flex gap-3 mb-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="p04_tt_revenido_disponible" id="p04_tt_revenido_si" value="si" required data-conditional-trigger="p04_tt_revenido_dimensiones">
+                          <label class="form-check-label" for="p04_tt_revenido_si">Disponible</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="p04_tt_revenido_disponible" id="p04_tt_revenido_no" value="no" required>
+                          <label class="form-check-label" for="p04_tt_revenido_no">No disponible</label>
+                        </div>
+                      </div>
+                      <div class="conditional-field d-none" data-conditional="p04_tt_revenido_dimensiones" data-show-when-value="si" id="cond_p04_tt_revenido_dimensiones">
+                        <label for="p04_tt_revenido_dimensiones" class="form-label">Dimensiones de piezas <span class="text-danger" aria-hidden="true">*</span></label>
+                        <input type="text" class="form-control" id="p04_tt_revenido_dimensiones" name="p04_tt_revenido_dimensiones" disabled>
+                        <div class="invalid-feedback">Indique las dimensiones.</div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="treatment-item">
+                    <fieldset>
+                      <legend class="form-label fw-semibold mb-2">Recocido</legend>
+                      <div class="d-flex gap-3 mb-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="p04_tt_recocido_disponible" id="p04_tt_recocido_si" value="si" required data-conditional-trigger="p04_tt_recocido_dimensiones">
+                          <label class="form-check-label" for="p04_tt_recocido_si">Disponible</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="p04_tt_recocido_disponible" id="p04_tt_recocido_no" value="no" required>
+                          <label class="form-check-label" for="p04_tt_recocido_no">No disponible</label>
+                        </div>
+                      </div>
+                      <div class="conditional-field d-none" data-conditional="p04_tt_recocido_dimensiones" data-show-when-value="si" id="cond_p04_tt_recocido_dimensiones">
+                        <label for="p04_tt_recocido_dimensiones" class="form-label">Dimensiones de piezas <span class="text-danger" aria-hidden="true">*</span></label>
+                        <input type="text" class="form-control" id="p04_tt_recocido_dimensiones" name="p04_tt_recocido_dimensiones" disabled>
+                        <div class="invalid-feedback">Indique las dimensiones.</div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="treatment-item">
+                    <fieldset>
+                      <legend class="form-label fw-semibold mb-2">Normalizado</legend>
+                      <div class="d-flex gap-3 mb-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="p04_tt_normalizado_disponible" id="p04_tt_normalizado_si" value="si" required data-conditional-trigger="p04_tt_normalizado_dimensiones">
+                          <label class="form-check-label" for="p04_tt_normalizado_si">Disponible</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="p04_tt_normalizado_disponible" id="p04_tt_normalizado_no" value="no" required>
+                          <label class="form-check-label" for="p04_tt_normalizado_no">No disponible</label>
+                        </div>
+                      </div>
+                      <div class="conditional-field d-none" data-conditional="p04_tt_normalizado_dimensiones" data-show-when-value="si" id="cond_p04_tt_normalizado_dimensiones">
+                        <label for="p04_tt_normalizado_dimensiones" class="form-label">Dimensiones de piezas <span class="text-danger" aria-hidden="true">*</span></label>
+                        <input type="text" class="form-control" id="p04_tt_normalizado_dimensiones" name="p04_tt_normalizado_dimensiones" disabled>
+                        <div class="invalid-feedback">Indique las dimensiones.</div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="treatment-item">
+                    <fieldset>
+                      <legend class="form-label fw-semibold mb-2">Pavonado</legend>
+                      <div class="d-flex gap-3 mb-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="p04_tt_pavonado_disponible" id="p04_tt_pavonado_si" value="si" required data-conditional-trigger="p04_tt_pavonado_dimensiones">
+                          <label class="form-check-label" for="p04_tt_pavonado_si">Disponible</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="p04_tt_pavonado_disponible" id="p04_tt_pavonado_no" value="no" required>
+                          <label class="form-check-label" for="p04_tt_pavonado_no">No disponible</label>
+                        </div>
+                      </div>
+                      <div class="conditional-field d-none" data-conditional="p04_tt_pavonado_dimensiones" data-show-when-value="si" id="cond_p04_tt_pavonado_dimensiones">
+                        <label for="p04_tt_pavonado_dimensiones" class="form-label">Dimensiones de piezas <span class="text-danger" aria-hidden="true">*</span></label>
+                        <input type="text" class="form-control" id="p04_tt_pavonado_dimensiones" name="p04_tt_pavonado_dimensiones" disabled>
+                        <div class="invalid-feedback">Indique las dimensiones.</div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="treatment-item">
+                    <fieldset>
+                      <legend class="form-label fw-semibold mb-2">Galvanizado</legend>
+                      <div class="d-flex gap-3 mb-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="p04_tt_galvanizado_disponible" id="p04_tt_galvanizado_si" value="si" required data-conditional-trigger="p04_tt_galvanizado_dimensiones">
+                          <label class="form-check-label" for="p04_tt_galvanizado_si">Disponible</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="p04_tt_galvanizado_disponible" id="p04_tt_galvanizado_no" value="no" required>
+                          <label class="form-check-label" for="p04_tt_galvanizado_no">No disponible</label>
+                        </div>
+                      </div>
+                      <div class="conditional-field d-none" data-conditional="p04_tt_galvanizado_dimensiones" data-show-when-value="si" id="cond_p04_tt_galvanizado_dimensiones">
+                        <label for="p04_tt_galvanizado_dimensiones" class="form-label">Dimensiones de piezas <span class="text-danger" aria-hidden="true">*</span></label>
+                        <input type="text" class="form-control" id="p04_tt_galvanizado_dimensiones" name="p04_tt_galvanizado_dimensiones" disabled>
+                        <div class="invalid-feedback">Indique las dimensiones.</div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="treatment-item">
+                    <fieldset>
+                      <legend class="form-label fw-semibold mb-2">Nitrurado</legend>
+                      <div class="d-flex gap-3 mb-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="p04_tt_nitrurado_disponible" id="p04_tt_nitrurado_si" value="si" required data-conditional-trigger="p04_tt_nitrurado_dimensiones">
+                          <label class="form-check-label" for="p04_tt_nitrurado_si">Disponible</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="p04_tt_nitrurado_disponible" id="p04_tt_nitrurado_no" value="no" required>
+                          <label class="form-check-label" for="p04_tt_nitrurado_no">No disponible</label>
+                        </div>
+                      </div>
+                      <div class="conditional-field d-none" data-conditional="p04_tt_nitrurado_dimensiones" data-show-when-value="si" id="cond_p04_tt_nitrurado_dimensiones">
+                        <label for="p04_tt_nitrurado_dimensiones" class="form-label">Dimensiones de piezas <span class="text-danger" aria-hidden="true">*</span></label>
+                        <input type="text" class="form-control" id="p04_tt_nitrurado_dimensiones" name="p04_tt_nitrurado_dimensiones" disabled>
+                        <div class="invalid-feedback">Indique las dimensiones.</div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="treatment-item">
+                    <fieldset>
+                      <legend class="form-label fw-semibold mb-2">Zincado</legend>
+                      <div class="d-flex gap-3 mb-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="p04_tt_zincado_disponible" id="p04_tt_zincado_si" value="si" required data-conditional-trigger="p04_tt_zincado_dimensiones">
+                          <label class="form-check-label" for="p04_tt_zincado_si">Disponible</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="p04_tt_zincado_disponible" id="p04_tt_zincado_no" value="no" required>
+                          <label class="form-check-label" for="p04_tt_zincado_no">No disponible</label>
+                        </div>
+                      </div>
+                      <div class="conditional-field d-none" data-conditional="p04_tt_zincado_dimensiones" data-show-when-value="si" id="cond_p04_tt_zincado_dimensiones">
+                        <label for="p04_tt_zincado_dimensiones" class="form-label">Dimensiones de piezas <span class="text-danger" aria-hidden="true">*</span></label>
+                        <input type="text" class="form-control" id="p04_tt_zincado_dimensiones" name="p04_tt_zincado_dimensiones" disabled>
+                        <div class="invalid-feedback">Indique las dimensiones.</div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                </div>
+
+                <h4 class="subsection-title">Herramientas básicas de medición</h4>
+                <div class="row g-3">
+              <div class="col-md-6">
+                <div class="tool-item">
+                  <fieldset>
+                    <legend class="form-label fw-semibold">Calibrador digital hasta 500 mm</legend>
+                    <div class="d-flex gap-3 mb-2">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="p04_hm_calibrador_digital" id="p04_hm_calibrador_digital_si" value="si" required data-conditional-trigger="p04_hm_calibrador_digital_cantidad">
+                        <label class="form-check-label" for="p04_hm_calibrador_digital_si">Sí</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="p04_hm_calibrador_digital" id="p04_hm_calibrador_digital_no" value="no" required>
+                        <label class="form-check-label" for="p04_hm_calibrador_digital_no">No</label>
+                      </div>
+                    </div>
+                    <div class="conditional-field d-none" data-conditional="p04_hm_calibrador_digital_cantidad" data-show-when-value="si" id="cond_p04_hm_calibrador_digital_cantidad">
+                      <label for="p04_hm_calibrador_digital_cantidad" class="form-label">Cantidad <span class="text-danger" aria-hidden="true">*</span></label>
+                      <input type="number" class="form-control" id="p04_hm_calibrador_digital_cantidad" name="p04_hm_calibrador_digital_cantidad" min="1" step="1" disabled>
+                      <div class="invalid-feedback">Indique la cantidad (mínimo 1).</div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="tool-item">
+                  <fieldset>
+                    <legend class="form-label fw-semibold">Pasa no pasa o calibrador de roscas</legend>
+                    <div class="d-flex gap-3 mb-2">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="p04_hm_pasa_no_pasa" id="p04_hm_pasa_no_pasa_si" value="si" required data-conditional-trigger="p04_hm_pasa_no_pasa_cantidad">
+                        <label class="form-check-label" for="p04_hm_pasa_no_pasa_si">Sí</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="p04_hm_pasa_no_pasa" id="p04_hm_pasa_no_pasa_no" value="no" required>
+                        <label class="form-check-label" for="p04_hm_pasa_no_pasa_no">No</label>
+                      </div>
+                    </div>
+                    <div class="conditional-field d-none" data-conditional="p04_hm_pasa_no_pasa_cantidad" data-show-when-value="si" id="cond_p04_hm_pasa_no_pasa_cantidad">
+                      <label for="p04_hm_pasa_no_pasa_cantidad" class="form-label">Cantidad <span class="text-danger" aria-hidden="true">*</span></label>
+                      <input type="number" class="form-control" id="p04_hm_pasa_no_pasa_cantidad" name="p04_hm_pasa_no_pasa_cantidad" min="1" step="1" disabled>
+                      <div class="invalid-feedback">Indique la cantidad (mínimo 1).</div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="tool-item">
+                  <fieldset>
+                    <legend class="form-label fw-semibold">Vernier de alturas 500 mm</legend>
+                    <div class="d-flex gap-3 mb-2">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="p04_hm_vernier_alturas" id="p04_hm_vernier_alturas_si" value="si" required data-conditional-trigger="p04_hm_vernier_alturas_cantidad">
+                        <label class="form-check-label" for="p04_hm_vernier_alturas_si">Sí</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="p04_hm_vernier_alturas" id="p04_hm_vernier_alturas_no" value="no" required>
+                        <label class="form-check-label" for="p04_hm_vernier_alturas_no">No</label>
+                      </div>
+                    </div>
+                    <div class="conditional-field d-none" data-conditional="p04_hm_vernier_alturas_cantidad" data-show-when-value="si" id="cond_p04_hm_vernier_alturas_cantidad">
+                      <label for="p04_hm_vernier_alturas_cantidad" class="form-label">Cantidad <span class="text-danger" aria-hidden="true">*</span></label>
+                      <input type="number" class="form-control" id="p04_hm_vernier_alturas_cantidad" name="p04_hm_vernier_alturas_cantidad" min="1" step="1" disabled>
+                      <div class="invalid-feedback">Indique la cantidad (mínimo 1).</div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="tool-item">
+                  <fieldset>
+                    <legend class="form-label fw-semibold">Ángulos de precisión 300 mm</legend>
+                    <div class="d-flex gap-3 mb-2">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="p04_hm_angulos_precision" id="p04_hm_angulos_precision_si" value="si" required data-conditional-trigger="p04_hm_angulos_precision_cantidad">
+                        <label class="form-check-label" for="p04_hm_angulos_precision_si">Sí</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="p04_hm_angulos_precision" id="p04_hm_angulos_precision_no" value="no" required>
+                        <label class="form-check-label" for="p04_hm_angulos_precision_no">No</label>
+                      </div>
+                    </div>
+                    <div class="conditional-field d-none" data-conditional="p04_hm_angulos_precision_cantidad" data-show-when-value="si" id="cond_p04_hm_angulos_precision_cantidad">
+                      <label for="p04_hm_angulos_precision_cantidad" class="form-label">Cantidad <span class="text-danger" aria-hidden="true">*</span></label>
+                      <input type="number" class="form-control" id="p04_hm_angulos_precision_cantidad" name="p04_hm_angulos_precision_cantidad" min="1" step="1" disabled>
+                      <div class="invalid-feedback">Indique la cantidad (mínimo 1).</div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="tool-item">
+                  <fieldset>
+                    <legend class="form-label fw-semibold">Escuadra de pelo o fija</legend>
+                    <div class="d-flex gap-3 mb-2">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="p04_hm_escuadra" id="p04_hm_escuadra_si" value="si" required data-conditional-trigger="p04_hm_escuadra_cantidad">
+                        <label class="form-check-label" for="p04_hm_escuadra_si">Sí</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="p04_hm_escuadra" id="p04_hm_escuadra_no" value="no" required>
+                        <label class="form-check-label" for="p04_hm_escuadra_no">No</label>
+                      </div>
+                    </div>
+                    <div class="conditional-field d-none" data-conditional="p04_hm_escuadra_cantidad" data-show-when-value="si" id="cond_p04_hm_escuadra_cantidad">
+                      <label for="p04_hm_escuadra_cantidad" class="form-label">Cantidad <span class="text-danger" aria-hidden="true">*</span></label>
+                      <input type="number" class="form-control" id="p04_hm_escuadra_cantidad" name="p04_hm_escuadra_cantidad" min="1" step="1" disabled>
+                      <div class="invalid-feedback">Indique la cantidad (mínimo 1).</div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+                  <div class="col-md-6">
+                    <div class="tool-item">
+                      <fieldset>
+                        <legend class="form-label fw-semibold">Otros</legend>
+                        <div class="d-flex gap-3 mb-2">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="p04_hm_otros" id="p04_hm_otros_si" value="si" required data-conditional-trigger="p04_hm_otros_detalle">
+                            <label class="form-check-label" for="p04_hm_otros_si">Sí</label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="p04_hm_otros" id="p04_hm_otros_no" value="no" required>
+                            <label class="form-check-label" for="p04_hm_otros_no">No</label>
+                          </div>
+                        </div>
+                        <div class="conditional-field d-none" data-conditional="p04_hm_otros_detalle" data-show-when-value="si" id="cond_p04_hm_otros_detalle">
+                          <label for="p04_hm_otros_nombre" class="form-label">Nombre de la herramienta <span class="text-danger" aria-hidden="true">*</span></label>
+                          <input type="text" class="form-control mb-2" id="p04_hm_otros_nombre" name="p04_hm_otros_nombre" disabled>
+                          <label for="p04_hm_otros_cantidad" class="form-label">Cantidad <span class="text-danger" aria-hidden="true">*</span></label>
+                          <input type="number" class="form-control" id="p04_hm_otros_cantidad" name="p04_hm_otros_cantidad" min="1" step="1" disabled>
+                          <div class="invalid-feedback">Complete el nombre y la cantidad.</div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="question-block" data-question="5">
+                <label for="p05_horas_maquina_semana" class="form-label fw-semibold">5. ¿Con cuántas horas máquina por semana cuenta su empresa? <span class="text-danger" aria-hidden="true">*</span></label>
+                <input type="number" class="form-control form-control-lg" id="p05_horas_maquina_semana" name="p05_horas_maquina_semana" min="0" step="any" required>
+                <div class="invalid-feedback">Indique un número igual o mayor a 0.</div>
+              </div>
+
+              <div class="question-block" data-question="6">
+                <fieldset>
+                  <legend class="form-label fw-semibold">6. Indique si su empresa cuenta con alguna de las siguientes certificaciones y su vigencia</legend>
+                  <p class="form-text mb-3">Seleccione las certificaciones aplicables e indique la vigencia (mes y año) de cada una. Si no cuenta con ninguna, continúe con la pregunta 7.</p>
+                  <div class="cert-grid">
+                    
+                <div class="cert-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="p06_iso9001_seleccion" name="p06_iso9001_seleccion" value="si" data-conditional-trigger="p06_iso9001_vigencia" data-iso9001-trigger="1">
+                    <label class="form-check-label fw-semibold" for="p06_iso9001_seleccion">ISO 9001</label>
+                  </div>
+                  <div class="conditional-field d-none mt-2" data-conditional="p06_iso9001_vigencia" id="cond_p06_iso9001_vigencia">
+                    <label for="p06_iso9001_vigencia" class="form-label">Vigencia (mes y año) <span class="text-danger" aria-hidden="true">*</span></label>
+                    <input type="month" class="form-control" id="p06_iso9001_vigencia" name="p06_iso9001_vigencia" disabled>
+                    <div class="invalid-feedback">Indique la vigencia.</div>
+                  </div>
+                </div>
+                <div class="cert-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="p06_vda64_seleccion" name="p06_vda64_seleccion" value="si" data-conditional-trigger="p06_vda64_vigencia">
+                    <label class="form-check-label fw-semibold" for="p06_vda64_seleccion">VDA 6.4</label>
+                  </div>
+                  <div class="conditional-field d-none mt-2" data-conditional="p06_vda64_vigencia" id="cond_p06_vda64_vigencia">
+                    <label for="p06_vda64_vigencia" class="form-label">Vigencia (mes y año) <span class="text-danger" aria-hidden="true">*</span></label>
+                    <input type="month" class="form-control" id="p06_vda64_vigencia" name="p06_vda64_vigencia" disabled>
+                    <div class="invalid-feedback">Indique la vigencia.</div>
+                  </div>
+                </div>
+                <div class="cert-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="p06_iso45001_seleccion" name="p06_iso45001_seleccion" value="si" data-conditional-trigger="p06_iso45001_vigencia">
+                    <label class="form-check-label fw-semibold" for="p06_iso45001_seleccion">ISO 45001</label>
+                  </div>
+                  <div class="conditional-field d-none mt-2" data-conditional="p06_iso45001_vigencia" id="cond_p06_iso45001_vigencia">
+                    <label for="p06_iso45001_vigencia" class="form-label">Vigencia (mes y año) <span class="text-danger" aria-hidden="true">*</span></label>
+                    <input type="month" class="form-control" id="p06_iso45001_vigencia" name="p06_iso45001_vigencia" disabled>
+                    <div class="invalid-feedback">Indique la vigencia.</div>
+                  </div>
+                </div>
+                <div class="cert-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="p06_iso14001_seleccion" name="p06_iso14001_seleccion" value="si" data-conditional-trigger="p06_iso14001_vigencia">
+                    <label class="form-check-label fw-semibold" for="p06_iso14001_seleccion">ISO 14001</label>
+                  </div>
+                  <div class="conditional-field d-none mt-2" data-conditional="p06_iso14001_vigencia" id="cond_p06_iso14001_vigencia">
+                    <label for="p06_iso14001_vigencia" class="form-label">Vigencia (mes y año) <span class="text-danger" aria-hidden="true">*</span></label>
+                    <input type="month" class="form-control" id="p06_iso14001_vigencia" name="p06_iso14001_vigencia" disabled>
+                    <div class="invalid-feedback">Indique la vigencia.</div>
+                  </div>
+                </div>
+                    <div class="cert-item">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="p06_otra_certificacion_seleccion" name="p06_otra_certificacion_seleccion" value="si" data-conditional-trigger="p06_otra_certificacion_detalle">
+                        <label class="form-check-label fw-semibold" for="p06_otra_certificacion_seleccion">Otros</label>
+                      </div>
+                      <div class="conditional-field d-none mt-2" data-conditional="p06_otra_certificacion_detalle" id="cond_p06_otra_certificacion_detalle">
+                        <label for="p06_otra_certificacion_nombre" class="form-label">Nombre de la certificación <span class="text-danger" aria-hidden="true">*</span></label>
+                        <input type="text" class="form-control mb-2" id="p06_otra_certificacion_nombre" name="p06_otra_certificacion_nombre" disabled>
+                        <label for="p06_otra_certificacion_vigencia" class="form-label">Vigencia (mes y año) <span class="text-danger" aria-hidden="true">*</span></label>
+                        <input type="month" class="form-control" id="p06_otra_certificacion_vigencia" name="p06_otra_certificacion_vigencia" disabled>
+                        <div class="invalid-feedback">Complete nombre y vigencia.</div>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="question-block d-none" data-question="7" data-conditional="p07_planea_iso9001" id="cond_p07_planea_iso9001" aria-expanded="false" aria-controls="cond_p07_iso9001_fecha_estimada">
+                <fieldset>
+                  <legend class="form-label fw-semibold">7. ¿Tiene planeado certificarse en ISO 9001? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p07_planea_iso9001" id="p07_planea_iso9001_si" value="si" data-conditional-trigger="p07_iso9001_fecha_estimada" disabled>
+                      <label class="form-check-label" for="p07_planea_iso9001_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p07_planea_iso9001" id="p07_planea_iso9001_no" value="no" disabled>
+                      <label class="form-check-label" for="p07_planea_iso9001_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                  <div class="conditional-field d-none mt-3" data-conditional="p07_iso9001_fecha_estimada" data-show-when-value="si" id="cond_p07_iso9001_fecha_estimada">
+                    <label for="p07_iso9001_fecha_estimada" class="form-label">Mes y año estimados para obtener la certificación <span class="text-danger" aria-hidden="true">*</span></label>
+                    <input type="month" class="form-control" id="p07_iso9001_fecha_estimada" name="p07_iso9001_fecha_estimada" disabled>
+                    <div class="invalid-feedback">Indique el mes y año estimados.</div>
+                  </div>
+                </fieldset>
+              </div>
+
+              
+              <div class="question-block" data-question="9">
+                <fieldset>
+                  <legend class="form-label fw-semibold">9. ¿Es posible visitar su empresa para llevar a cabo una evaluación en piso? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p09_posible_visita" id="p09_posible_visita_si" value="si" required>
+                      <label class="form-check-label" for="p09_posible_visita_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p09_posible_visita" id="p09_posible_visita_no" value="no" required>
+                      <label class="form-check-label" for="p09_posible_visita_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                  
+                </fieldset>
+              </div>
+
+            </div>
+          </fieldset>
+
+          <!-- PASO 2: Operaciones -->
+          <fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="2" aria-labelledby="step-title-2">
+            <div class="card-header section-header">
+              <h2 id="step-title-2" class="h4 mb-0"><i class="bi bi-clipboard-check me-2"></i>II. Operaciones y Calidad</h2>
+            </div>
+            <div class="card-body">
+
+              
+              <div class="question-block" data-question="10">
+                <fieldset>
+                  <legend class="form-label fw-semibold">10. ¿Se encuentra un manual de operaciones para cada máquina? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p10_manual_operaciones" id="p10_manual_operaciones_si" value="si" required>
+                      <label class="form-check-label" for="p10_manual_operaciones_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p10_manual_operaciones" id="p10_manual_operaciones_no" value="no" required>
+                      <label class="form-check-label" for="p10_manual_operaciones_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                  
+                </fieldset>
+              </div>
+
+              
+              <div class="question-block" data-question="11">
+                <fieldset>
+                  <legend class="form-label fw-semibold">11. ¿Calibra con regularidad sus máquinas? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p11_calibra_maquinas" id="p11_calibra_maquinas_si" value="si" required data-conditional-trigger="p11_reportes_calibracion">
+                      <label class="form-check-label" for="p11_calibra_maquinas_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p11_calibra_maquinas" id="p11_calibra_maquinas_no" value="no" required>
+                      <label class="form-check-label" for="p11_calibra_maquinas_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                </fieldset>
+              </div>
+              <div class="conditional-field d-none mb-3" data-conditional="p11_reportes_calibracion" data-show-when-value="si" id="cond_p11_reportes_calibracion">
+                
+                <div class="file-upload-area conditional-field">
+                  <label for="p11_reporte_calibracion_ultimo" class="form-label fw-semibold">Último reporte de calibración <span class="text-danger" aria-hidden="true">*</span></label>
+                  <input type="file" class="form-control" id="p11_reporte_calibracion_ultimo" name="p11_reporte_calibracion_ultimo" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx" disabled>
+                  <div class="form-text">Formatos permitidos: PDF, JPG, JPEG, PNG, DOC, DOCX, XLS, XLSX.</div>
+                  <div class="invalid-feedback">Adjunte el archivo solicitado.</div>
+                </div>
+                
+                <div class="file-upload-area conditional-field">
+                  <label for="p11_reporte_calibracion_penultimo" class="form-label fw-semibold">Penúltimo reporte de calibración <span class="text-danger" aria-hidden="true">*</span></label>
+                  <input type="file" class="form-control" id="p11_reporte_calibracion_penultimo" name="p11_reporte_calibracion_penultimo" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx" disabled>
+                  <div class="form-text">Formatos permitidos: PDF, JPG, JPEG, PNG, DOC, DOCX, XLS, XLSX.</div>
+                  <div class="invalid-feedback">Adjunte el archivo solicitado.</div>
+                </div>
+              </div>
+
+              <div class="question-block" data-question="12">
+                <fieldset>
+                  <legend class="form-label fw-semibold">12. El mantenimiento de sus máquinas es <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p12_tipo_mantenimiento" id="p12_preventivo" value="preventivo" required>
+                      <label class="form-check-label" for="p12_preventivo">Preventivo</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p12_tipo_mantenimiento" id="p12_correctivo" value="correctivo" required>
+                      <label class="form-check-label" for="p12_correctivo">Correctivo</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                </fieldset>
+              </div>
+
+              <div class="question-block" data-question="13">
+                <label for="p13_periodo_mantenimiento" class="form-label fw-semibold">13. ¿En qué periodo se da mantenimiento a las máquinas? <span class="text-danger" aria-hidden="true">*</span></label>
+                <input type="text" class="form-control form-control-lg" id="p13_periodo_mantenimiento" name="p13_periodo_mantenimiento" required>
+                <div class="invalid-feedback">Indique el periodo de mantenimiento.</div>
+                <div class="mt-3">
+                  <div class="file-upload-area">
+                    <label for="p13_evidencia_mantenimiento_maquinas" class="form-label fw-semibold">Evidencia del periodo o programa de mantenimiento <span class="text-danger" aria-hidden="true">*</span></label>
+                    <input type="file" class="form-control" id="p13_evidencia_mantenimiento_maquinas" name="p13_evidencia_mantenimiento_maquinas" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx" required>
+                    <div class="form-text">Formatos permitidos: PDF, JPG, JPEG, PNG, DOC, DOCX, XLS, XLSX.</div>
+                    <div class="invalid-feedback">Adjunte la evidencia de mantenimiento.</div>
+                  </div>
+                </div>
+              </div>
+
+              
+              <div class="question-block" data-question="14">
+                <fieldset>
+                  <legend class="form-label fw-semibold">14. ¿Cuenta su empresa con máquinas controladas CNC? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p14_maquinas_cnc" id="p14_maquinas_cnc_si" value="si" required data-conditional-trigger="p14_detalle_cnc">
+                      <label class="form-check-label" for="p14_maquinas_cnc_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p14_maquinas_cnc" id="p14_maquinas_cnc_no" value="no" required>
+                      <label class="form-check-label" for="p14_maquinas_cnc_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                </fieldset>
+              </div>
+              <div class="conditional-field d-none" data-conditional="p14_detalle_cnc" data-show-when-value="si" id="cond_p14_detalle_cnc">
+                <div class="question-block" data-question="15">
+                  <label for="p15_personas_cnc_automatico" class="form-label fw-semibold">15. ¿Cuánta gente de su empresa sabe manejar esta(s) máquina(s) CNC de forma &quot;automática&quot;? <span class="text-danger" aria-hidden="true">*</span></label>
+                  <input type="number" class="form-control" id="p15_personas_cnc_automatico" name="p15_personas_cnc_automatico" min="0" step="1" disabled>
+                  <div class="invalid-feedback">Indique el número de personas.</div>
+                </div>
+                <div class="question-block" data-question="16">
+                  <label for="p16_programa_cnc" class="form-label fw-semibold">16. ¿Cuál programa CNC está operando en sus máquinas? <span class="text-danger" aria-hidden="true">*</span></label>
+                  <input type="text" class="form-control" id="p16_programa_cnc" name="p16_programa_cnc" disabled>
+                  <div class="invalid-feedback">Indique el programa CNC.</div>
+                </div>
+              </div>
+
+              
+              <div class="question-block" data-question="17">
+                <fieldset>
+                  <legend class="form-label fw-semibold">17. ¿Hay una persona encargada de calidad? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p17_persona_calidad" id="p17_persona_calidad_si" value="si" required data-conditional-trigger="p17_nombre_calidad">
+                      <label class="form-check-label" for="p17_persona_calidad_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p17_persona_calidad" id="p17_persona_calidad_no" value="no" required>
+                      <label class="form-check-label" for="p17_persona_calidad_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                </fieldset>
+              </div>
+              <div class="conditional-field d-none" data-conditional="p17_nombre_calidad" data-show-when-value="si" id="cond_p17_nombre_calidad">
+                <label for="p17_nombre_encargado_calidad" class="form-label">Nombre de la persona encargada de calidad <span class="text-danger" aria-hidden="true">*</span></label>
+                <input type="text" class="form-control" id="p17_nombre_encargado_calidad" name="p17_nombre_encargado_calidad" disabled>
+                <div class="invalid-feedback">Indique el nombre.</div>
+              </div>
+
+              
+              <div class="question-block" data-question="18">
+                <fieldset>
+                  <legend class="form-label fw-semibold">18. ¿Existen instrucciones de trabajo en las áreas correspondientes? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p18_instrucciones_trabajo" id="p18_instrucciones_trabajo_si" value="si" required>
+                      <label class="form-check-label" for="p18_instrucciones_trabajo_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p18_instrucciones_trabajo" id="p18_instrucciones_trabajo_no" value="no" required>
+                      <label class="form-check-label" for="p18_instrucciones_trabajo_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                  
+                </fieldset>
+              </div>
+              
+              <div class="question-block" data-question="19">
+                <fieldset>
+                  <legend class="form-label fw-semibold">19. ¿Se aplican pruebas de calidad antes de la entrega final de los servicios? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p19_pruebas_calidad" id="p19_pruebas_calidad_si" value="si" required>
+                      <label class="form-check-label" for="p19_pruebas_calidad_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p19_pruebas_calidad" id="p19_pruebas_calidad_no" value="no" required>
+                      <label class="form-check-label" for="p19_pruebas_calidad_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                  
+                </fieldset>
+              </div>
+              
+              <div class="question-block" data-question="20">
+                <fieldset>
+                  <legend class="form-label fw-semibold">20. ¿Se documentan los resultados de las pruebas de medición? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p20_documentan_pruebas" id="p20_documentan_pruebas_si" value="si" required>
+                      <label class="form-check-label" for="p20_documentan_pruebas_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p20_documentan_pruebas" id="p20_documentan_pruebas_no" value="no" required>
+                      <label class="form-check-label" for="p20_documentan_pruebas_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                  
+                </fieldset>
+              </div>
+              
+              <div class="question-block" data-question="21">
+                <fieldset>
+                  <legend class="form-label fw-semibold">21. ¿Existe un sistema de calidad que evita la equivocación de materiales antes de su salida? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p21_sistema_evita_equivocacion" id="p21_sistema_evita_equivocacion_si" value="si" required>
+                      <label class="form-check-label" for="p21_sistema_evita_equivocacion_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p21_sistema_evita_equivocacion" id="p21_sistema_evita_equivocacion_no" value="no" required>
+                      <label class="form-check-label" for="p21_sistema_evita_equivocacion_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                  
+                </fieldset>
+              </div>
+
+              
+              <div class="question-block" data-question="22">
+                <fieldset>
+                  <legend class="form-label fw-semibold">22. ¿Da mantenimiento en periodos consecutivos a los instrumentos de medición? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p22_mantenimiento_instrumentos" id="p22_mantenimiento_instrumentos_si" value="si" required data-conditional-trigger="p22_evidencia_mantenimiento_instrumentos">
+                      <label class="form-check-label" for="p22_mantenimiento_instrumentos_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p22_mantenimiento_instrumentos" id="p22_mantenimiento_instrumentos_no" value="no" required>
+                      <label class="form-check-label" for="p22_mantenimiento_instrumentos_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                </fieldset>
+              </div>
+              
+                <div class="file-upload-area conditional-field d-none" data-conditional="p22_evidencia_mantenimiento_instrumentos" data-show-when-value="si" id="cond_p22_evidencia_mantenimiento_instrumentos">
+                  <label for="p22_evidencia_mantenimiento_instrumentos" class="form-label fw-semibold">Evidencia del mantenimiento de instrumentos de medición <span class="text-danger" aria-hidden="true">*</span></label>
+                  <input type="file" class="form-control" id="p22_evidencia_mantenimiento_instrumentos" name="p22_evidencia_mantenimiento_instrumentos" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx" disabled>
+                  <div class="form-text">Formatos permitidos: PDF, JPG, JPEG, PNG, DOC, DOCX, XLS, XLSX.</div>
+                  <div class="invalid-feedback">Adjunte el archivo solicitado.</div>
+                </div>
+
+              
+              <div class="question-block" data-question="23">
+                <fieldset>
+                  <legend class="form-label fw-semibold">23. ¿Sus máquinas cumplen con las señaléticas y barreras mecánicas necesarias para evitar accidentes? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p23_senaleticas_barreras" id="p23_senaleticas_barreras_si" value="si" required>
+                      <label class="form-check-label" for="p23_senaleticas_barreras_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p23_senaleticas_barreras" id="p23_senaleticas_barreras_no" value="no" required>
+                      <label class="form-check-label" for="p23_senaleticas_barreras_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                  
+                </fieldset>
+              </div>
+
+              
+              <div class="question-block" data-question="24">
+                <fieldset>
+                  <legend class="form-label fw-semibold">24. ¿Subcontratan proveedores para lograr el servicio entregable para FFT? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p24_subcontrata_proveedores" id="p24_subcontrata_proveedores_si" value="si" required data-conditional-trigger="p24_detalle_subcontratacion">
+                      <label class="form-check-label" for="p24_subcontrata_proveedores_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p24_subcontrata_proveedores" id="p24_subcontrata_proveedores_no" value="no" required>
+                      <label class="form-check-label" for="p24_subcontrata_proveedores_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                </fieldset>
+              </div>
+              <div class="conditional-field d-none" data-conditional="p24_detalle_subcontratacion" data-show-when-value="si" id="cond_p24_detalle_subcontratacion">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="p24_empresa_subcontratada" class="form-label">Nombre de la empresa <span class="text-danger" aria-hidden="true">*</span></label>
+                    <input type="text" class="form-control" id="p24_empresa_subcontratada" name="p24_empresa_subcontratada" disabled>
+                    <div class="invalid-feedback">Indique el nombre de la empresa.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="p24_tipo_servicio" class="form-label">Tipo de servicio <span class="text-danger" aria-hidden="true">*</span></label>
+                    <input type="text" class="form-control" id="p24_tipo_servicio" name="p24_tipo_servicio" disabled>
+                    <div class="invalid-feedback">Indique el tipo de servicio.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="p24_porcentaje_subcontratado" class="form-label">Porcentaje del volumen de trabajo de FFT México subcontratado <span class="text-danger" aria-hidden="true">*</span></label>
+                    <div class="input-group">
+                      <input type="number" class="form-control" id="p24_porcentaje_subcontratado" name="p24_porcentaje_subcontratado" min="0" max="100" step="any" disabled>
+                      <span class="input-group-text">%</span>
+                    </div>
+                    <div class="invalid-feedback">Indique un porcentaje entre 0 y 100.</div>
+                  </div>
+                </div>
+              </div>
+
+              
+              <div class="question-block" data-question="25">
+                <fieldset>
+                  <legend class="form-label fw-semibold">25. ¿Puede asegurar que siempre está trabajando de acuerdo a los estándares y normas internacionales actuales? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p25_estandares_internacionales" id="p25_estandares_internacionales_si" value="si" required>
+                      <label class="form-check-label" for="p25_estandares_internacionales_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p25_estandares_internacionales" id="p25_estandares_internacionales_no" value="no" required>
+                      <label class="form-check-label" for="p25_estandares_internacionales_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                  
+                </fieldset>
+              </div>
+              
+              <div class="question-block" data-question="26">
+                <fieldset>
+                  <legend class="form-label fw-semibold">26. ¿Su personal puede leer e entender dibujos en inglés? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p26_dibujo_ingles" id="p26_dibujo_ingles_si" value="si" required>
+                      <label class="form-check-label" for="p26_dibujo_ingles_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p26_dibujo_ingles" id="p26_dibujo_ingles_no" value="no" required>
+                      <label class="form-check-label" for="p26_dibujo_ingles_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                  
+                </fieldset>
+              </div>
+              
+              <div class="question-block" data-question="27">
+                <fieldset>
+                  <legend class="form-label fw-semibold">27. ¿Tiene un sistema y proceso definido (captura de pedidos, control de proveedores, control de fechas, etc.) para asegurar el cumplimiento de la entrega en las fechas acordadas con FFT? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p27_sistema_cumplimiento_fechas" id="p27_sistema_cumplimiento_fechas_si" value="si" required>
+                      <label class="form-check-label" for="p27_sistema_cumplimiento_fechas_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p27_sistema_cumplimiento_fechas" id="p27_sistema_cumplimiento_fechas_no" value="no" required>
+                      <label class="form-check-label" for="p27_sistema_cumplimiento_fechas_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                  
+                </fieldset>
+              </div>
+
+              <div class="question-block" data-question="28">
+                <label for="p28_descripcion_sistema" class="form-label fw-semibold">28. Favor de describir el sistema de la pregunta 27. <span class="text-danger" aria-hidden="true">*</span></label>
+                <textarea class="form-control" id="p28_descripcion_sistema" name="p28_descripcion_sistema" rows="4" required></textarea>
+                <div class="invalid-feedback">Describa el sistema.</div>
+              </div>
+
+            </div>
+          </fieldset>
+
+          <!-- PASO 3: Experiencia -->
+          <fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="3" aria-labelledby="step-title-3">
+            <div class="card-header section-header">
+              <h2 id="step-title-3" class="h4 mb-0"><i class="bi bi-briefcase me-2"></i>III. Experiencia</h2>
+            </div>
+            <div class="card-body">
+
+              <div class="question-block" data-question="29">
+                <label for="p29_anios_fundacion" class="form-label fw-semibold">29. ¿Cuándo se fundó su empresa? (años de operación) <span class="text-danger" aria-hidden="true">*</span></label>
+                <div class="input-group">
+                  <input type="number" class="form-control form-control-lg" id="p29_anios_fundacion" name="p29_anios_fundacion" min="0" step="1" required>
+                  <span class="input-group-text">años</span>
+                </div>
+                <div class="invalid-feedback">Indique los años desde la fundación.</div>
+              </div>
+
+              <div class="question-block" data-question="30">
+                <label for="p30_anios_experiencia" class="form-label fw-semibold">30. ¿Cuánta experiencia tiene con la fabricación de los productos solicitados? <span class="text-danger" aria-hidden="true">*</span></label>
+                <div class="input-group">
+                  <input type="number" class="form-control form-control-lg" id="p30_anios_experiencia" name="p30_anios_experiencia" min="0" step="any" required>
+                  <span class="input-group-text">años</span>
+                </div>
+                <div class="invalid-feedback">Indique los años de experiencia.</div>
+              </div>
+
+              
+              <div class="question-block" data-question="31">
+                <fieldset>
+                  <legend class="form-label fw-semibold">31. ¿Tiene un organigrama que enseña las responsabilidades en su empresa? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p31_organigrama" id="p31_organigrama_si" value="si" required data-conditional-trigger="p31_evidencia_organigrama">
+                      <label class="form-check-label" for="p31_organigrama_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p31_organigrama" id="p31_organigrama_no" value="no" required>
+                      <label class="form-check-label" for="p31_organigrama_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                </fieldset>
+              </div>
+              
+                <div class="file-upload-area conditional-field d-none" data-conditional="p31_evidencia_organigrama" data-show-when-value="si" id="cond_p31_evidencia_organigrama">
+                  <label for="p31_evidencia_organigrama" class="form-label fw-semibold">Organigrama de la empresa <span class="text-danger" aria-hidden="true">*</span></label>
+                  <input type="file" class="form-control" id="p31_evidencia_organigrama" name="p31_evidencia_organigrama" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx" disabled>
+                  <div class="form-text">Formatos permitidos: PDF, JPG, JPEG, PNG, DOC, DOCX, XLS, XLSX.</div>
+                  <div class="invalid-feedback">Adjunte el archivo solicitado.</div>
+                </div>
+
+              
+              <div class="question-block" data-question="32">
+                <fieldset>
+                  <legend class="form-label fw-semibold">32. ¿Cuenta con referencias / clientes / proyectos para los trabajos que provee? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p32_referencias" id="p32_referencias_si" value="si" required data-conditional-trigger="p32_evidencia_referencias">
+                      <label class="form-check-label" for="p32_referencias_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p32_referencias" id="p32_referencias_no" value="no" required>
+                      <label class="form-check-label" for="p32_referencias_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                </fieldset>
+              </div>
+              
+                <div class="file-upload-area conditional-field d-none" data-conditional="p32_evidencia_referencias" data-show-when-value="si" id="cond_p32_evidencia_referencias">
+                  <label for="p32_evidencia_referencias" class="form-label fw-semibold">Evidencia de referencias, clientes o proyectos <span class="text-danger" aria-hidden="true">*</span></label>
+                  <input type="file" class="form-control" id="p32_evidencia_referencias" name="p32_evidencia_referencias" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx" disabled>
+                  <div class="form-text">Formatos permitidos: PDF, JPG, JPEG, PNG, DOC, DOCX, XLS, XLSX.</div>
+                  <div class="invalid-feedback">Adjunte el archivo solicitado.</div>
+                </div>
+
+            </div>
+          </fieldset>
+
+          <!-- PASO 4: Personal -->
+          <fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="4" aria-labelledby="step-title-4">
+            <div class="card-header section-header">
+              <h2 id="step-title-4" class="h4 mb-0"><i class="bi bi-people me-2"></i>IV. Personal</h2>
+            </div>
+            <div class="card-body">
+
+              
+              <div class="question-block" data-question="33">
+                <fieldset>
+                  <legend class="form-label fw-semibold">33. ¿Participa su personal en capacitaciones frecuentes? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p33_capacitaciones_frecuentes" id="p33_capacitaciones_frecuentes_si" value="si" required>
+                      <label class="form-check-label" for="p33_capacitaciones_frecuentes_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p33_capacitaciones_frecuentes" id="p33_capacitaciones_frecuentes_no" value="no" required>
+                      <label class="form-check-label" for="p33_capacitaciones_frecuentes_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                  
+                </fieldset>
+              </div>
+              
+              <div class="question-block" data-question="34">
+                <fieldset>
+                  <legend class="form-label fw-semibold">34. ¿Recibe su personal con regularidad cursos de seguridad y está documentado? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p34_cursos_seguridad" id="p34_cursos_seguridad_si" value="si" required>
+                      <label class="form-check-label" for="p34_cursos_seguridad_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p34_cursos_seguridad" id="p34_cursos_seguridad_no" value="no" required>
+                      <label class="form-check-label" for="p34_cursos_seguridad_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                  
+                </fieldset>
+              </div>
+              
+              <div class="question-block" data-question="35">
+                <fieldset>
+                  <legend class="form-label fw-semibold">35. ¿Está su personal asegurado en el IMSS (seguro social)? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p35_asegurado_imss" id="p35_asegurado_imss_si" value="si" required>
+                      <label class="form-check-label" for="p35_asegurado_imss_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p35_asegurado_imss" id="p35_asegurado_imss_no" value="no" required>
+                      <label class="form-check-label" for="p35_asegurado_imss_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                  
+                </fieldset>
+              </div>
+              
+              <div class="question-block" data-question="36">
+                <fieldset>
+                  <legend class="form-label fw-semibold">36. ¿Proporciona la empresa equipo de seguridad para su personal? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p36_equipo_seguridad" id="p36_equipo_seguridad_si" value="si" required>
+                      <label class="form-check-label" for="p36_equipo_seguridad_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p36_equipo_seguridad" id="p36_equipo_seguridad_no" value="no" required>
+                      <label class="form-check-label" for="p36_equipo_seguridad_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                  
+                </fieldset>
+              </div>
+
+              <div class="question-block" data-question="37">
+                <label for="p37_porcentaje_fluctuacion" class="form-label fw-semibold">37. ¿Qué tan alto es el porcentaje de fluctuación de personal en su empresa? <span class="text-danger" aria-hidden="true">*</span></label>
+                <div class="input-group">
+                  <input type="number" class="form-control form-control-lg" id="p37_porcentaje_fluctuacion" name="p37_porcentaje_fluctuacion" min="0" max="100" step="any" required>
+                  <span class="input-group-text">%</span>
+                </div>
+                <div class="invalid-feedback">Indique un porcentaje entre 0 y 100.</div>
+              </div>
+
+              <div class="question-block" data-question="38">
+                <h3 class="form-label fw-semibold">38. Favor de indicar la formación/educación más alta de cada trabajador <span class="text-danger" aria-hidden="true">*</span></h3>
+                <p class="form-text">Ejemplos: secundaria, técnico, universidad, etc.</p>
+                <div class="dynamic-table-wrap">
+                  <table class="table table-bordered dynamic-table align-middle" id="p38_trabajadores_table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nombre completo</th>
+                        <th scope="col">Grado de estudios</th>
+                        <th scope="col">Acción</th>
+                      </tr>
+                    </thead>
+                    <tbody id="p38_trabajadores_tbody"></tbody>
+                  </table>
+                </div>
+                <div class="table-actions">
+                  <button type="button" class="btn btn-add-row btn-sm" id="btnAddWorkerRow"><i class="bi bi-plus-circle me-1"></i>Agregar trabajador</button>
+                </div>
+              </div>
+
+            </div>
+          </fieldset>
+
+          <!-- PASO 5: Ambiente -->
+          <fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="5" aria-labelledby="step-title-5">
+            <div class="card-header section-header">
+              <h2 id="step-title-5" class="h4 mb-0"><i class="bi bi-tree me-2"></i>V. Medio ambiente e Infraestructura de su empresa</h2>
+            </div>
+            <div class="card-body">
+
+              
+              <div class="question-block" data-question="39">
+                <fieldset>
+                  <legend class="form-label fw-semibold">39. ¿Se reutiliza material de empaque para los envíos a FFT? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p39_reutiliza_empaque" id="p39_reutiliza_empaque_si" value="si" required>
+                      <label class="form-check-label" for="p39_reutiliza_empaque_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p39_reutiliza_empaque" id="p39_reutiliza_empaque_no" value="no" required>
+                      <label class="form-check-label" for="p39_reutiliza_empaque_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                  
+                </fieldset>
+              </div>
+              
+              <div class="question-block" data-question="40">
+                <fieldset>
+                  <legend class="form-label fw-semibold">40. ¿Su empresa cumple con las normas de seguridad e higiene (extintores, botiquín, rutas de evacuación)? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p40_normas_seguridad_higiene" id="p40_normas_seguridad_higiene_si" value="si" required>
+                      <label class="form-check-label" for="p40_normas_seguridad_higiene_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p40_normas_seguridad_higiene" id="p40_normas_seguridad_higiene_no" value="no" required>
+                      <label class="form-check-label" for="p40_normas_seguridad_higiene_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                  
+                </fieldset>
+              </div>
+              
+              <div class="question-block" data-question="41">
+                <fieldset>
+                  <legend class="form-label fw-semibold">41. ¿Los materiales peligrosos se almacenan, procesan y eliminan adecuadamente? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p41_materiales_peligrosos" id="p41_materiales_peligrosos_si" value="si" required>
+                      <label class="form-check-label" for="p41_materiales_peligrosos_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p41_materiales_peligrosos" id="p41_materiales_peligrosos_no" value="no" required>
+                      <label class="form-check-label" for="p41_materiales_peligrosos_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                  
+                </fieldset>
+              </div>
+
+              
+              <div class="question-block" data-question="42">
+                <fieldset>
+                  <legend class="form-label fw-semibold">42. ¿Tiene su empresa metas e indicadores que midan el desempeño de seguridad y la accidentabilidad? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p42_metas_indicadores" id="p42_metas_indicadores_si" value="si" required data-conditional-trigger="p42_descripcion_metas">
+                      <label class="form-check-label" for="p42_metas_indicadores_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p42_metas_indicadores" id="p42_metas_indicadores_no" value="no" required>
+                      <label class="form-check-label" for="p42_metas_indicadores_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                </fieldset>
+              </div>
+              <div class="conditional-field d-none" data-conditional="p42_descripcion_metas" data-show-when-value="si" id="cond_p42_descripcion_metas">
+                <label for="p42_descripcion_metas_indicadores" class="form-label">Describa las metas e indicadores <span class="text-danger" aria-hidden="true">*</span></label>
+                <textarea class="form-control" id="p42_descripcion_metas_indicadores" name="p42_descripcion_metas_indicadores" rows="3" disabled></textarea>
+                <div class="invalid-feedback">Describa las metas e indicadores.</div>
+              </div>
+
+              <div class="question-block" data-question="43">
+                <label for="p43_indice_accidentes" class="form-label fw-semibold" id="p43_indice_accidentes_label">43. Durante el año calendario anterior, ¿cuál fue su índice de accidentes laborales? <span class="text-danger" aria-hidden="true">*</span></label>
+                <input type="number" class="form-control form-control-lg" id="p43_indice_accidentes" name="p43_indice_accidentes" min="0" step="any" required>
+                <div class="invalid-feedback">Indique un número igual o mayor a 0.</div>
+              </div>
+
+            </div>
+          </fieldset>
+
+          <!-- PASO 6: Envío -->
+          <fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="6" aria-labelledby="step-title-6">
+            <div class="card-header section-header">
+              <h2 id="step-title-6" class="h4 mb-0"><i class="bi bi-truck me-2"></i>VI. Envío</h2>
+            </div>
+            <div class="card-body">
+
+              
+              <div class="question-block" data-question="44">
+                <fieldset>
+                  <legend class="form-label fw-semibold">44. ¿Sus productos están empaquetados correctamente para evitar daños de envío? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p44_empaquetado_correcto" id="p44_empaquetado_correcto_si" value="si" required>
+                      <label class="form-check-label" for="p44_empaquetado_correcto_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p44_empaquetado_correcto" id="p44_empaquetado_correcto_no" value="no" required>
+                      <label class="form-check-label" for="p44_empaquetado_correcto_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                  
+                </fieldset>
+              </div>
+
+              <div class="question-block" data-question="45">
+                <fieldset>
+                  <legend class="form-label fw-semibold">45. ¿El transporte está realizado por su empresa o un tercero? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-column gap-2">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p45_tipo_transporte" id="p45_transporte_propio" value="propio" required>
+                      <label class="form-check-label" for="p45_transporte_propio">Transporte realizado por la propia empresa</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p45_tipo_transporte" id="p45_transporte_tercero" value="tercero" required>
+                      <label class="form-check-label" for="p45_transporte_tercero">Transporte realizado por un tercero</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                </fieldset>
+              </div>
+
+              
+              <div class="question-block" data-question="46">
+                <fieldset>
+                  <legend class="form-label fw-semibold">46. ¿Tiene un proceso definido para procesar reclamos de materiales? <span class="text-danger" aria-hidden="true">*</span></legend>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p46_proceso_reclamos" id="p46_proceso_reclamos_si" value="si" required>
+                      <label class="form-check-label" for="p46_proceso_reclamos_si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="p46_proceso_reclamos" id="p46_proceso_reclamos_no" value="no" required>
+                      <label class="form-check-label" for="p46_proceso_reclamos_no">No</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback">Seleccione una opción.</div>
+                  
+                </fieldset>
+              </div>
+
+            </div>
+          </fieldset>
+
+          <!-- PASO 7: SI -->
+          <fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="7" aria-labelledby="step-title-7">
+            <div class="card-header section-header">
+              <h2 id="step-title-7" class="h4 mb-0"><i class="bi bi-shield-lock me-2"></i>VII. Seguridad de la Información</h2>
+            </div>
+            <div class="card-body">
+              <div class="alert alert-light border mb-4">
+                <p class="fw-semibold mb-2">Para esta sección, elija la puntuación según el estado del proceso en su empresa:</p>
+                <ul class="score-scale-list mb-2">
+                  <li><strong>10:</strong> Determinado por escrito y también efectivamente probado.</li>
+                  <li><strong>8:</strong> No se establece por escrito, pero se demuestra con eficacia.</li>
+                  <li><strong>6:</strong> Determinado por escrito y eficacia predominante probada.</li>
+                  <li><strong>4:</strong> No se establece por escrito y es eficaz en su mayoría.</li>
+                  <li><strong>0:</strong> No está probado como efectivo o no existe.</li>
+                </ul>
+                <p class="small mb-0"><em>*) La puntuación 4 significa que más de la mitad de todas las determinaciones están efectivamente probadas y no existe riesgo específico.</em></p>
+              </div>
+
+              
+              <div class="question-block" data-question="47">
+                <label for="p47_confidencialidad_empleados_puntaje" class="form-label fw-semibold">47. ¿Están todos los empleados obligados por contrato a mantener la confidencialidad? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select form-select-lg si-score" id="p47_confidencialidad_empleados_puntaje" name="p47_confidencialidad_empleados_puntaje" required>
+                  <option value="" selected disabled>Seleccione una puntuación</option>
+                  <option value="0">0</option><option value="4">4</option><option value="6">6</option><option value="8">8</option><option value="10">10</option>
+                </select>
+                <div class="invalid-feedback">Seleccione 0, 4, 6, 8 o 10.</div>
+              </div>
+              <div class="question-block" data-question="48">
+                <label for="p48_capacitacion_seguridad_informacion_puntaje" class="form-label fw-semibold">48. ¿Son instruidos todos los trabajadores regularmente sobre la seguridad de la información y protección de datos? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select form-select-lg si-score" id="p48_capacitacion_seguridad_informacion_puntaje" name="p48_capacitacion_seguridad_informacion_puntaje" required>
+                  <option value="" selected disabled>Seleccione una puntuación</option>
+                  <option value="0">0</option><option value="4">4</option><option value="6">6</option><option value="8">8</option><option value="10">10</option>
+                </select>
+                <div class="invalid-feedback">Seleccione 0, 4, 6, 8 o 10.</div>
+              </div>
+              <div class="question-block" data-question="49">
+                <label for="p49_zonas_seguridad_acceso_puntaje" class="form-label fw-semibold">49. ¿Se han implementado zonas de seguridad y reglas de acceso en la empresa? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select form-select-lg si-score" id="p49_zonas_seguridad_acceso_puntaje" name="p49_zonas_seguridad_acceso_puntaje" required>
+                  <option value="" selected disabled>Seleccione una puntuación</option>
+                  <option value="0">0</option><option value="4">4</option><option value="6">6</option><option value="8">8</option><option value="10">10</option>
+                </select>
+                <div class="invalid-feedback">Seleccione 0, 4, 6, 8 o 10.</div>
+              </div>
+              <div class="question-block" data-question="50">
+                <label for="p50_permisos_acceso_datos_clientes_puntaje" class="form-label fw-semibold">50. ¿Se otorgan permisos de acceso a los datos de clientes según cada proyecto y se revisan regularmente? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select form-select-lg si-score" id="p50_permisos_acceso_datos_clientes_puntaje" name="p50_permisos_acceso_datos_clientes_puntaje" required>
+                  <option value="" selected disabled>Seleccione una puntuación</option>
+                  <option value="0">0</option><option value="4">4</option><option value="6">6</option><option value="8">8</option><option value="10">10</option>
+                </select>
+                <div class="invalid-feedback">Seleccione 0, 4, 6, 8 o 10.</div>
+              </div>
+              <div class="question-block" data-question="51">
+                <label for="p51_clasificacion_informacion_puntaje" class="form-label fw-semibold">51. ¿La información se clasifica según su nivel de confidencialidad y se protege de acuerdo a ello? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select form-select-lg si-score" id="p51_clasificacion_informacion_puntaje" name="p51_clasificacion_informacion_puntaje" required>
+                  <option value="" selected disabled>Seleccione una puntuación</option>
+                  <option value="0">0</option><option value="4">4</option><option value="6">6</option><option value="8">8</option><option value="10">10</option>
+                </select>
+                <div class="invalid-feedback">Seleccione 0, 4, 6, 8 o 10.</div>
+              </div>
+              <div class="question-block" data-question="52">
+                <label for="p52_copias_seguridad_puntaje" class="form-label fw-semibold">52. ¿Existe un proceso de copias de seguridad definido e implementado en la empresa? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select form-select-lg si-score" id="p52_copias_seguridad_puntaje" name="p52_copias_seguridad_puntaje" required>
+                  <option value="" selected disabled>Seleccione una puntuación</option>
+                  <option value="0">0</option><option value="4">4</option><option value="6">6</option><option value="8">8</option><option value="10">10</option>
+                </select>
+                <div class="invalid-feedback">Seleccione 0, 4, 6, 8 o 10.</div>
+              </div>
+              <div class="question-block" data-question="53">
+                <label for="p53_confidencialidad_proveedores_puntaje" class="form-label fw-semibold">53. ¿Los proveedores que participan en proyectos específicos están obligados a mantener la confidencialidad? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select form-select-lg si-score" id="p53_confidencialidad_proveedores_puntaje" name="p53_confidencialidad_proveedores_puntaje" required>
+                  <option value="" selected disabled>Seleccione una puntuación</option>
+                  <option value="0">0</option><option value="4">4</option><option value="6">6</option><option value="8">8</option><option value="10">10</option>
+                </select>
+                <div class="invalid-feedback">Seleccione 0, 4, 6, 8 o 10.</div>
+              </div>
+              <div class="question-block" data-question="54">
+                <label for="p54_firewall_proteccion_internet_puntaje" class="form-label fw-semibold">54. ¿El acceso a internet está protegido mediante un Firewall contra accesos no autorizados y software malicioso? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select form-select-lg si-score" id="p54_firewall_proteccion_internet_puntaje" name="p54_firewall_proteccion_internet_puntaje" required>
+                  <option value="" selected disabled>Seleccione una puntuación</option>
+                  <option value="0">0</option><option value="4">4</option><option value="6">6</option><option value="8">8</option><option value="10">10</option>
+                </select>
+                <div class="invalid-feedback">Seleccione 0, 4, 6, 8 o 10.</div>
+              </div>
+
+              <div class="subtotal-box mt-4" aria-live="polite">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+                  <span class="fw-semibold">Subtotal de Seguridad de la Información:</span>
+                  <span class="subtotal-display" id="subtotalSeguridadDisplay">0 / 80</span>
+                </div>
+                <p class="form-text mb-0 mt-2">Este valor se calcula automáticamente. Máximo posible: 80.</p>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- PASO 8: Documentos -->
+          <fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="8" aria-labelledby="step-title-8">
+            <div class="card-header section-header">
+              <h2 id="step-title-8" class="h4 mb-0"><i class="bi bi-folder2-open me-2"></i>VIII. Check-list de documentos anexos</h2>
+            </div>
+            <div class="card-body">
+              <div class="alert alert-danger border-0 mb-4">
+                <i class="bi bi-exclamation-octagon me-1"></i>
+                <strong>Sin estos cinco documentos, el proceso de alta no puede ser iniciado.</strong>
+              </div>
+              
+              <div class="question-block">
+                <div class="file-upload-area">
+                  <label for="documento_cedula_identificacion_fiscal" class="form-label fw-semibold">1) Copia de la Cédula de Identificación Fiscal con obligaciones. El régimen y actividad deben ir de acuerdo con los servicios ofrecidos a FFT México. <span class="text-danger" aria-hidden="true">*</span></label>
+                  <input type="file" class="form-control" id="documento_cedula_identificacion_fiscal" name="documento_cedula_identificacion_fiscal" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx" required>
+                  <div class="form-text">Formatos permitidos: PDF, JPG, JPEG, PNG, DOC, DOCX, XLS, XLSX.</div>
+                  <div class="invalid-feedback">Adjunte el documento solicitado.</div>
+                </div>
+              </div>
+              <div class="question-block">
+                <div class="file-upload-area">
+                  <label for="documento_opinion_positiva_sat" class="form-label fw-semibold">2) Opinión positiva del SAT con antigüedad no mayor a cinco días. <span class="text-danger" aria-hidden="true">*</span></label>
+                  <input type="file" class="form-control" id="documento_opinion_positiva_sat" name="documento_opinion_positiva_sat" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx" required>
+                  <div class="form-text">Formatos permitidos: PDF, JPG, JPEG, PNG, DOC, DOCX, XLS, XLSX.</div>
+                  <div class="invalid-feedback">Adjunte el documento solicitado.</div>
+                </div>
+              </div>
+              <div class="question-block">
+                <div class="file-upload-area">
+                  <label for="documento_tarjeta_patronal_imss" class="form-label fw-semibold">3) Copia de la tarjeta patronal del IMSS. <span class="text-danger" aria-hidden="true">*</span></label>
+                  <input type="file" class="form-control" id="documento_tarjeta_patronal_imss" name="documento_tarjeta_patronal_imss" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx" required>
+                  <div class="form-text">Formatos permitidos: PDF, JPG, JPEG, PNG, DOC, DOCX, XLS, XLSX.</div>
+                  <div class="invalid-feedback">Adjunte el documento solicitado.</div>
+                </div>
+              </div>
+              <div class="question-block">
+                <div class="file-upload-area">
+                  <label for="documento_sua" class="form-label fw-semibold">4) SUA: cédula de determinación de cuotas obrero-patronales, aportaciones y amortizaciones. <span class="text-danger" aria-hidden="true">*</span></label>
+                  <input type="file" class="form-control" id="documento_sua" name="documento_sua" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx" required>
+                  <div class="form-text">Formatos permitidos: PDF, JPG, JPEG, PNG, DOC, DOCX, XLS, XLSX.</div>
+                  <div class="invalid-feedback">Adjunte el documento solicitado.</div>
+                </div>
+              </div>
+              <div class="question-block">
+                <div class="file-upload-area">
+                  <label for="documento_ultimo_pago_imss" class="form-label fw-semibold">5) Copia del último pago del IMSS. <span class="text-danger" aria-hidden="true">*</span></label>
+                  <input type="file" class="form-control" id="documento_ultimo_pago_imss" name="documento_ultimo_pago_imss" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx" required>
+                  <div class="form-text">Formatos permitidos: PDF, JPG, JPEG, PNG, DOC, DOCX, XLS, XLSX.</div>
+                  <div class="invalid-feedback">Adjunte el documento solicitado.</div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- PASO 9: Resumen -->
+          <fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="9" aria-labelledby="step-title-9">
+            <div class="card-header section-header">
+              <h2 id="step-title-9" class="h4 mb-0"><i class="bi bi-send-check me-2"></i>Resumen y envío</h2>
+            </div>
+            <div class="card-body">
+              <p class="mb-3">Revise que la información capturada sea correcta y esté completa antes de enviar la autoevaluación.</p>
+              <ul class="summary-list mb-4">
+                <li>Datos de contacto</li>
+                <li>I. General</li>
+                <li>II. Operaciones y Calidad</li>
+                <li>III. Experiencia</li>
+                <li>IV. Personal</li>
+                <li>V. Medio ambiente e Infraestructura</li>
+                <li>VI. Envío</li>
+                <li>VII. Seguridad de la Información</li>
+                <li>VIII. Documentos anexos</li>
+              </ul>
+
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" id="confirmacion_informacion_correcta" name="confirmacion_informacion_correcta" value="si" required>
+                <label class="form-check-label" for="confirmacion_informacion_correcta">
+                  Confirmo que la información proporcionada es correcta, vigente y corresponde a la empresa representada. <span class="text-danger" aria-hidden="true">*</span>
+                </label>
+                <div class="invalid-feedback">Debe confirmar la información antes de enviar.</div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Navegación -->
+          <div class="form-navigation d-flex flex-wrap justify-content-between align-items-center gap-2 mt-3">
+            <button type="button" class="btn btn-outline-secondary d-none" id="btnPrev">
+              <i class="bi bi-arrow-left me-1"></i>Anterior
+            </button>
+            <div class="ms-auto d-flex flex-wrap gap-2">
+              <button type="button" class="btn btn-primary" id="btnNext">
+                Siguiente<i class="bi bi-arrow-right ms-1"></i>
+              </button>
+              <button type="submit" class="btn btn-primary d-none" id="btnSubmit">
+                <span class="spinner-border spinner-border-sm me-2 d-none submit-spinner" role="status" aria-hidden="true"></span>
+                <i class="bi bi-send me-1 submit-icon"></i>
+                <span class="submit-label">Enviar autoevaluación</span>
+              </button>
+            </div>
+          </div>
+
+        </form>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="text-center py-4 bg-dark text-light mt-5">
     <div class="container">
-      <p class="mb-1">&copy; 2024 FFT México. Todos los derechos reservados.</p>
-      <p class="mb-0 small text-muted">Plantilla de pruebas para formularios</p>
+      <p class="mb-1">&copy; <span id="footerYear"></span> FFT México. Todos los derechos reservados.</p>
+      <p class="mb-0 small text-muted">Autoevaluación de Maquinados &middot; Documento 08015p22</p>
     </div>
   </footer>
 
-  <!-- Bootstrap 5.3.2 JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
-          integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
           crossorigin="anonymous"></script>
-
-  <!-- Validation JavaScript -->
   <script src="main.js"></script>
-
 </body>
+
 </html>
