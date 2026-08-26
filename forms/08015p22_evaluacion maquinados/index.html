@@ -23,9 +23,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top px-3 px-md-5" style="background-color: #009d80;">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#" aria-label="FFT México Logo">
-          <img src="../../assets/img/primaryGreenBGLogo.png" alt="FFT México" height="30" class="d-inline-block align-text-top">
-        </a>
+        <a class="navbar-brand fw-bold" href="../../index.html" aria-label="FFT México, ir al catálogo">FFT México</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -34,7 +32,7 @@
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
               <a class="nav-link" href="../../index.html">
-                <i class="bi bi-arrow-left-circle me-1"></i>Volver a Servicios Internos
+                <i class="bi bi-arrow-left-circle me-1"></i>Volver al catálogo
               </a>
             </li>
           </ul>
@@ -92,10 +90,12 @@
           autocomplete="on"
         >
           <input type="hidden" name="formulario_codigo" value="08015p22">
-          <input type="hidden" name="formulario_nombre" value="autoevaluacion_maquinados">
+          <input type="hidden" name="formulario_nombre" value="Autoevaluación de Maquinados">
+          <input type="hidden" name="documento_referencia" value="08015p22">
+          <input type="hidden" name="documento_revision" value="4">
           <input type="hidden" name="revision_documento_origen" value="4">
           <input type="hidden" name="fecha_documento_origen" value="2024-06-20">
-          <input type="hidden" name="fecha_envio_iso" id="fecha_envio_iso" value="">
+          <input type="hidden" name="fecha_envio" id="fecha_envio" value="">
           <input type="hidden" name="anio_referencia_accidentes" id="anio_referencia_accidentes" value="">
           <input type="hidden" name="subtotal_seguridad_informacion" id="subtotal_seguridad_informacion" value="0">
 
@@ -135,8 +135,13 @@
             <div class="card-body">
               <div class="row g-3">
                 <div class="col-md-6">
-                  <label for="contacto_nombre" class="form-label">Contacto <span class="text-danger" aria-hidden="true">*</span></label>
-                  <input type="text" class="form-control form-control-lg" id="contacto_nombre" name="contacto_nombre" required autocomplete="name">
+                  <label for="empresa_nombre" class="form-label">Nombre de la empresa <span class="text-danger" aria-hidden="true">*</span></label>
+                  <input type="text" class="form-control form-control-lg" id="empresa_nombre" name="empresa_nombre" required autocomplete="organization">
+                  <div class="invalid-feedback">Indique el nombre de la empresa.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="empresa_contacto" class="form-label">Contacto <span class="text-danger" aria-hidden="true">*</span></label>
+                  <input type="text" class="form-control form-control-lg" id="empresa_contacto" name="empresa_contacto" required autocomplete="name">
                   <div class="invalid-feedback">Indique el nombre del contacto.</div>
                 </div>
                 <div class="col-12">
@@ -703,7 +708,7 @@
                 </div>
                     <div class="cert-item">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="p06_otra_certificacion_seleccion" name="p06_otra_certificacion_seleccion" value="si" data-conditional-trigger="p06_otra_certificacion_detalle">
+                        <input class="form-check-input" type="checkbox" id="p06_otra_certificacion_seleccion" name="p06_otra_certificacion_seleccion" value="si" data-conditional-trigger="p06_otra_certificacion_detalle" data-iso9001-trigger="1">
                         <label class="form-check-label fw-semibold" for="p06_otra_certificacion_seleccion">Otros</label>
                       </div>
                       <div class="conditional-field d-none mt-2" data-conditional="p06_otra_certificacion_detalle" id="cond_p06_otra_certificacion_detalle">
@@ -718,26 +723,16 @@
                 </fieldset>
               </div>
 
-              <div class="question-block d-none" data-question="7" data-conditional="p07_planea_iso9001" id="cond_p07_planea_iso9001" aria-expanded="false" aria-controls="cond_p07_iso9001_fecha_estimada">
-                <fieldset>
-                  <legend class="form-label fw-semibold">7. ¿Tiene planeado certificarse en ISO 9001? <span class="text-danger" aria-hidden="true">*</span></legend>
-                  <div class="d-flex flex-wrap gap-3">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="p07_planea_iso9001" id="p07_planea_iso9001_si" value="si" data-conditional-trigger="p07_iso9001_fecha_estimada" disabled>
-                      <label class="form-check-label" for="p07_planea_iso9001_si">Sí</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="p07_planea_iso9001" id="p07_planea_iso9001_no" value="no" disabled>
-                      <label class="form-check-label" for="p07_planea_iso9001_no">No</label>
-                    </div>
-                  </div>
-                  <div class="invalid-feedback">Seleccione una opción.</div>
-                  <div class="conditional-field d-none mt-3" data-conditional="p07_iso9001_fecha_estimada" data-show-when-value="si" id="cond_p07_iso9001_fecha_estimada">
-                    <label for="p07_iso9001_fecha_estimada" class="form-label">Mes y año estimados para obtener la certificación <span class="text-danger" aria-hidden="true">*</span></label>
-                    <input type="month" class="form-control" id="p07_iso9001_fecha_estimada" name="p07_iso9001_fecha_estimada" disabled>
-                    <div class="invalid-feedback">Indique el mes y año estimados.</div>
-                  </div>
-                </fieldset>
+              <div class="question-block d-none" data-question="7" id="cond_p07_control_calidad">
+                <label for="p07_control_calidad_sin_certificacion" class="form-label fw-semibold">7. Si no cuenta con un sistema de calidad certificado y seleccionó “Otros”, describa cómo controla la calidad en su empresa. <span class="text-danger" aria-hidden="true">*</span></label>
+                <textarea class="form-control" id="p07_control_calidad_sin_certificacion" name="p07_control_calidad_sin_certificacion" rows="4" disabled></textarea>
+                <div class="invalid-feedback">Describa cómo controla la calidad.</div>
+              </div>
+
+              <div class="question-block d-none" data-question="8" id="cond_p08_fecha_certificacion">
+                <label for="p08_fecha_certificacion_estimada" class="form-label fw-semibold">8. En caso de no estar certificado, ¿hasta cuándo está planeado certificarse? <span class="text-danger" aria-hidden="true">*</span></label>
+                <input type="month" class="form-control" id="p08_fecha_certificacion_estimada" name="p08_fecha_certificacion_estimada" disabled>
+                <div class="invalid-feedback">Indique el mes y año estimados.</div>
               </div>
 
               

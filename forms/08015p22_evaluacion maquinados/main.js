@@ -70,9 +70,12 @@ function initializeDynamicDates() {
 }
 
 function initializeTooltips() {
+  if (!window.bootstrap || !window.bootstrap.Tooltip) {
+    return;
+  }
   const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
   tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl);
+    return new window.bootstrap.Tooltip(tooltipTriggerEl);
   });
 }
 
@@ -788,29 +791,20 @@ function updateConditionalField(trigger) {
     toggleConditionalSection(target, shouldShow);
   });
 
-  if (targetKey === 'p07_planea_iso9001' || trigger.name === 'p07_planea_iso9001') {
-    // nested fecha handled by its own trigger
-  }
 }
 
 function updateIso9001PlanVisibility() {
   const iso9001 = document.getElementById('p06_iso9001_seleccion');
-  const target = document.getElementById('cond_p07_planea_iso9001');
-  if (!iso9001 || !target) {
+  const other = document.getElementById('p06_otra_certificacion_seleccion');
+  const qualityTarget = document.getElementById('cond_p07_control_calidad');
+  const dateTarget = document.getElementById('cond_p08_fecha_certificacion');
+  if (!iso9001 || !other || !qualityTarget || !dateTarget) {
     return;
   }
 
-  const shouldShow = !iso9001.checked;
-  toggleConditionalSection(target, shouldShow);
-  target.setAttribute('aria-expanded', shouldShow ? 'true' : 'false');
-
-  if (shouldShow) {
-    const checked = document.querySelector('input[name="p07_planea_iso9001"]:checked');
-    const fechaTarget = document.getElementById('cond_p07_iso9001_fecha_estimada');
-    if (fechaTarget) {
-      toggleConditionalSection(fechaTarget, Boolean(checked && checked.value === 'si'));
-    }
-  }
+  const withoutIso9001 = !iso9001.checked;
+  toggleConditionalSection(qualityTarget, withoutIso9001 && other.checked);
+  toggleConditionalSection(dateTarget, withoutIso9001);
 }
 
 function toggleConditionalSection(target, shouldShow) {
@@ -962,7 +956,7 @@ async function handleFormSubmit(event) {
   reindexWorkersRows();
 
   const subtotal = updateSecuritySubtotal();
-  const fechaEnvio = document.getElementById('fecha_envio_iso');
+  const fechaEnvio = document.getElementById('fecha_envio');
   if (fechaEnvio) {
     fechaEnvio.value = new Date().toISOString();
   }
@@ -976,7 +970,7 @@ async function handleFormSubmit(event) {
   try {
     const formData = new FormData(form);
     formData.set('subtotal_seguridad_informacion', String(subtotal));
-    formData.set('fecha_envio_iso', fechaEnvio ? fechaEnvio.value : new Date().toISOString());
+    formData.set('fecha_envio', fechaEnvio ? fechaEnvio.value : new Date().toISOString());
     formData.set('anio_referencia_accidentes', String(CURRENT_YEAR - 1));
 
     const response = await fetch(endpoint, {

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autoevaluación de proveedores | FFT México</title>
+  <meta name="description" content="Catálogo de formularios de autoevaluación para proveedores de FFT México.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/catalog.css">
+</head>
+<body>
+  <header class="catalog-hero text-white">
+    <nav class="container py-4 d-flex justify-content-between align-items-center">
+      <span class="fs-4 fw-bold">FFT México</span>
+      <span class="small text-white-50">Servicios internos · Compras</span>
+    </nav>
+    <div class="container py-5">
+      <div class="row"><div class="col-lg-8">
+        <p class="text-uppercase fw-semibold tracking-wide mb-2">Evaluación de proveedores</p>
+        <h1 class="display-4 fw-bold mb-3">Formularios de autoevaluación</h1>
+        <p class="lead mb-0">Seleccione el cuestionario que corresponda al tipo de servicio que su empresa ofrece a FFT México.</p>
+      </div></div>
+    </div>
+  </header>
+
+  <main class="container py-5">
+    <div class="row g-4" aria-label="Formularios disponibles">
+      <div class="col-md-6 col-xl-4"><article class="card form-card h-100 border-0 shadow-sm"><div class="card-body p-4 d-flex flex-column">
+        <div class="d-flex justify-content-between align-items-start mb-3"><span class="form-icon" aria-hidden="true"><i class="bi bi-buildings"></i></span><span class="badge text-bg-success">Endpoint configurado</span></div>
+        <p class="text-uppercase small text-muted fw-semibold mb-1">08015p22 · Rev. 5</p><h2 class="h3">Fabricantes</h2>
+        <p class="text-muted flex-grow-1">Capacidad general, experiencia, procesos, seguridad, ambiente, calidad y seguridad de la información.</p>
+        <a class="btn btn-primary stretched-link" href="forms/08015p22_autoevaluacion_fabricantes/index.html">Abrir formulario <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></a>
+      </div></article></div>
+
+      <div class="col-md-6 col-xl-4"><article class="card form-card h-100 border-0 shadow-sm"><div class="card-body p-4 d-flex flex-column">
+        <div class="d-flex justify-content-between align-items-start mb-3"><span class="form-icon" aria-hidden="true"><i class="bi bi-gear-wide-connected"></i></span><span class="badge text-bg-warning">Endpoint pendiente</span></div>
+        <p class="text-uppercase small text-muted fw-semibold mb-1">08015p22 · Rev. 4</p><h2 class="h3">Maquinados</h2>
+        <p class="text-muted flex-grow-1">Maquinaria, operaciones, calidad, personal, infraestructura, envío y documentación fiscal.</p>
+        <a class="btn btn-primary stretched-link" href="forms/08015p22_evaluacion%20maquinados/index.html">Abrir formulario <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></a>
+      </div></article></div>
+
+      <div class="col-md-6 col-xl-4"><article class="card form-card h-100 border-0 shadow-sm"><div class="card-body p-4 d-flex flex-column">
+        <div class="d-flex justify-content-between align-items-start mb-3"><span class="form-icon" aria-hidden="true"><i class="bi bi-box-seam"></i></span><span class="badge text-bg-warning">Endpoint pendiente</span></div>
+        <p class="text-uppercase small text-muted fw-semibold mb-1">08015p23 · Rev. 5</p><h2 class="h3">Distribuidores</h2>
+        <p class="text-muted flex-grow-1">Origen de productos, personal, ambiente, aseguramiento de calidad y procesos de envío.</p>
+        <a class="btn btn-primary stretched-link" href="forms/08015p23_evaluaci%C3%B3n_distribuidor/index.html">Abrir formulario <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></a>
+      </div></article></div>
+    </div>
+
+    <aside class="catalog-note mt-5 p-4 rounded-3" role="note">
+      <h2 class="h5">Antes de comenzar</h2>
+      <p class="mb-0">Tenga disponibles los documentos y evidencias solicitados. Los formularios de Maquinados y Distribuidores permiten captura y validación, pero requieren configurar su endpoint exclusivo antes del envío real.</p>
+    </aside>
+  </main>
+  <footer class="container py-4 border-top text-muted small">© <span id="catalogYear"></span> FFT México · Información interna</footer>
+  <script>document.getElementById('catalogYear').textContent = String(new Date().getFullYear());</script>
+</body>
+</html>

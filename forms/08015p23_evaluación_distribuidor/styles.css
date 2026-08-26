@@ -1,0 +1,9 @@
+@import url("../08015p22_autoevaluacion_fabricantes/styles.css");
+
+.navbar-brand {
+  letter-spacing: .02em;
+}
+
+[data-yes-no]:empty {
+  min-height: 4rem;
+}

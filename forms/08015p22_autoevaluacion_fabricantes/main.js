@@ -53,9 +53,12 @@ function initializeFooterYear() {
 }
 
 function initializeTooltips() {
+  if (!window.bootstrap || !window.bootstrap.Tooltip) {
+    return;
+  }
   const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
   tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl);
+    return new window.bootstrap.Tooltip(tooltipTriggerEl);
   });
 }
 
@@ -632,7 +635,7 @@ async function handleFormSubmit(event) {
     formData.set('formulario_nombre', 'Autoevaluación de los fabricantes');
     formData.set('documento_referencia', '08015p22');
     formData.set('documento_revision', '5');
-    formData.set('fecha_envio', new Date().toLocaleString('es-MX'));
+    formData.set('fecha_envio', new Date().toISOString());
     formData.set('subtotal_seguridad_informacion', String(subtotal));
 
     const response = await fetch(FORMSPREE_ENDPOINT, {
@@ -719,7 +722,12 @@ function showFormMessage(type, message) {
       ? 'bi-exclamation-triangle'
       : 'bi-info-circle';
 
-  messageEl.innerHTML = '<i class="bi ' + icon + ' me-2" aria-hidden="true"></i>' + message;
+  messageEl.replaceChildren();
+  const iconEl = document.createElement('i');
+  iconEl.className = 'bi ' + icon + ' me-2';
+  iconEl.setAttribute('aria-hidden', 'true');
+  messageEl.appendChild(iconEl);
+  messageEl.appendChild(document.createTextNode(message));
   scrollToMessage();
 }
 

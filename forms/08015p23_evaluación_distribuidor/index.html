@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autoevaluación de distribuidores | FFT México</title>
+  <meta name="description" content="Autoevaluación de distribuidores de FFT México, documento 08015p23 revisión 5.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top px-3 px-md-5" style="background-color:#009d80">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="../../index.html" aria-label="FFT México, ir al catálogo">FFT México</a>
+        <a class="nav-link text-white" href="../../index.html"><i class="bi bi-arrow-left-circle me-1" aria-hidden="true"></i>Volver al catálogo</a>
+      </div>
+    </nav>
+    <div class="container pt-5 mt-5">
+      <div class="row"><div class="col-lg-10 mx-auto">
+        <h1 class="display-5 fw-bold mb-4">Autoevaluación de distribuidores</h1>
+        <div class="alert alert-info border-0 shadow-sm"><strong>Evaluación de proveedores FFT México.</strong> Formulario para empresas distribuidoras.</div>
+        <p class="lead">Recopila información sobre la empresa, su personal, gestión ambiental, calidad y procesos de envío.</p>
+        <p class="text-muted">Complete las seis secciones con información actual y verificable. Los campos marcados con asterisco son obligatorios.</p>
+        <p class="small text-muted doc-meta">Documento: <strong>08015p23</strong> · Revisión: <strong>5</strong> · Fecha origen: <strong>20.06.2024</strong> · Clasificación: <strong>Interna</strong></p>
+      </div></div>
+    </div>
+  </header>
+
+  <main>
+    <section id="_form" class="container py-5">
+      <div class="row mb-5"><div class="col-lg-10 mx-auto">
+        <div id="formMessage" class="form-message d-none" role="status" aria-live="polite"></div>
+        <form id="distributorSelfAssessmentForm" novalidate enctype="multipart/form-data" autocomplete="on">
+          <input type="hidden" name="formulario_nombre" value="Autoevaluación de distribuidores">
+          <input type="hidden" name="documento_referencia" value="08015p23">
+          <input type="hidden" name="documento_revision" value="5">
+          <input type="hidden" id="fecha_envio" name="fecha_envio" value="">
+
+          <div class="form-progress-card card border-0 shadow-sm mb-4"><div class="card-body">
+            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
+              <div><span id="stepIndicator" class="fw-semibold">Paso 1 de 6</span><span class="text-muted mx-2">|</span><span id="stepName" class="text-muted">Datos de la empresa</span></div>
+              <span id="progressPercent" class="badge bg-fft-green">17%</span>
+            </div>
+            <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="17" aria-labelledby="stepIndicator"><div id="progressBar" class="progress-bar" style="width:17%"></div></div>
+            <ol class="step-list list-unstyled d-none d-lg-flex mt-3 mb-0" aria-label="Secciones del formulario">
+              <li class="step-item active" data-step-label="0" aria-current="step"><span>1</span><small>Empresa</small></li>
+              <li class="step-item" data-step-label="1"><span>2</span><small>General</small></li>
+              <li class="step-item" data-step-label="2"><span>3</span><small>Personal</small></li>
+              <li class="step-item" data-step-label="3"><span>4</span><small>Ambiente</small></li>
+              <li class="step-item" data-step-label="4"><span>5</span><small>Calidad</small></li>
+              <li class="step-item" data-step-label="5"><span>6</span><small>Envío</small></li>
+            </ol>
+          </div></div>
+
+          <fieldset class="form-step card border-0 shadow-sm mb-4" data-step="0" aria-labelledby="step-title-0">
+            <div class="card-header section-header"><h2 id="step-title-0" class="h4 mb-0">Datos de la empresa</h2></div>
+            <div class="card-body"><div class="row g-3">
+              <div class="col-md-6"><label for="empresa_nombre" class="form-label">Nombre de la empresa *</label><input class="form-control" id="empresa_nombre" name="empresa_nombre" required autocomplete="organization"><div class="invalid-feedback">Indique el nombre de la empresa.</div></div>
+              <div class="col-md-6"><label for="empresa_contacto" class="form-label">Nombre del contacto *</label><input class="form-control" id="empresa_contacto" name="empresa_contacto" required autocomplete="name"><div class="invalid-feedback">Indique el nombre del contacto.</div></div>
+              <div class="col-12"><label for="empresa_direccion" class="form-label">Dirección de la empresa *</label><textarea class="form-control" id="empresa_direccion" name="empresa_direccion" rows="3" required autocomplete="street-address"></textarea><div class="invalid-feedback">Indique la dirección.</div></div>
+              <div class="col-md-6"><label for="empresa_telefono" class="form-label">Teléfono *</label><input type="tel" class="form-control" id="empresa_telefono" name="empresa_telefono" required autocomplete="tel"><div class="invalid-feedback">Indique un teléfono.</div></div>
+              <div class="col-md-6"><label for="empresa_email" class="form-label">Correo electrónico *</label><input type="email" class="form-control" id="empresa_email" name="empresa_email" required autocomplete="email"><div class="invalid-feedback">Indique un correo válido.</div></div>
+            </div></div>
+          </fieldset>
+
+          <fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="1" aria-labelledby="step-title-1">
+            <div class="card-header section-header"><h2 id="step-title-1" class="h4 mb-0">General</h2></div>
+            <div class="card-body">
+              <div class="question-block" data-question="1"><label for="p01_personas_empresa" class="form-label fw-semibold">1. ¿Cuántas personas trabajan en su empresa? *</label><input type="number" class="form-control" id="p01_personas_empresa" name="p01_personas_empresa" min="0" step="1" required></div>
+              <div class="question-block" data-question="2"><label for="p02_numero_sucursales" class="form-label fw-semibold">2. ¿Cuántas sucursales tiene su empresa? *</label><input type="number" class="form-control" id="p02_numero_sucursales" name="p02_numero_sucursales" min="0" step="1" required></div>
+              <div class="question-block" data-question="3"><fieldset class="checkbox-group" data-checkbox-group="p03_giros_empresa"><legend class="form-label fw-semibold">3. ¿En qué giro(s) trabaja su empresa? *</legend><p class="form-text">Seleccione al menos una opción.</p>
+                <div class="row g-2">
+                  <div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" name="p03_giros_empresa" value="Automatización"> Automatización</label></div>
+                  <div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" name="p03_giros_empresa" value="Neumática / Hidráulica"> Neumática / Hidráulica</label></div>
+                  <div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" name="p03_giros_empresa" value="Consumibles"> Consumibles</label></div>
+                  <div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" name="p03_giros_empresa" value="Eléctrica & Controles"> Eléctrica &amp; Controles</label></div>
+                  <div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" name="p03_giros_empresa" value="Seguridad Industrial"> Seguridad Industrial</label></div>
+                  <div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" name="p03_giros_empresa" value="Mecánica"> Mecánica</label></div>
+                  <div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" name="p03_giros_empresa" value="Papelería, cómputo y/o mobiliario"> Papelería, cómputo y/o mobiliario</label></div>
+                  <div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" name="p03_giros_empresa" value="Metal mecánica"> Metal mecánica</label></div>
+                  <div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" name="p03_giros_empresa" value="Empaque y embalaje"> Empaque y embalaje</label></div>
+                  <div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" name="p03_giros_empresa" value="Maquinaria y refacciones"> Maquinaria y refacciones</label></div>
+                  <div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" name="p03_giros_empresa" value="Soldadura"> Soldadura</label></div>
+                  <div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" name="p03_giros_empresa" value="Construcción"> Construcción</label></div>
+                  <div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" name="p03_giros_empresa" value="Herramientas e instrumentos de medición"> Herramientas e instrumentos de medición</label></div>
+                  <div class="col-md-6"><label class="form-check"><input id="p03_otros" class="form-check-input" type="checkbox" name="p03_giros_empresa" value="Otros" data-conditional-trigger="p03_otro_giro"> Otros</label></div>
+                </div><div class="checkbox-group-feedback invalid-feedback d-none">Seleccione al menos un giro.</div>
+                <div class="conditional-field d-none mt-3" data-conditional="p03_otro_giro"><label for="p03_otro_giro" class="form-label">Especifique otro giro *</label><input class="form-control" id="p03_otro_giro" name="p03_otro_giro" data-required="true" disabled></div>
+              </fieldset></div>
+              <div class="question-block" data-question="4"><label for="p04_paises_origen" class="form-label fw-semibold">4. ¿De qué país(es) de origen vienen sus productos? *</label><textarea class="form-control" id="p04_paises_origen" name="p04_paises_origen" rows="2" required></textarea></div>
+              <div class="question-block" data-question="5"><label for="p05_plazo_entrega" class="form-label fw-semibold">5. ¿De cuánto tiempo son sus plazos de entrega en promedio? *</label><input class="form-control" id="p05_plazo_entrega" name="p05_plazo_entrega" required placeholder="Ej.: 4 semanas"></div>
+              <div class="question-block" data-question="6"><fieldset><legend class="form-label fw-semibold">6. Certificaciones y vigencia</legend><p class="form-text">Seleccione las aplicables.</p><div class="row g-3">
+                <div class="col-md-6 cert-item"><label class="form-check"><input id="p06_iso9001" class="form-check-input certification-trigger" type="checkbox" name="p06_iso9001" value="Sí" data-conditional-trigger="p06_iso9001_vigencia"> ISO 9001</label><div class="conditional-field d-none mt-2" data-conditional="p06_iso9001_vigencia"><label for="p06_iso9001_vigencia" class="form-label">Vigencia *</label><input type="month" class="form-control" id="p06_iso9001_vigencia" name="p06_iso9001_vigencia" data-required="true" disabled></div></div>
+                <div class="col-md-6 cert-item"><label class="form-check"><input class="form-check-input certification-trigger" type="checkbox" name="p06_vda64" value="Sí" data-conditional-trigger="p06_vda64_vigencia"> VDA 6.4</label><div class="conditional-field d-none mt-2" data-conditional="p06_vda64_vigencia"><label for="p06_vda64_vigencia" class="form-label">Vigencia *</label><input type="month" class="form-control" id="p06_vda64_vigencia" name="p06_vda64_vigencia" data-required="true" disabled></div></div>
+                <div class="col-md-6 cert-item"><label class="form-check"><input class="form-check-input certification-trigger" type="checkbox" name="p06_iso45001" value="Sí" data-conditional-trigger="p06_iso45001_vigencia"> ISO 45001</label><div class="conditional-field d-none mt-2" data-conditional="p06_iso45001_vigencia"><label for="p06_iso45001_vigencia" class="form-label">Vigencia *</label><input type="month" class="form-control" id="p06_iso45001_vigencia" name="p06_iso45001_vigencia" data-required="true" disabled></div></div>
+                <div class="col-md-6 cert-item"><label class="form-check"><input class="form-check-input certification-trigger" type="checkbox" name="p06_iso14001" value="Sí" data-conditional-trigger="p06_iso14001_vigencia"> ISO 14001</label><div class="conditional-field d-none mt-2" data-conditional="p06_iso14001_vigencia"><label for="p06_iso14001_vigencia" class="form-label">Vigencia *</label><input type="month" class="form-control" id="p06_iso14001_vigencia" name="p06_iso14001_vigencia" data-required="true" disabled></div></div>
+                <div class="col-md-6 cert-item"><label class="form-check"><input class="form-check-input certification-trigger" type="checkbox" name="p06_otros" value="Sí" data-conditional-trigger="p06_otros_detalle"> Otra</label><div class="conditional-field d-none mt-2" data-conditional="p06_otros_detalle"><label for="p06_otros_nombre" class="form-label">Nombre y vigencia *</label><input class="form-control mb-2" id="p06_otros_nombre" name="p06_otros_nombre" data-required="true" disabled><input type="month" class="form-control" id="p06_otros_vigencia" name="p06_otros_vigencia" data-required="true" disabled></div></div>
+              </div></fieldset></div>
+              <div id="p07_container" class="question-block" data-question="7"><label for="p07_fecha_certificacion" class="form-label fw-semibold">7. Si no está certificada, ¿hasta cuándo planea certificarse? *</label><input type="month" class="form-control" id="p07_fecha_certificacion" name="p07_fecha_certificacion" required></div>
+              <div class="question-block" data-question="8"><fieldset><legend class="form-label fw-semibold">8. ¿Es posible visitar su empresa para una evaluación en piso? *</legend><div class="d-flex gap-4"><label class="form-check"><input class="form-check-input" type="radio" name="p08_visita_evaluacion" value="Sí" required> Sí</label><label class="form-check"><input class="form-check-input" type="radio" name="p08_visita_evaluacion" value="No" required> No</label></div></fieldset></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="2" aria-labelledby="step-title-2">
+            <div class="card-header section-header"><h2 id="step-title-2" class="h4 mb-0">Experiencia y personal</h2></div><div class="card-body">
+              <div class="question-block" data-question="9"><label for="p09_antiguedad_empresa" class="form-label fw-semibold">9. ¿Hace cuántos años se fundó su empresa? *</label><input type="number" class="form-control" id="p09_antiguedad_empresa" name="p09_antiguedad_empresa" min="0" step="1" required></div>
+              <div class="question-block" data-question="10" data-yes-no="p10_organigrama" data-label="¿Tiene un organigrama que muestre las responsabilidades en su empresa?" data-detail="p10_archivo_organigrama" data-detail-type="file" data-detail-label="Adjunte el organigrama"></div>
+              <div class="question-block" data-question="11" data-yes-no="p11_referencias" data-label="¿Cuenta con referencias, clientes o proyectos para los trabajos que provee?" data-detail="p11_archivos_referencias" data-detail-type="file" data-detail-label="Adjunte referencias, clientes o proyectos" data-multiple="true"></div>
+              <div class="question-block" data-question="12" data-yes-no="p12_capacitaciones" data-label="¿Participa su personal en capacitaciones frecuentes?"></div>
+              <div class="question-block" data-question="13" data-yes-no="p13_acceso_normas" data-label="¿Tiene su personal acceso a normas y leyes vigentes?"></div>
+              <div class="question-block" data-question="14" data-yes-no="p14_cursos_seguridad" data-label="¿Recibe su personal cursos de seguridad en el trabajo con regularidad?"></div>
+              <div class="question-block" data-question="15" data-yes-no="p15_imss" data-label="¿Está su personal asegurado en el IMSS?"></div>
+              <div class="question-block" data-question="16" data-yes-no="p16_equipo_seguridad" data-label="¿Proporciona la empresa equipo de seguridad para su personal?"></div>
+              <div class="question-block" data-question="17"><label for="p17_satisfaccion_personal" class="form-label fw-semibold">17. ¿Cuál es el porcentaje de satisfacción de su personal? *</label><div class="input-group"><input type="number" class="form-control" id="p17_satisfaccion_personal" name="p17_satisfaccion_personal" min="0" max="100" step="0.1" required><span class="input-group-text">%</span></div></div>
+              <div class="question-block" data-question="18" data-yes-no="p18_indicadores_seguridad" data-label="¿Tiene metas e indicadores de desempeño de seguridad y accidentabilidad?" data-detail="p18_detalle_indicadores" data-detail-label="Indique cuáles"></div>
+              <div class="question-block" data-question="19"><label for="p19_indice_accidentes" class="form-label fw-semibold">19. ¿Cuál fue su índice de accidentes laborales en el año calendario pasado? *</label><input type="number" class="form-control" id="p19_indice_accidentes" name="p19_indice_accidentes" min="0" step="any" required></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="3" aria-labelledby="step-title-3">
+            <div class="card-header section-header"><h2 id="step-title-3" class="h4 mb-0">Medio ambiente</h2></div><div class="card-body">
+              <div class="question-block" data-question="20" data-yes-no="p20_clasifica_residuos" data-label="¿En su empresa se clasifican los residuos?"></div>
+              <div class="question-block" data-question="21" data-yes-no="p21_responsable_ambiental" data-label="¿Hay una persona encargada de la protección ambiental?" data-detail="p21_nombre_responsable" data-detail-label="Nombre de la persona responsable"></div>
+              <div class="question-block" data-question="22" data-yes-no="p22_programa_ambiental" data-label="¿Está inscrita su empresa en algún programa de protección ambiental?" data-detail="p22_nombre_programa" data-detail-label="Nombre del programa"></div>
+              <div class="question-block" data-question="23" data-yes-no="p23_material_peligroso" data-label="¿Provee a FFT material peligroso para la salud, químico o fácilmente inflamable?" data-detail="p24_materiales_peligrosos" data-detail-label="24. Indique cuáles materiales"></div>
+              <div class="question-block" data-question="25" data-yes-no="p25_manejo_materiales" data-label="¿Los materiales peligrosos de su almacén se procesan y eliminan adecuadamente?"></div>
+              <div class="question-block" data-question="26" data-yes-no="p26_biodegradables" data-label="¿Usa su empresa productos biodegradables?" data-detail="p26_productos_biodegradables" data-detail-label="Indique cuáles"></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="4" aria-labelledby="step-title-4">
+            <div class="card-header section-header"><h2 id="step-title-4" class="h4 mb-0">Calidad</h2></div><div class="card-body">
+              <div class="question-block" data-question="27" data-yes-no="p27_responsable_calidad" data-label="¿Hay una persona encargada del Aseguramiento de la Calidad?" data-detail="p27_nombre_responsable" data-detail-label="Nombre de la persona responsable"></div>
+              <div class="question-block" data-question="28" data-yes-no="p28_pruebas_calidad" data-label="¿Se aplican pruebas de calidad antes de la entrega final de los materiales?"></div>
+              <div class="question-block" data-question="29" data-yes-no="p29_documentan_pruebas" data-label="¿Se documentan los resultados de las pruebas?"></div>
+              <div class="question-block" data-question="30" data-yes-no="p30_sistema_calidad" data-label="¿Hay un sistema de calidad que evite el envío incorrecto de materiales?"></div>
+              <div class="question-block" data-question="31" data-yes-no="p31_auditorias_proveedores" data-label="¿Se llevan a cabo auditorías o evaluaciones frecuentes de proveedores?"></div>
+              <div class="question-block" data-question="32" data-yes-no="p32_exige_certificados" data-label="¿Piden a sus proveedores que estén certificados?"></div>
+              <div class="question-block" data-question="33" data-yes-no="p33_estandares" data-label="¿Puede asegurar que siempre trabaja de acuerdo con los estándares y normas internacionales actuales?"></div>
+              <div class="question-block" data-question="34" data-yes-no="p34_trazabilidad" data-label="¿Se puede rastrear el origen de sus productos?"></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="5" aria-labelledby="step-title-5">
+            <div class="card-header section-header"><h2 id="step-title-5" class="h4 mb-0">Envío</h2></div><div class="card-body">
+              <div class="question-block" data-question="35" data-yes-no="p35_reaccion_urgente" data-label="¿Puede reaccionar flexiblemente y a corto plazo a solicitudes urgentes?"></div>
+              <div class="question-block" data-question="36" data-yes-no="p36_empaque_correcto" data-label="¿Sus productos están empaquetados correctamente para evitar daños en el envío?"></div>
+              <div class="question-block" data-question="37" data-yes-no="p37_empaque_ecologico" data-label="¿Utilizan empaques ecológicos o reciclables?"></div>
+              <div class="question-block" data-question="38" data-yes-no="p38_seleccion_transportista" data-label="¿Tiene un proceso definido para seleccionar al transportista?"></div>
+              <div class="question-block" data-question="39" data-yes-no="p39_reclamos_garantias" data-label="¿Tiene un proceso definido para procesar reclamos o garantías de materiales?"></div>
+              <div class="question-block" data-question="40" data-yes-no="p40_servicio_tecnico" data-label="¿Ofrece servicios de mantenimiento o soporte técnico para sus productos?"></div>
+              <div class="question-block" data-question="41" data-yes-no="p41_mejores_precios" data-label="¿Busca mejores precios con fabricantes para transferir descuentos a sus clientes?"></div>
+              <div class="question-block" data-question="42"><fieldset class="checkbox-group" data-checkbox-group="p42_documentacion_envio"><legend class="form-label fw-semibold">42. ¿Qué documentación provee con el envío de cada producto? *</legend><div class="row g-2">
+                <div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" name="p42_documentacion_envio" value="Ficha técnica"> Ficha técnica</label></div>
+                <div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" name="p42_documentacion_envio" value="Manual de operaciones"> Manual de operaciones</label></div>
+                <div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" name="p42_documentacion_envio" value="Hoja de seguridad"> Hoja de seguridad</label></div>
+                <div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" name="p42_documentacion_envio" value="Reporte de funcionamiento"> Reporte de funcionamiento</label></div>
+                <div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" name="p42_documentacion_envio" value="Hoja de datos de fabricación"> Hoja de datos de fabricación</label></div>
+                <div class="col-md-6"><label class="form-check"><input id="p42_otro" class="form-check-input" type="checkbox" name="p42_documentacion_envio" value="Otro" data-conditional-trigger="p42_otro_documento"> Otro</label></div>
+              </div><div class="checkbox-group-feedback invalid-feedback d-none">Seleccione al menos una opción.</div><div class="conditional-field d-none mt-3" data-conditional="p42_otro_documento"><label for="p42_otro_documento" class="form-label">Especifique otro documento *</label><input class="form-control" id="p42_otro_documento" name="p42_otro_documento" data-required="true" disabled></div></fieldset></div>
+              <div class="alert alert-warning mb-0"><strong>Configuración pendiente:</strong> el endpoint exclusivo de Formspree para Distribuidores debe configurarse antes de habilitar envíos reales.</div>
+            </div>
+          </fieldset>
+
+          <div class="form-navigation d-flex justify-content-between align-items-center gap-3 mt-4">
+            <button type="button" id="btnPrev" class="btn btn-outline-secondary btn-lg d-none"><i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Anterior</button>
+            <div class="ms-auto d-flex gap-2">
+              <button type="button" id="btnNext" class="btn btn-primary btn-lg">Siguiente<i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
+              <button type="submit" id="btnSubmit" class="btn btn-success btn-lg d-none"><span class="spinner-border spinner-border-sm submit-spinner d-none" aria-hidden="true"></span><span class="submit-label">Enviar autoevaluación</span></button>
+            </div>
+          </div>
+        </form>
+      </div></div>
+    </section>
+  </main>
+  <footer class="text-center py-4"><p class="mb-0 small text-muted">© <span id="footerYear"></span> FFT México · Autoevaluación de distribuidores · 08015p23 Rev. 5</p></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+</body>
+</html>

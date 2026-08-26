@@ -1,0 +1,57 @@
+:root {
+  --fft-green: #009d80;
+  --fft-dark: #12342f;
+  --fft-soft: #eaf7f4;
+}
+
+body {
+  background: #f7f9f9;
+  color: #243330;
+}
+
+.catalog-hero {
+  background: linear-gradient(125deg, var(--fft-dark), var(--fft-green));
+}
+
+.tracking-wide {
+  letter-spacing: .13em;
+}
+
+.form-card {
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.form-card:hover,
+.form-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 1rem 2rem rgba(18, 52, 47, .14) !important;
+}
+
+.form-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: .8rem;
+  background: var(--fft-soft);
+  color: var(--fft-green);
+  font-size: 1.4rem;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--fft-green);
+  --bs-btn-border-color: var(--fft-green);
+  --bs-btn-hover-bg: #007f69;
+  --bs-btn-hover-border-color: #007f69;
+}
+
+.catalog-note {
+  background: var(--fft-soft);
+  border-left: .3rem solid var(--fft-green);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .form-card {
+    transition: none;
+  }
+}
