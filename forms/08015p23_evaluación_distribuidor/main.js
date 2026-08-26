@@ -3,7 +3,7 @@
  * Documento: 08015p23 | Rev.: 5
  */
 
-const FORMSPREE_ENDPOINT = 'REEMPLAZAR_ENDPOINT_DISTRIBUIDORES';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mzebpelz';
 const STEP_NAMES = [
   'Datos de la empresa',
   'General',
