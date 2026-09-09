@@ -1,0 +1,90 @@
+/**
+ * FFT México - Static Thanks Template
+ * Template Version: 1.0.0
+ *
+ * TEMPLATE CORE — protected reusable infrastructure.
+ * PAGE-SPECIFIC CONTENT — optional styles at the end of this file.
+ * TEMPLATE CONFIGURATION lives in index.html, not here.
+ *
+ * This file expects FFT tokens and layout classes from the parent
+ * form stylesheet (../styles.css) when deployed as forms/<form>/thanks/.
+ * The rules below cover confirmation-only layout and a fallback eyebrow.
+ */
+
+/* ======================================================
+   TEMPLATE CORE — DO NOT MODIFY FOR INDIVIDUAL PAGES
+====================================================== */
+
+.fft-eyebrow {
+  color: var(--fft-green-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.confirmation-main {
+  display: grid;
+  flex: 1 0 auto;
+  align-items: center;
+  padding-top: 4.5rem;
+}
+
+.confirmation-card {
+  padding-block: clamp(2rem, 7vw, 4.5rem);
+}
+
+.confirmation-icon {
+  display: inline-grid;
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 1.5rem;
+  place-items: center;
+  border-radius: 50%;
+  background: #e7f7f3;
+  color: var(--fft-green-dark);
+  font-size: 2.75rem;
+}
+
+.confirmation-detail {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 34rem;
+  margin-inline: auto;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--fft-green);
+  border-radius: 0.25rem;
+  background: var(--fft-gray-lighter);
+}
+
+.confirmation-detail i {
+  color: var(--fft-green-dark);
+}
+
+.confirmation-card .btn-primary {
+  border-color: var(--fft-green);
+  background: linear-gradient(135deg, var(--fft-green), var(--fft-green-dark));
+  box-shadow: var(--fft-shadow-sm);
+  font-weight: 500;
+}
+
+.confirmation-card .btn-primary:hover {
+  border-color: var(--fft-green-dark);
+  background: linear-gradient(135deg, var(--fft-green-dark), #005544);
+}
+
+@media (max-width: 576px) {
+  .confirmation-main {
+    align-items: start;
+  }
+
+  .confirmation-card {
+    padding-inline: 1.25rem;
+  }
+}
+
+/* ======================================================
+   PAGE-SPECIFIC CONTENT — ADD STYLES ONLY WHEN A PAGE
+   REQUIRES VISUAL RULES NOT COVERED BY BOOTSTRAP, THE
+   PARENT FORM STYLESHEET, OR THE CORE ABOVE.
+   TEMPLATE CONFIGURATION lives in index.html.
+====================================================== */

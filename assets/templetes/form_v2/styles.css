@@ -1,0 +1,269 @@
+/**
+ * FFT México - Static Form Template
+ * Template Version: 1.1.0
+ *
+ * TEMPLATE CORE — protected reusable infrastructure.
+ * FORM-SPECIFIC CONTENT — optional styles at the end of this file.
+ * TEMPLATE CONFIGURATION lives in index.html, not here.
+ */
+
+/* ======================================================
+   TEMPLATE CORE — DO NOT MODIFY FOR INDIVIDUAL FORMS
+====================================================== */
+
+:root {
+  --fft-green: #009d80;
+  --fft-green-dark: #006b57;
+  --fft-green-light: #00b893;
+  --fft-gray: #575756;
+  --fft-gray-dark: #3d3d3c;
+  --fft-gray-light: #d0d0d0;
+  --fft-gray-lighter: #f5f5f5;
+  --fft-text: #333;
+  --fft-danger: #dc3545;
+  --fft-surface: #fff;
+  --fft-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --fft-shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --fft-radius: 0.75rem;
+  --fft-transition: 0.3s ease;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #eef7f5 0%, var(--fft-surface) 150px);
+  color: var(--fft-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* FFT navigation */
+.fft-navbar {
+  background-color: var(--fft-green);
+  box-shadow: var(--fft-shadow-md);
+  backdrop-filter: blur(10px);
+}
+
+.fft-navbar .navbar-brand img {
+  transition: transform var(--fft-transition);
+}
+
+.fft-navbar .navbar-brand:hover img {
+  transform: scale(1.05);
+}
+
+.fft-navbar .nav-link {
+  position: relative;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-weight: 500;
+  transition: color var(--fft-transition), transform var(--fft-transition);
+}
+
+.fft-navbar .nav-link:hover {
+  color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.fft-navbar .nav-link::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  content: "";
+  transform: translateX(-50%);
+  transition: width var(--fft-transition);
+}
+
+.fft-navbar .nav-link:hover::after {
+  width: 80%;
+}
+
+.fft-eyebrow {
+  color: var(--fft-green-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.fft-required-notice {
+  border-radius: var(--fft-radius);
+}
+
+/* Reusable form shell */
+.fft-form {
+  color: var(--fft-text);
+}
+
+.form-section {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid rgba(87, 87, 86, 0.16);
+  border-radius: var(--fft-radius);
+  background-color: var(--fft-surface);
+  box-shadow: var(--fft-shadow-sm);
+}
+
+.form-section-title {
+  margin-bottom: 0.5rem;
+  color: var(--fft-green-dark);
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+}
+
+.form-section-description {
+  margin-bottom: 1.5rem;
+  color: var(--fft-gray);
+}
+
+.form-question {
+  margin-bottom: 1.5rem;
+}
+
+.form-question > .form-label,
+.form-question > legend {
+  font-weight: 600;
+}
+
+.required-indicator {
+  color: var(--fft-danger);
+  font-weight: 700;
+}
+
+.form-help {
+  display: block;
+  margin-top: 0.375rem;
+  color: var(--fft-gray);
+  font-size: 0.875rem;
+}
+
+.conditional-field {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-left: 0.25rem solid var(--fft-green-light);
+  border-radius: 0.25rem;
+  background-color: var(--fft-gray-lighter);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--fft-gray-light);
+}
+
+.fft-form .btn-primary {
+  border-color: var(--fft-green);
+  background: linear-gradient(135deg, var(--fft-green), var(--fft-green-dark));
+  box-shadow: var(--fft-shadow-sm);
+  font-weight: 500;
+  transition: box-shadow var(--fft-transition), transform var(--fft-transition);
+}
+
+.fft-form .btn-primary:hover {
+  border-color: var(--fft-green-dark);
+  background: linear-gradient(135deg, var(--fft-green-dark), #005544);
+  box-shadow: var(--fft-shadow-md);
+  transform: translateY(-2px);
+}
+
+.fft-form .btn-primary:active {
+  background: var(--fft-green-dark);
+  transform: translateY(0);
+}
+
+.fft-form .btn-primary:focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(0, 157, 128, 0.25);
+}
+
+.fft-form .invalid-feedback,
+.fft-form .valid-feedback {
+  font-weight: 500;
+}
+
+/* Bootstrap tooltip branding */
+.tooltip-inner {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  background-color: var(--fft-gray);
+}
+
+/* FFT footer */
+.fft-footer {
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--fft-gray), var(--fft-gray-dark));
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  color: #f0f0f0;
+}
+
+/* Accessibility */
+*:focus-visible {
+  outline: 3px solid var(--fft-green);
+  outline-offset: 2px;
+}
+
+::selection {
+  background-color: var(--fft-green);
+  color: #fff;
+}
+
+@media (max-width: 576px) {
+  .form-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+}
+
+@media print {
+  .fft-navbar,
+  .form-actions,
+  .fft-footer {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .form-section {
+    border: 0;
+    box-shadow: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .form-section,
+  .conditional-field,
+  .fft-form .btn {
+    border: 2px solid currentColor;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ======================================================
+   FORM-SPECIFIC CONTENT — ADD STYLES ONLY WHEN A FORM
+   REQUIRES VISUAL RULES NOT COVERED BY BOOTSTRAP OR THE
+   CORE ABOVE. TEMPLATE CONFIGURATION lives in index.html.
+====================================================== */
