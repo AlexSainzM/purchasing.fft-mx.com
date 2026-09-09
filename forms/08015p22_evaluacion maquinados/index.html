@@ -659,11 +659,12 @@
               <div class="question-block" data-question="6">
                 <fieldset>
                   <legend class="form-label fw-semibold">6. Indique si su empresa cuenta con alguna de las siguientes certificaciones y su vigencia</legend>
-                  <p class="form-text mb-3">Seleccione las certificaciones aplicables e indique la vigencia (mes y año) de cada una. Si no cuenta con ninguna, continúe con la pregunta 7.</p>
+                  <p class="form-text mb-3">Seleccione las certificaciones aplicables e indique la vigencia (mes y año) de cada una. Si no cuenta con ninguna, seleccione Ninguno.</p>
                   <div class="cert-grid">
                     
                 <div class="cert-item">
-                  <div class="form-check">
+                  <div class="form-check mb-3"><input class="form-check-input" type="checkbox" id="p06_ninguno" name="p06_ninguno" value="Sí"><label class="form-check-label" for="p06_ninguno">Ninguno</label></div>
+<div class="form-check">
                     <input class="form-check-input" type="checkbox" id="p06_iso9001_seleccion" name="p06_iso9001_seleccion" value="si" data-conditional-trigger="p06_iso9001_vigencia" data-iso9001-trigger="1">
                     <label class="form-check-label fw-semibold" for="p06_iso9001_seleccion">ISO 9001</label>
                   </div>
@@ -730,9 +731,14 @@
               </div>
 
               <div class="question-block d-none" data-question="8" id="cond_p08_fecha_certificacion">
-                <label for="p08_fecha_certificacion_estimada" class="form-label fw-semibold">8. En caso de no estar certificado, ¿hasta cuándo está planeado certificarse? <span class="text-danger" aria-hidden="true">*</span></label>
-                <input type="month" class="form-control" id="p08_fecha_certificacion_estimada" name="p08_fecha_certificacion_estimada" disabled>
-                <div class="invalid-feedback">Indique el mes y año estimados.</div>
+                <fieldset><legend class="form-label fw-semibold">8. En caso de no estar certificado, ¿planea certificarse? *</legend>
+                  <label class="form-check"><input class="form-check-input" type="radio" name="p08_planea_certificarse" value="Sí" data-required="true" disabled> Sí</label>
+                  <label class="form-check"><input class="form-check-input" type="radio" name="p08_planea_certificarse" value="No" data-required="true" disabled> No</label>
+                </fieldset>
+                <div class="conditional-field d-none mt-3" id="p08_fecha_plan">
+                  <label for="p08_fecha_certificacion_estimada" class="form-label">¿Hasta cuándo está planeado certificarse? *</label>
+                  <input type="month" class="form-control" id="p08_fecha_certificacion_estimada" name="p08_fecha_certificacion_estimada" data-required="true" disabled>
+                </div>
               </div>
 
               
@@ -1398,7 +1404,7 @@
               </div>
 
               <div class="question-block" data-question="43">
-                <label for="p43_indice_accidentes" class="form-label fw-semibold" id="p43_indice_accidentes_label">43. Durante el año calendario anterior, ¿cuál fue su índice de accidentes laborales? <span class="text-danger" aria-hidden="true">*</span></label>
+                <label for="p43_indice_accidentes" class="form-label fw-semibold" id="p43_indice_accidentes_label">43. Durante el año pasado, ¿cuál fue su índice de accidentes laborales? <span class="text-danger" aria-hidden="true">*</span></label>
                 <input type="number" class="form-control form-control-lg" id="p43_indice_accidentes" name="p43_indice_accidentes" min="0" step="any" required>
                 <div class="invalid-feedback">Indique un número igual o mayor a 0.</div>
               </div>
@@ -1493,64 +1499,96 @@
               <div class="question-block" data-question="47">
                 <label for="p47_confidencialidad_empleados_puntaje" class="form-label fw-semibold">47. ¿Están todos los empleados obligados por contrato a mantener la confidencialidad? <span class="text-danger" aria-hidden="true">*</span></label>
                 <select class="form-select form-select-lg si-score" id="p47_confidencialidad_empleados_puntaje" name="p47_confidencialidad_empleados_puntaje" required>
-                  <option value="" selected disabled>Seleccione una puntuación</option>
-                  <option value="0">0</option><option value="4">4</option><option value="6">6</option><option value="8">8</option><option value="10">10</option>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
                 </select>
                 <div class="invalid-feedback">Seleccione 0, 4, 6, 8 o 10.</div>
               </div>
               <div class="question-block" data-question="48">
                 <label for="p48_capacitacion_seguridad_informacion_puntaje" class="form-label fw-semibold">48. ¿Son instruidos todos los trabajadores regularmente sobre la seguridad de la información y protección de datos? <span class="text-danger" aria-hidden="true">*</span></label>
                 <select class="form-select form-select-lg si-score" id="p48_capacitacion_seguridad_informacion_puntaje" name="p48_capacitacion_seguridad_informacion_puntaje" required>
-                  <option value="" selected disabled>Seleccione una puntuación</option>
-                  <option value="0">0</option><option value="4">4</option><option value="6">6</option><option value="8">8</option><option value="10">10</option>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
                 </select>
                 <div class="invalid-feedback">Seleccione 0, 4, 6, 8 o 10.</div>
               </div>
               <div class="question-block" data-question="49">
                 <label for="p49_zonas_seguridad_acceso_puntaje" class="form-label fw-semibold">49. ¿Se han implementado zonas de seguridad y reglas de acceso en la empresa? <span class="text-danger" aria-hidden="true">*</span></label>
                 <select class="form-select form-select-lg si-score" id="p49_zonas_seguridad_acceso_puntaje" name="p49_zonas_seguridad_acceso_puntaje" required>
-                  <option value="" selected disabled>Seleccione una puntuación</option>
-                  <option value="0">0</option><option value="4">4</option><option value="6">6</option><option value="8">8</option><option value="10">10</option>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
                 </select>
                 <div class="invalid-feedback">Seleccione 0, 4, 6, 8 o 10.</div>
               </div>
               <div class="question-block" data-question="50">
                 <label for="p50_permisos_acceso_datos_clientes_puntaje" class="form-label fw-semibold">50. ¿Se otorgan permisos de acceso a los datos de clientes según cada proyecto y se revisan regularmente? <span class="text-danger" aria-hidden="true">*</span></label>
                 <select class="form-select form-select-lg si-score" id="p50_permisos_acceso_datos_clientes_puntaje" name="p50_permisos_acceso_datos_clientes_puntaje" required>
-                  <option value="" selected disabled>Seleccione una puntuación</option>
-                  <option value="0">0</option><option value="4">4</option><option value="6">6</option><option value="8">8</option><option value="10">10</option>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
                 </select>
                 <div class="invalid-feedback">Seleccione 0, 4, 6, 8 o 10.</div>
               </div>
               <div class="question-block" data-question="51">
                 <label for="p51_clasificacion_informacion_puntaje" class="form-label fw-semibold">51. ¿La información se clasifica según su nivel de confidencialidad y se protege de acuerdo a ello? <span class="text-danger" aria-hidden="true">*</span></label>
                 <select class="form-select form-select-lg si-score" id="p51_clasificacion_informacion_puntaje" name="p51_clasificacion_informacion_puntaje" required>
-                  <option value="" selected disabled>Seleccione una puntuación</option>
-                  <option value="0">0</option><option value="4">4</option><option value="6">6</option><option value="8">8</option><option value="10">10</option>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
                 </select>
                 <div class="invalid-feedback">Seleccione 0, 4, 6, 8 o 10.</div>
               </div>
               <div class="question-block" data-question="52">
                 <label for="p52_copias_seguridad_puntaje" class="form-label fw-semibold">52. ¿Existe un proceso de copias de seguridad definido e implementado en la empresa? <span class="text-danger" aria-hidden="true">*</span></label>
                 <select class="form-select form-select-lg si-score" id="p52_copias_seguridad_puntaje" name="p52_copias_seguridad_puntaje" required>
-                  <option value="" selected disabled>Seleccione una puntuación</option>
-                  <option value="0">0</option><option value="4">4</option><option value="6">6</option><option value="8">8</option><option value="10">10</option>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
                 </select>
                 <div class="invalid-feedback">Seleccione 0, 4, 6, 8 o 10.</div>
               </div>
               <div class="question-block" data-question="53">
                 <label for="p53_confidencialidad_proveedores_puntaje" class="form-label fw-semibold">53. ¿Los proveedores que participan en proyectos específicos están obligados a mantener la confidencialidad? <span class="text-danger" aria-hidden="true">*</span></label>
                 <select class="form-select form-select-lg si-score" id="p53_confidencialidad_proveedores_puntaje" name="p53_confidencialidad_proveedores_puntaje" required>
-                  <option value="" selected disabled>Seleccione una puntuación</option>
-                  <option value="0">0</option><option value="4">4</option><option value="6">6</option><option value="8">8</option><option value="10">10</option>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
                 </select>
                 <div class="invalid-feedback">Seleccione 0, 4, 6, 8 o 10.</div>
               </div>
               <div class="question-block" data-question="54">
                 <label for="p54_firewall_proteccion_internet_puntaje" class="form-label fw-semibold">54. ¿El acceso a internet está protegido mediante un Firewall contra accesos no autorizados y software malicioso? <span class="text-danger" aria-hidden="true">*</span></label>
                 <select class="form-select form-select-lg si-score" id="p54_firewall_proteccion_internet_puntaje" name="p54_firewall_proteccion_internet_puntaje" required>
-                  <option value="" selected disabled>Seleccione una puntuación</option>
-                  <option value="0">0</option><option value="4">4</option><option value="6">6</option><option value="8">8</option><option value="10">10</option>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
                 </select>
                 <div class="invalid-feedback">Seleccione 0, 4, 6, 8 o 10.</div>
               </div>
@@ -1681,6 +1719,7 @@
           integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
           crossorigin="anonymous"></script>
   <script src="main.js"></script>
+  <script src="../../assets/js/certifications.js"></script>
 </body>
 
 </html>

@@ -3,8 +3,8 @@
 ## PROJECT_OVERVIEW
 
 **Estado:** Activo
-**Versión:** 0.2
-**Fecha:** 2026-08-25
+**Versión:** 0.3
+**Fecha:** 2026-09-09
 
 ---
 
@@ -79,9 +79,11 @@ Los formularios deben conservar el conjunto común de conceptos definido en `INS
 
 ## 4.5 Plantilla y harness
 
-Existe una plantilla para generar nuevos formularios en `assets/templetes/form_v1`.
+Existen plantillas en `assets/templetes/form_v1` y `assets/templetes/form_v2`. Los tres formularios implementan el agradecimiento de `form_v2/thanks` en su propia carpeta `thanks/`, con redirección JavaScript después del envío AJAX exitoso.
 
 Las reglas estructurales comunes se verifican con `tests/verify_forms.py`. Cualquier cambio de preguntas o lógica condicional debe actualizar primero `docs/FORM_LOGIC_MATRIX.md` y la Spec correspondiente.
+
+`tests/verify_forms_browser.cjs` verifica en un navegador los condicionales, las tablas de Maquinados y el flujo de envío con respuestas de Formspree simuladas. La Spec 002 documenta los cambios de certificación, agradecimiento y Maquinados, conservando los nombres de campos existentes.
 
 ---
 
@@ -90,5 +92,7 @@ Las reglas estructurales comunes se verifican con `tests/verify_forms.py`. Cualq
 | Formulario | Documento | Revisión | Implementación web | Endpoint Formspree |
 | --- | --- | ---: | --- | --- |
 | Fabricantes | 08015p22 | 5 | Disponible | Configurado |
-| Maquinados | 08015p22 | 4 | Disponible | Pendiente de configuración |
-| Distribuidores | 08015p23 | 5 | Disponible | Pendiente de configuración |
+| Maquinados | 08015p22 | 4 | Disponible | Configurado |
+| Distribuidores | 08015p23 | 5 | Disponible | Configurado |
+
+Estado constatado en el código el 2026-09-09; no implica una prueba real de recepción en Formspree.

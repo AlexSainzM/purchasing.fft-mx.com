@@ -182,17 +182,9 @@ function updateCertificationPlan() {
     return field.checked;
   });
   const container = document.getElementById('p07_container');
-  const field = document.getElementById('p07_fecha_certificacion');
-  if (!container || !field) {
-    return;
-  }
-  container.classList.toggle('d-none', hasCertification);
-  field.disabled = hasCertification;
-  field.required = !hasCertification;
-  if (hasCertification) {
-    field.value = '';
-    field.classList.remove('is-invalid', 'is-valid');
-  }
+  toggleConditional(container, !hasCertification);
+  const planned = container.querySelector('input[type="radio"]:checked');
+  toggleConditional(document.getElementById('p07_fecha_plan'), !hasCertification && Boolean(planned && planned.value === 'Sí'));
 }
 
 function initializeNavigation() {
@@ -339,11 +331,7 @@ async function handleSubmit(event) {
     if (!response.ok) {
       throw new Error('Formspree respondió con estado ' + response.status);
     }
-    showFormMessage('success', 'La autoevaluación fue enviada correctamente.');
-    form.reset();
-    initializeConditionalFields();
-    updateCertificationPlan();
-    showStep(0, true);
+    window.location.assign(new URL('thanks/index.html', window.location.href).href);
   } catch (error) {
     showFormMessage('error', 'No fue posible enviar la autoevaluación. Verifique su conexión e intente de nuevo.');
   } finally {
@@ -378,3 +366,10 @@ function hideFormMessage() {
   element.classList.remove('success', 'error', 'info');
   element.replaceChildren();
 }
+
+// Re-evaluate the date after every plan answer.
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('[name="p07_planea_certificarse"]').forEach(function (field) {
+    field.addEventListener('change', updateCertificationPlan);
+  });
+});

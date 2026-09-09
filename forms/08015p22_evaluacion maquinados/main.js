@@ -63,9 +63,7 @@ function initializeDynamicDates() {
   const label = document.getElementById('p43_indice_accidentes_label');
   if (label) {
     label.innerHTML =
-      '43. Durante el año calendario ' +
-      prevYear +
-      ', ¿cuál fue su índice de accidentes laborales? <span class="text-danger" aria-hidden="true">*</span>';
+      '43. Durante el año pasado, ¿cuál fue su índice de accidentes laborales? <span class="text-danger" aria-hidden="true">*</span>';
   }
 }
 
@@ -373,7 +371,7 @@ function validateMachineTables(stepEl) {
       messages.push('Agregue al menos una máquina CNC o marque “No aplica”.');
     }
     rows.forEach(function (row) {
-      row.querySelectorAll('input').forEach(function (input) {
+      row.querySelectorAll('input, select').forEach(function (input) {
         if (!input.checkValidity()) {
           input.classList.add('is-invalid');
           isValid = false;
@@ -389,7 +387,7 @@ function validateMachineTables(stepEl) {
       messages.push('Agregue al menos un equipo de corte o marque “No aplica”.');
     }
     rows.forEach(function (row) {
-      row.querySelectorAll('input').forEach(function (input) {
+      row.querySelectorAll('input, select').forEach(function (input) {
         if (!input.checkValidity()) {
           input.classList.add('is-invalid');
           isValid = false;
@@ -414,7 +412,7 @@ function validateWorkersTable(stepEl) {
   }
 
   rows.forEach(function (row) {
-    row.querySelectorAll('input').forEach(function (input) {
+    row.querySelectorAll('input, select').forEach(function (input) {
       if (!input.checkValidity()) {
         input.classList.add('is-invalid');
         isValid = false;
@@ -529,7 +527,7 @@ function toggleMachineTable(type, isNa) {
   }
 
   if (isNa) {
-    tbody.querySelectorAll('input').forEach(function (input) {
+    tbody.querySelectorAll('input, select').forEach(function (input) {
       clearFieldValue(input);
       input.required = false;
       input.disabled = true;
@@ -551,7 +549,7 @@ function toggleMachineTable(type, isNa) {
         addCorteRow();
       }
     } else {
-      tbody.querySelectorAll('input').forEach(function (input) {
+      tbody.querySelectorAll('input, select').forEach(function (input) {
         input.disabled = false;
         input.required = true;
       });
@@ -592,7 +590,7 @@ function addCncRow() {
   const tr = document.createElement('tr');
   tr.dataset.tempIndex = idx;
 
-  tr.appendChild(createInputCell('text', '', { 'data-field': 'tipo', placeholder: 'Tipo', 'aria-label': 'Tipo CNC ' + idx }));
+  tr.appendChild(createMachineTypeCell('Tipo CNC ' + idx));
   tr.appendChild(createInputCell('text', '', { 'data-field': 'marca', placeholder: 'Marca', 'aria-label': 'Marca CNC ' + idx }));
   tr.appendChild(createInputCell('text', '', { 'data-field': 'modelo', placeholder: 'Modelo', 'aria-label': 'Modelo CNC ' + idx }));
   tr.appendChild(createInputCell('number', '', {
@@ -620,7 +618,7 @@ function addCorteRow() {
   const tr = document.createElement('tr');
   tr.dataset.tempIndex = idx;
 
-  tr.appendChild(createInputCell('text', '', { 'data-field': 'tipo', placeholder: 'Tipo', 'aria-label': 'Tipo corte ' + idx }));
+  tr.appendChild(createMachineTypeCell('Tipo corte ' + idx, ['Pantógrafo', 'Láser', 'Plasma', 'Chorro de agua', 'Oxígeno']));
   tr.appendChild(createInputCell('text', '', { 'data-field': 'marca', placeholder: 'Marca', 'aria-label': 'Marca corte ' + idx }));
   tr.appendChild(createInputCell('text', '', { 'data-field': 'modelo', placeholder: 'Modelo', 'aria-label': 'Modelo corte ' + idx }));
   tr.appendChild(createInputCell('number', '', {
@@ -702,7 +700,7 @@ function reindexCncRows() {
   rows.forEach(function (row, index) {
     const n = String(index + 1).padStart(2, '0');
     const prefix = 'p04_cnc_' + n + '_';
-    row.querySelectorAll('input[data-field]').forEach(function (input) {
+    row.querySelectorAll('[data-field]').forEach(function (input) {
       const field = input.getAttribute('data-field');
       const name = prefix + field;
       input.name = name;
@@ -716,7 +714,7 @@ function reindexCuttingRows() {
   rows.forEach(function (row, index) {
     const n = String(index + 1).padStart(2, '0');
     const prefix = 'p04_corte_' + n + '_';
-    row.querySelectorAll('input[data-field]').forEach(function (input) {
+    row.querySelectorAll('[data-field]').forEach(function (input) {
       const field = input.getAttribute('data-field');
       const name = prefix + field;
       input.name = name;
@@ -730,7 +728,7 @@ function reindexWorkersRows() {
   rows.forEach(function (row, index) {
     const n = String(index + 1).padStart(2, '0');
     const prefix = 'p38_trabajador_' + n + '_';
-    row.querySelectorAll('input[data-field]').forEach(function (input) {
+    row.querySelectorAll('[data-field]').forEach(function (input) {
       const field = input.getAttribute('data-field');
       const name = prefix + field;
       input.name = name;
@@ -805,6 +803,8 @@ function updateIso9001PlanVisibility() {
   const withoutIso9001 = !iso9001.checked;
   toggleConditionalSection(qualityTarget, withoutIso9001 && other.checked);
   toggleConditionalSection(dateTarget, withoutIso9001);
+  const planned = dateTarget.querySelector('input[type="radio"]:checked');
+  toggleConditionalSection(document.getElementById('p08_fecha_plan'), withoutIso9001 && Boolean(planned && planned.value === 'Sí'));
 }
 
 function toggleConditionalSection(target, shouldShow) {
@@ -982,12 +982,7 @@ async function handleFormSubmit(event) {
     });
 
     if (response.ok) {
-      showFormMessage(
-        'success',
-        'La autoevaluación fue enviada correctamente. Gracias por completar el formulario.'
-      );
-      resetFormState();
-      scrollToMessage();
+      window.location.assign(new URL('thanks/index.html', window.location.href).href);
       return;
     }
 
@@ -1132,4 +1127,29 @@ function resetFormState() {
   initializeDynamicDates();
   updateSecuritySubtotal();
   showStep(0);
+}
+
+// Re-evaluate the date after every plan answer.
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('[name="p08_planea_certificarse"]').forEach(function (field) {
+    field.addEventListener('change', updateIso9001PlanVisibility);
+  });
+});
+
+function createMachineTypeCell(label, types = ['Fresadora CNC', 'Centros de maquinado CNC en diferentes dimensiones de mesa',
+  'Mandriladora CNC en diferentes dimensiones de mesa', 'Torno CNC en diferentes tamaños']) {
+  const td = document.createElement('td');
+  const select = document.createElement('select');
+  select.className = 'form-select form-select-sm';
+  select.dataset.field = 'tipo';
+  select.setAttribute('aria-label', label);
+  select.required = true;
+  ['', ...types].forEach(function (value) {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = value || 'Seleccione un tipo';
+    select.appendChild(option);
+  });
+  td.appendChild(select);
+  return td;
 }

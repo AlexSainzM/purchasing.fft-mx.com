@@ -227,7 +227,8 @@
                   <p class="form-text mb-2">Marque los certificados aplicables. Por cada certificado seleccionado, indique hasta qué mes y año se encuentra vigente.</p>
                   <div class="cert-grid">
                     <div class="cert-item">
-                      <div class="form-check">
+                      <div class="form-check mb-3"><input class="form-check-input" type="checkbox" id="p06_ninguno" name="p06_ninguno" value="Sí"><label class="form-check-label" for="p06_ninguno">Ninguno</label></div>
+<div class="form-check">
                         <input class="form-check-input" type="checkbox" name="p06_iso9001" id="p06_iso9001" value="Sí" data-conditional-trigger="p06_iso9001_vigencia">
                         <label class="form-check-label" for="p06_iso9001">ISO 9001</label>
                       </div>
@@ -1305,6 +1306,7 @@
 
   <!-- Validation JavaScript -->
   <script src="main.js"></script>
+  <script src="../../assets/js/certifications.js"></script>
 
 </body>
 

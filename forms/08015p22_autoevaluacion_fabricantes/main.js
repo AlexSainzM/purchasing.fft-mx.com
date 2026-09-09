@@ -647,12 +647,7 @@ async function handleFormSubmit(event) {
     });
 
     if (response.ok) {
-      showFormMessage(
-        'success',
-        'La autoevaluación fue enviada correctamente. Gracias por completar el formulario.'
-      );
-      resetFormState();
-      scrollToMessage();
+      window.location.assign(new URL('thanks/index.html', window.location.href).href);
       return;
     }
 

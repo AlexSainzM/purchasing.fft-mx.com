@@ -131,7 +131,7 @@ class FormContractTests(unittest.TestCase):
             self.assertEqual(1, len(visible), f"{name}: pasos visibles al iniciar")
 
     def test_no_template_placeholders_or_broken_local_assets(self) -> None:
-        production = [ROOT / "index.html", *FORMS.values()]
+        production = [ROOT / "index.html", *FORMS.values(), *(p.parent / 'thanks/index.html' for p in FORMS.values())]
         for path in production:
             source, page = parse(path)
             self.assertNotRegex(source, r"\{\{[A-Z0-9_]+\}\}", str(path))
@@ -148,9 +148,30 @@ class FormContractTests(unittest.TestCase):
         machining_html = FORMS["maquinados"].read_text(encoding="utf-8")
         distributor_js = FORMS["distribuidores"].with_name("main.js").read_text(encoding="utf-8")
         self.assertIn("https://formspree.io/f/mvkppyry", manufacturer_js)
-        self.assertIn("REEMPLAZAR_ENDPOINT_FORMSPREE", machining_html)
-        self.assertIn("REEMPLAZAR_ENDPOINT_DISTRIBUIDORES", distributor_js)
+        self.assertIn("https://formspree.io/f/myeygeqy", machining_html)
+        self.assertIn("https://formspree.io/f/mzebpelz", distributor_js)
         self.assertNotIn("mvkppyry", machining_html + distributor_js)
+
+    def test_certification_and_thanks_contract(self) -> None:
+        for name, path in FORMS.items():
+            source, page = parse(path)
+            self.assertIn('name="p06_ninguno"', source, name)
+            self.assertIn('assets/js/certifications.js', source, name)
+            self.assertTrue((path.parent / 'thanks/index.html').is_file())
+            self.assertIn("new URL('thanks/index.html', window.location.href)", path.with_name('main.js').read_text(encoding='utf-8'))
+
+    def test_security_questions_match_manufacturers(self) -> None:
+        manufacturer = FORMS['fabricantes'].read_text(encoding='utf-8')
+        machining = FORMS['maquinados'].read_text(encoding='utf-8')
+        for number in range(47, 55):
+            labels = []
+            options = []
+            for source, question in ((manufacturer, number + 8), (machining, number)):
+                block = re.search(r'data-question="' + str(question) + r'">(.*?)</select>', source, re.S).group(1)
+                labels.append(re.search(r'fw-semibold">\d+\. (.*?)</label>', block, re.S).group(1))
+                options.append(re.findall(r'<option value="(.*?)">(.*?)</option>', block))
+            self.assertEqual(*labels)
+            self.assertEqual(*options)
 
 
 class JavaScriptSyntaxTests(unittest.TestCase):
