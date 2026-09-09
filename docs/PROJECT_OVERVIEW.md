@@ -3,7 +3,7 @@
 ## PROJECT_OVERVIEW
 
 **Estado:** Activo
-**Versión:** 0.3
+**Versión:** 0.4
 **Fecha:** 2026-09-09
 
 ---
@@ -40,7 +40,7 @@ FFT México utiliza diferentes formatos para evaluar a nuevos proveedores. Los f
 
 Digitalizar los formualrios de autoevaluación de los nuevos proveedores de FFT México mediante una aplicación web que permita:
 
-1. contestar cualquiera de los tres formularios oficiales: Fabricantes, Maquinados y Distribuidores;
+1. contestar cualquiera de los cuatro formularios: Fabricantes, Maquinados, Distribuidores y Servicios;
 2. adjuntar evidencia cuando sea requerido;
 3. enviar cada formulario al endpoint correspondiente de Formspree;
 4. consultar posteriormente los registros mediante la API de solo lectura de Formspree;
@@ -79,11 +79,13 @@ Los formularios deben conservar el conjunto común de conceptos definido en `INS
 
 ## 4.5 Plantilla y harness
 
-Existen plantillas en `assets/templetes/form_v1` y `assets/templetes/form_v2`. Los tres formularios implementan el agradecimiento de `form_v2/thanks` en su propia carpeta `thanks/`, con redirección JavaScript después del envío AJAX exitoso.
+Existen plantillas en `assets/templetes/form_v1` y `assets/templetes/form_v2`. Los cuatro formularios implementan el agradecimiento de `form_v2/thanks` en su propia carpeta `thanks/`, con redirección JavaScript después del envío AJAX exitoso.
 
 Las reglas estructurales comunes se verifican con `tests/verify_forms.py`. Cualquier cambio de preguntas o lógica condicional debe actualizar primero `docs/FORM_LOGIC_MATRIX.md` y la Spec correspondiente.
 
 `tests/verify_forms_browser.cjs` verifica en un navegador los condicionales, las tablas de Maquinados y el flujo de envío con respuestas de Formspree simuladas. La Spec 002 documenta los cambios de certificación, agradecimiento y Maquinados, conservando los nombres de campos existentes.
+
+La Spec 003 añade Servicios (39 preguntas del PDF 08015p21 Rev. 5, 03.06.2026) y Seguridad de la Información en Distribuidores (43–50). Ambos usan `assets/js/security-score.js` para validar la escala y recalcular el subtotal. El harness recorre sus formularios completos con validación real y prueba los anexos de Servicios. La exclusión de Ninguno usa `assets/js/certifications.js`, configurable para la pregunta 4 de Servicios y compatible con la pregunta 6 de los demás.
 
 ---
 
@@ -94,5 +96,6 @@ Las reglas estructurales comunes se verifican con `tests/verify_forms.py`. Cualq
 | Fabricantes | 08015p22 | 5 | Disponible | Configurado |
 | Maquinados | 08015p22 | 4 | Disponible | Configurado |
 | Distribuidores | 08015p23 | 5 | Disponible | Configurado |
+| Servicios | 08015p21 | 5 | Disponible | Configurado |
 
 Estado constatado en el código el 2026-09-09; no implica una prueba real de recepción en Formspree.

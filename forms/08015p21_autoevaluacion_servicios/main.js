@@ -1,13 +1,15 @@
 /**
- * Autoevaluación de distribuidores - FFT México
- * Documento: 08015p23 | Rev.: 5
+ * Autoevaluación de proveedores de servicios - FFT México
+ * Documento: 08015p21 | Rev.: 5
  */
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mzebpelz';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mbgjqzka';
 const STEP_NAMES = [
   'Datos de la empresa',
   'General',
-  'Experiencia y personal',
+  'Experiencia',
+  'Personal',
+  'Tecnología',
   'Medio ambiente',
   'Calidad',
   'Envío',
@@ -74,9 +76,6 @@ function buildYesNoQuestions() {
     conditional.className = 'conditional-field d-none mt-3';
     conditional.dataset.conditional = detailId;
     conditional.dataset.showWhenValue = 'Sí';
-    if (/^24\./.test(detailLabel)) {
-      conditional.dataset.question = '24';
-    }
 
     const detailLabelEl = document.createElement('label');
     detailLabelEl.className = 'form-label';
@@ -183,10 +182,10 @@ function updateCertificationPlan() {
   const hasCertification = Array.from(document.querySelectorAll('.certification-trigger')).some(function (field) {
     return field.checked;
   });
-  const container = document.getElementById('p07_container');
+  const container = document.getElementById('p05_container');
   toggleConditional(container, !hasCertification);
   const planned = container.querySelector('input[type="radio"]:checked');
-  toggleConditional(document.getElementById('p07_fecha_plan'), !hasCertification && Boolean(planned && planned.value === 'Sí'));
+  toggleConditional(document.getElementById('p05_fecha_plan'), !hasCertification && Boolean(planned && planned.value === 'Sí'));
 }
 
 function initializeNavigation() {
@@ -302,7 +301,7 @@ function findFirstInvalidStep() {
 }
 
 function initializeSubmission() {
-  document.getElementById('distributorSelfAssessmentForm').addEventListener('submit', handleSubmit);
+  document.getElementById('servicesSelfAssessmentForm').addEventListener('submit', handleSubmit);
 }
 
 async function handleSubmit(event) {
@@ -319,7 +318,7 @@ async function handleSubmit(event) {
   }
 
   if (FORMSPREE_ENDPOINT.indexOf('REEMPLAZAR_ENDPOINT') !== -1) {
-    showFormMessage('error', 'El formulario está completo, pero falta configurar el endpoint exclusivo de Formspree para Distribuidores. No se envió información.');
+    showFormMessage('error', 'El formulario está completo, pero falta configurar el endpoint exclusivo de Formspree para Servicios. No se envió información.');
     return;
   }
 
@@ -372,7 +371,7 @@ function hideFormMessage() {
 
 // Re-evaluate the date after every plan answer.
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('[name="p07_planea_certificarse"]').forEach(function (field) {
+  document.querySelectorAll('[name="p05_planea_certificarse"]').forEach(function (field) {
     field.addEventListener('change', updateCertificationPlan);
   });
 });

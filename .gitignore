@@ -1,3 +1,5 @@
 .DS_Store/
 .vscode/
 .ignore/
+/tmp/forms-qa/
+/tmp/forms-qa-cdn/

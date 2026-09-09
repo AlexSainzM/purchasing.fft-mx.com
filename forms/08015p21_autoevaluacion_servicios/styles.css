@@ -1,0 +1,4 @@
+@import url("../08015p23_evaluación_distribuidor/styles.css");
+
+/* Nine steps wrap without compressing their labels. */
+.step-list { flex-wrap: wrap; gap: .75rem; }

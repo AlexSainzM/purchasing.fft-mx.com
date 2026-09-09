@@ -1,6 +1,6 @@
 # Matriz de lógica de formularios
 
-**Versión:** 1.1
+**Versión:** 1.2
 **Fecha:** 2026-09-09
 
 Esta matriz normaliza las reglas observadas en los PDFs oficiales. Ante un cambio del documento fuente, esta matriz y la Spec deben actualizarse antes del código.
@@ -76,10 +76,38 @@ Los cinco anexos fiscales y del IMSS son obligatorios según el bloque VIII. El 
 | 27 | Sí | Nombre del responsable de calidad. |
 | 42 | “Otro” | Tipo de documentación. |
 
+Seguridad de la Información se añade como 43–50 (Spec 003): mismos ocho reactivos, opciones y nota de Fabricantes 55–62; subtotal automático de 0–80. Las preguntas y nombres 1–42 se conservan.
+
+## Servicios — 08015p21 Rev. 5, 03.06.2026
+
+| Pregunta | Condición | Dependencia |
+| ---: | --- | --- |
+| 1–2 | Siempre | Número de personas y sucursales, enteros no negativos. |
+| 3 | Otros | Descripción del servicio; al menos un servicio seleccionado. |
+| 4 | Cada certificado | Vigencia y archivo requeridos; Otros requiere además nombre. Ninguno es excluyente y no requiere anexos. |
+| 5 | Ninguna certificación seleccionada | Preguntar si planea certificarse; sólo Sí requiere mes y año. |
+| 6 | Siempre | Posibilidad de visita, Sí/No. |
+| 7–8 | Siempre | Años desde fundación y experiencia en los servicios solicitados, no negativos. |
+| 9 | Sí | Organigrama adjunto. |
+| 10 | Sí | Referencias, clientes o proyectos adjuntos; admite varios archivos. |
+| 11–13 | Sí | Detalle de capacitaciones, acceso a normas/leyes y cursos de seguridad, respectivamente. |
+| 14–15 | Siempre | IMSS y equipo de seguridad, Sí/No. |
+| 16 | Siempre | Satisfacción del personal, entre 0 y 100 %. |
+| 17–19 | Siempre | Personal con inglés, experiencia en el extranjero y disponibilidad para viajar, Sí/No. |
+| 20 | Siempre | Al menos un método de registro de horas: escrito, electrónico manual o electrónico automático. |
+| 21 | Sí | Software utilizado; redacción aclarada para corresponder a las opciones Sí/No del PDF. |
+| 22–23 | Siempre | Reacción urgente y separación de basura, Sí/No. |
+| 24–25 | Sí | Nombres de responsables ambiental y de calidad, respectivamente. |
+| 26–31 | Siempre | Pruebas, documentación, auditorías, certificación de proveedores, estándares y reclamos, Sí/No. |
+| 32–39 | Siempre | Seguridad de la Información: escala 0, 4, 6, 8 y 10; subtotal 0–80. |
+
+El PDF contiene cinco páginas aunque el pie dice «de 3». Se conserva toda la información de las preguntas y se usa navegación por pasos. No se trasladan placeholders de Word ni la instrucción F9 del subtotal. La instrucción de envío por correo/plazo de tres días se adapta a Formspree y al formulario permanente, como los demás formularios.
+
 ## Datos pendientes de FFT México
 
 1. Endpoint Maquinados configurado en el código (ver Spec 002).
 2. Endpoint Distribuidores configurado en el código (ver Spec 002).
+   Endpoint Servicios proporcionado por el solicitante y configurado: `https://formspree.io/f/mbgjqzka` (Spec 003).
 3. Política de conservación, responsable y plazo de borrado de respuestas/evidencias en Formspree.
 4. Límites máximos de tamaño y cantidad de archivos.
 5. Confirmación de si los plazos de “3 días” de los PDFs siguen vigentes; la web actual los describe como formularios permanentes.

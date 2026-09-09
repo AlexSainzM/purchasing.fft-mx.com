@@ -7,3 +7,24 @@
 [data-yes-no]:empty {
   min-height: 4rem;
 }
+
+/* Keep navigation and dependent fields usable when the Bootstrap CDN is unavailable. */
+@media screen {
+  .d-none { display: none !important; }
+}
+
+fieldset { min-width: 0; }
+*, *::before, *::after { box-sizing: border-box; }
+.form-control, .form-select { box-sizing: border-box; max-width: 100%; width: 100%; }
+.form-step .card-body { padding: 1.25rem; }
+.form-check { display: block; }
+.form-label { display: block; }
+.invalid-feedback { display: none; }
+.is-invalid { outline: 2px solid #dc3545; }
+.is-invalid + .invalid-feedback { display: block; color: #b02a37; }
+.step-list { list-style: none; padding-left: 0; }
+footer .text-muted { color: #f2f2f2 !important; }
+
+@media (min-width: 992px) {
+  .step-list.d-lg-flex { display: flex !important; }
+}

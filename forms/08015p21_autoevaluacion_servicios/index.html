@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autoevaluación de proveedores de servicios | FFT México</title>
+  <meta name="description" content="Autoevaluación de proveedores de servicios de FFT México, documento 08015p21 revisión 5.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top px-3 px-md-5" style="background-color:#009d80">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="../../index.html" aria-label="FFT México, ir al catálogo">FFT México</a>
+        <a class="nav-link text-white" href="../../index.html"><i class="bi bi-arrow-left-circle me-1" aria-hidden="true"></i>Volver al catálogo</a>
+      </div>
+    </nav>
+    <div class="container pt-5 mt-5">
+      <div class="row"><div class="col-lg-10 mx-auto">
+        <h1 class="display-5 fw-bold mb-4">Autoevaluación de proveedores de servicios</h1>
+        <div class="alert alert-info border-0 shadow-sm"><strong>Evaluación de proveedores FFT México.</strong> Formulario para empresas proveedoras de servicios.</div>
+        <p class="lead">Recopila información sobre la empresa, experiencia, personal, tecnología, medio ambiente, calidad y seguridad de la información.</p>
+        <p class="text-muted">Complete todas las secciones con información actual y verificable. Los campos marcados con asterisco son obligatorios.</p>
+        <p class="small">Consultas: <a href="mailto:compras.servicios@mx-fft.com">compras.servicios@mx-fft.com</a> · <a href="08015p21_evaluacion_servicios.pdf" target="_blank" rel="noopener">Consultar el documento original (PDF)</a></p>
+        <p class="small text-muted doc-meta">Documento: <strong>08015p21</strong> · Revisión: <strong>5</strong> · Fecha origen: <strong>03.06.2026</strong> · Clasificación: <strong>Interna</strong></p>
+      </div></div>
+    </div>
+  </header>
+
+  <main>
+    <section id="_form" class="container py-5">
+      <div class="row mb-5"><div class="col-lg-10 mx-auto">
+        <div id="formMessage" class="form-message d-none" role="status" aria-live="polite"></div>
+        <form id="servicesSelfAssessmentForm" novalidate enctype="multipart/form-data" autocomplete="on">
+          <input type="hidden" name="formulario_nombre" value="Autoevaluación de proveedores de servicios">
+          <input type="hidden" name="documento_referencia" value="08015p21">
+          <input type="hidden" name="documento_revision" value="5">
+          <input type="hidden" id="fecha_envio" name="fecha_envio" value="">
+
+          <div class="form-progress-card card border-0 shadow-sm mb-4"><div class="card-body">
+            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
+              <div><span id="stepIndicator" class="fw-semibold">Paso 1 de 9</span><span class="text-muted mx-2">|</span><span id="stepName" class="text-muted">Datos de la empresa</span></div>
+              <span id="progressPercent" class="badge bg-fft-green">11%</span>
+            </div>
+            <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="11" aria-labelledby="stepIndicator"><div id="progressBar" class="progress-bar" style="width:11%"></div></div>
+            <ol class="step-list list-unstyled d-none d-lg-flex mt-3 mb-0" aria-label="Secciones del formulario">
+              <li class="step-item active" data-step-label="0" aria-current="step"><span>1</span><small>Empresa</small></li>
+              <li class="step-item" data-step-label="1"><span>2</span><small>General</small></li>
+              <li class="step-item" data-step-label="2"><span>3</span><small>Experiencia</small></li>
+              <li class="step-item" data-step-label="3"><span>4</span><small>Personal</small></li>
+              <li class="step-item" data-step-label="4"><span>5</span><small>Tecnología</small></li>
+              <li class="step-item" data-step-label="5"><span>6</span><small>Ambiente</small></li>
+              <li class="step-item" data-step-label="6"><span>7</span><small>Calidad</small></li>
+              <li class="step-item" data-step-label="7"><span>8</span><small>Envío</small></li>
+              <li class="step-item" data-step-label="8"><span>9</span><small>Información</small></li>
+            </ol>
+          </div></div>
+
+<fieldset class="form-step card border-0 shadow-sm mb-4" data-step="0" aria-labelledby="step-title-0">
+            <div class="card-header section-header"><h2 id="step-title-0" class="h4 mb-0">Datos de la empresa</h2></div>
+            <div class="card-body"><div class="row g-3">
+              <div class="col-md-6"><label for="empresa_nombre" class="form-label">Nombre de la empresa *</label><input class="form-control" id="empresa_nombre" name="empresa_nombre" required autocomplete="organization"><div class="invalid-feedback">Indique el nombre de la empresa.</div></div>
+              <div class="col-md-6"><label for="empresa_contacto" class="form-label">Nombre de quien completó el cuestionario *</label><input class="form-control" id="empresa_contacto" name="empresa_contacto" required autocomplete="name"><div class="invalid-feedback">Indique el nombre del contacto.</div></div>
+              <div class="col-md-6"><label for="empresa_puesto" class="form-label">Puesto en la empresa *</label><input class="form-control" id="empresa_puesto" name="empresa_puesto" required autocomplete="organization-title"></div>
+              <div class="col-12"><label for="empresa_direccion" class="form-label">Dirección de la empresa *</label><textarea class="form-control" id="empresa_direccion" name="empresa_direccion" rows="3" required autocomplete="street-address"></textarea><div class="invalid-feedback">Indique la dirección.</div></div>
+              <div class="col-md-6"><label for="empresa_telefono" class="form-label">Teléfono *</label><input type="tel" class="form-control" id="empresa_telefono" name="empresa_telefono" required autocomplete="tel"><div class="invalid-feedback">Indique un teléfono.</div></div>
+              <div class="col-md-6"><label for="empresa_email" class="form-label">Correo electrónico *</label><input type="email" class="form-control" id="empresa_email" name="empresa_email" required autocomplete="email"><div class="invalid-feedback">Indique un correo válido.</div></div>
+            </div></div>
+          </fieldset>
+
+<fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="1" aria-labelledby="step-title-1">
+            <div class="card-header section-header"><h2 id="step-title-1" class="h4 mb-0">General</h2></div>
+            <div class="card-body">
+              <div class="question-block" data-question="1"><label for="p01_personas_empresa" class="form-label fw-semibold">1. ¿Cuántas personas trabajan en su empresa? *</label><input type="number" class="form-control" id="p01_personas_empresa" name="p01_personas_empresa" min="0" step="1" required><div class="invalid-feedback">Complete este campo con un valor válido.</div></div>
+              <div class="question-block" data-question="2"><label for="p02_numero_sucursales" class="form-label fw-semibold">2. ¿Cuántas sucursales tiene su empresa? *</label><input type="number" class="form-control" id="p02_numero_sucursales" name="p02_numero_sucursales" min="0" step="1" required><div class="invalid-feedback">Complete este campo con un valor válido.</div></div>
+<div class="question-block" data-question="3"><fieldset class="checkbox-group" data-checkbox-group="p03_servicios_empresa"><legend class="form-label fw-semibold">3. ¿Cuál(es) servicio(s) ofrece su empresa? *</legend><p class="form-text">Seleccione al menos una opción.</p><div class="row g-2">
+<div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" id="p03_servicios_empresa_01" name="p03_servicios_empresa" value="Programación de robot"> Programación de robot</label></div>
+<div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" id="p03_servicios_empresa_02" name="p03_servicios_empresa" value="Programación de PLC"> Programación de PLC</label></div>
+<div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" id="p03_servicios_empresa_03" name="p03_servicios_empresa" value="Instalación eléctrica"> Instalación eléctrica</label></div>
+<div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" id="p03_servicios_empresa_04" name="p03_servicios_empresa" value="Instalación mecánica"> Instalación mecánica</label></div>
+<div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" id="p03_servicios_empresa_05" name="p03_servicios_empresa" value="Instalación neumática"> Instalación neumática</label></div>
+<div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" id="p03_servicios_empresa_06" name="p03_servicios_empresa" value="Diseño y simulación"> Diseño y simulación</label></div>
+<div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" id="p03_servicios_empresa_07" name="p03_servicios_empresa" value="Administración"> Administración</label></div>
+<div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" id="p03_servicios_empresa_08" name="p03_servicios_empresa" value="Sistemas informáticos"> Sistemas informáticos</label></div>
+<div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" id="p03_servicios_empresa_09" name="p03_servicios_empresa" value="Servicios financieros"> Servicios financieros</label></div>
+<div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" id="p03_servicios_empresa_10" name="p03_servicios_empresa" value="Otros" data-conditional-trigger="p03_otros_servicios"> Otros</label></div></div><div class="checkbox-group-feedback invalid-feedback d-none">Seleccione al menos una opción.</div><div class="conditional-field d-none mt-3" data-conditional="p03_otros_servicios"><label for="p03_otros_servicios" class="form-label">Especifique otros servicios *</label><textarea class="form-control" id="p03_otros_servicios" name="p03_otros_servicios" rows="3" data-required="true" disabled></textarea></div></fieldset></div>
+<div class="question-block" data-question="4"><fieldset><legend class="form-label fw-semibold">4. Indique si su empresa cuenta con alguna de las siguientes certificaciones y su vigencia</legend>
+<p class="form-text">Seleccione las certificaciones aplicables y adjunte cada certificado. Si no cuenta con ninguna, seleccione Ninguno.</p>
+<label class="form-check mb-3"><input type="checkbox" class="form-check-input" id="p04_ninguno" name="p04_ninguno" value="Sí" data-certification-none data-certification-prefix="p04_"> Ninguno</label><div class="row g-3"><div class="col-md-6 cert-item"><label class="form-check"><input class="form-check-input certification-trigger" type="checkbox" id="p04_iso9001" name="p04_iso9001" value="Sí" data-conditional-trigger="p04_iso9001_detalle"> ISO 9001</label>
+<div class="conditional-field d-none mt-3" data-conditional="p04_iso9001_detalle"><label for="p04_iso9001_vigencia" class="form-label">Vigencia (mes y año) *</label><input type="month" class="form-control mb-2" id="p04_iso9001_vigencia" name="p04_iso9001_vigencia" data-required="true" disabled>
+<label for="p04_iso9001_archivo" class="form-label">Adjunte el certificado *</label><input type="file" class="form-control" id="p04_iso9001_archivo" name="p04_iso9001_archivo" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" data-required="true" disabled></div></div><div class="col-md-6 cert-item"><label class="form-check"><input class="form-check-input certification-trigger" type="checkbox" id="p04_vda64" name="p04_vda64" value="Sí" data-conditional-trigger="p04_vda64_detalle"> VDA 6.4</label>
+<div class="conditional-field d-none mt-3" data-conditional="p04_vda64_detalle"><label for="p04_vda64_vigencia" class="form-label">Vigencia (mes y año) *</label><input type="month" class="form-control mb-2" id="p04_vda64_vigencia" name="p04_vda64_vigencia" data-required="true" disabled>
+<label for="p04_vda64_archivo" class="form-label">Adjunte el certificado *</label><input type="file" class="form-control" id="p04_vda64_archivo" name="p04_vda64_archivo" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" data-required="true" disabled></div></div><div class="col-md-6 cert-item"><label class="form-check"><input class="form-check-input certification-trigger" type="checkbox" id="p04_iso45001" name="p04_iso45001" value="Sí" data-conditional-trigger="p04_iso45001_detalle"> ISO 45001</label>
+<div class="conditional-field d-none mt-3" data-conditional="p04_iso45001_detalle"><label for="p04_iso45001_vigencia" class="form-label">Vigencia (mes y año) *</label><input type="month" class="form-control mb-2" id="p04_iso45001_vigencia" name="p04_iso45001_vigencia" data-required="true" disabled>
+<label for="p04_iso45001_archivo" class="form-label">Adjunte el certificado *</label><input type="file" class="form-control" id="p04_iso45001_archivo" name="p04_iso45001_archivo" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" data-required="true" disabled></div></div><div class="col-md-6 cert-item"><label class="form-check"><input class="form-check-input certification-trigger" type="checkbox" id="p04_iso14001" name="p04_iso14001" value="Sí" data-conditional-trigger="p04_iso14001_detalle"> ISO 14001</label>
+<div class="conditional-field d-none mt-3" data-conditional="p04_iso14001_detalle"><label for="p04_iso14001_vigencia" class="form-label">Vigencia (mes y año) *</label><input type="month" class="form-control mb-2" id="p04_iso14001_vigencia" name="p04_iso14001_vigencia" data-required="true" disabled>
+<label for="p04_iso14001_archivo" class="form-label">Adjunte el certificado *</label><input type="file" class="form-control" id="p04_iso14001_archivo" name="p04_iso14001_archivo" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" data-required="true" disabled></div></div><div class="col-md-6 cert-item"><label class="form-check"><input class="form-check-input certification-trigger" type="checkbox" id="p04_tisax" name="p04_tisax" value="Sí" data-conditional-trigger="p04_tisax_detalle"> TISAX</label>
+<div class="conditional-field d-none mt-3" data-conditional="p04_tisax_detalle"><label for="p04_tisax_vigencia" class="form-label">Vigencia (mes y año) *</label><input type="month" class="form-control mb-2" id="p04_tisax_vigencia" name="p04_tisax_vigencia" data-required="true" disabled>
+<label for="p04_tisax_archivo" class="form-label">Adjunte el certificado *</label><input type="file" class="form-control" id="p04_tisax_archivo" name="p04_tisax_archivo" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" data-required="true" disabled></div></div><div class="col-md-6 cert-item"><label class="form-check"><input class="form-check-input certification-trigger" type="checkbox" id="p04_otros" name="p04_otros" value="Sí" data-conditional-trigger="p04_otros_detalle"> Otros</label>
+<div class="conditional-field d-none mt-3" data-conditional="p04_otros_detalle"><label for="p04_otros_nombre" class="form-label">Nombre de la certificación *</label><input class="form-control mb-2" id="p04_otros_nombre" name="p04_otros_nombre" data-required="true" disabled><label for="p04_otros_vigencia" class="form-label">Vigencia (mes y año) *</label><input type="month" class="form-control mb-2" id="p04_otros_vigencia" name="p04_otros_vigencia" data-required="true" disabled>
+<label for="p04_otros_archivo" class="form-label">Adjunte el certificado *</label><input type="file" class="form-control" id="p04_otros_archivo" name="p04_otros_archivo" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" data-required="true" disabled></div></div></div></fieldset></div>
+<div class="question-block d-none" data-question="5" id="p05_container">
+<fieldset><legend class="form-label fw-semibold">5. En caso de no estar certificado, ¿planea certificarse? *</legend>
+<label class="form-check"><input class="form-check-input" type="radio" id="p05_planea_si" name="p05_planea_certificarse" value="Sí" data-required="true" disabled> Sí</label>
+<label class="form-check"><input class="form-check-input" type="radio" id="p05_planea_no" name="p05_planea_certificarse" value="No" data-required="true" disabled> No</label></fieldset>
+<div class="conditional-field d-none mt-3" id="p05_fecha_plan"><label for="p05_fecha_certificacion" class="form-label">¿Hasta cuándo está planeado certificarse? *</label><input type="month" class="form-control" id="p05_fecha_certificacion" name="p05_fecha_certificacion" data-required="true" disabled></div></div>
+              <div class="question-block" data-question="6" data-yes-no="p06_visita_evaluacion" data-label="¿Es posible visitar su empresa para llevar a cabo una evaluación en piso?"></div>
+            </div>
+          </fieldset>
+
+<fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="2" aria-labelledby="step-title-2">
+            <div class="card-header section-header"><h2 id="step-title-2" class="h4 mb-0">Experiencia</h2></div>
+            <div class="card-body">
+              <div class="question-block" data-question="7"><label for="p07_antiguedad_empresa" class="form-label fw-semibold">7. ¿Hace cuántos años se fundó su empresa? *</label><input type="number" class="form-control" id="p07_antiguedad_empresa" name="p07_antiguedad_empresa" min="0" step="any" required><div class="invalid-feedback">Complete este campo con un valor válido.</div></div>
+              <div class="question-block" data-question="8"><label for="p08_experiencia_servicios" class="form-label fw-semibold">8. ¿Cuántos años de experiencia tiene con los servicios que solicitamos? *</label><input type="number" class="form-control" id="p08_experiencia_servicios" name="p08_experiencia_servicios" min="0" step="any" required><div class="invalid-feedback">Complete este campo con un valor válido.</div></div>
+              <div class="question-block" data-question="9" data-yes-no="p09_organigrama" data-label="¿Tiene un organigrama que muestre las responsabilidades en su empresa?" data-detail="p09_archivo_organigrama" data-detail-label="Adjunte el organigrama" data-detail-type="file"></div>
+              <div class="question-block" data-question="10" data-yes-no="p10_referencias" data-label="¿Cuenta con referencias, clientes o proyectos para los trabajos que provee?" data-detail="p10_archivos_referencias" data-detail-label="Adjunte referencias, clientes o proyectos" data-detail-type="file" data-multiple="true"></div>
+            </div>
+          </fieldset>
+
+<fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="3" aria-labelledby="step-title-3">
+            <div class="card-header section-header"><h2 id="step-title-3" class="h4 mb-0">Personal</h2></div>
+            <div class="card-body">
+              <div class="question-block" data-question="11" data-yes-no="p11_capacitaciones" data-label="¿Participa su personal en capacitaciones frecuentes?" data-detail="p11_detalle_capacitaciones" data-detail-label="Indique las capacitaciones"></div>
+              <div class="question-block" data-question="12" data-yes-no="p12_acceso_normas" data-label="¿Tiene su personal acceso a normas y leyes actuales?" data-detail="p12_detalle_normas" data-detail-label="Indique las normas y leyes a las que tiene acceso"></div>
+              <div class="question-block" data-question="13" data-yes-no="p13_cursos_seguridad" data-label="¿Recibe su personal con regularidad cursos de seguridad?" data-detail="p13_detalle_cursos" data-detail-label="Indique los cursos de seguridad"></div>
+              <div class="question-block" data-question="14" data-yes-no="p14_imss" data-label="¿Está su personal asegurado en el IMSS (Seguro Social)?"></div>
+              <div class="question-block" data-question="15" data-yes-no="p15_equipo_seguridad" data-label="¿Proporciona la empresa equipo de seguridad para su personal?"></div>
+              <div class="question-block" data-question="16"><label for="p16_satisfaccion_personal" class="form-label fw-semibold">16. ¿Cuál es el porcentaje de satisfacción de su personal? *</label><input type="number" class="form-control" id="p16_satisfaccion_personal" name="p16_satisfaccion_personal" min="0" max="100" step="0.1" required><div class="invalid-feedback">Complete este campo con un valor válido.</div></div>
+              <div class="question-block" data-question="17" data-yes-no="p17_personal_ingles" data-label="¿Tiene personal calificado con conocimiento de inglés para el trabajo que provee?"></div>
+              <div class="question-block" data-question="18" data-yes-no="p18_experiencia_extranjero" data-label="¿Tiene personal calificado con experiencia en el extranjero para el trabajo que provee?"></div>
+              <div class="question-block" data-question="19" data-yes-no="p19_disponibilidad_viajar" data-label="¿Tiene personal dispuesto a viajar?"></div>
+<div class="question-block" data-question="20"><fieldset class="checkbox-group" data-checkbox-group="p20_registro_horas"><legend class="form-label fw-semibold">20. ¿De qué forma registra su personal sus horas trabajadas? *</legend><p class="form-text">Seleccione al menos una opción.</p><div class="row g-2">
+<div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" id="p20_registro_horas_01" name="p20_registro_horas" value="Escrito a mano"> Escrito a mano</label></div>
+<div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" id="p20_registro_horas_02" name="p20_registro_horas" value="Electrónico (entrada manual)"> Electrónico (entrada manual)</label></div>
+<div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" id="p20_registro_horas_03" name="p20_registro_horas" value="Electrónico (registro automático)"> Electrónico (registro automático)</label></div></div><div class="checkbox-group-feedback invalid-feedback d-none">Seleccione al menos una opción.</div></fieldset></div>
+            </div>
+          </fieldset>
+
+<fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="4" aria-labelledby="step-title-4">
+            <div class="card-header section-header"><h2 id="step-title-4" class="h4 mb-0">Tecnología</h2></div>
+            <div class="card-body">
+              <div class="question-block" data-question="21" data-yes-no="p21_utiliza_software" data-label="¿Trabaja con software para prestar sus servicios?" data-detail="p21_software_utilizado" data-detail-label="Indique con cuál software trabaja"></div>
+              <div class="question-block" data-question="22" data-yes-no="p22_reaccion_urgente" data-label="¿Es capaz de reaccionar flexiblemente y a corto plazo a solicitudes urgentes?"></div>
+            </div>
+          </fieldset>
+
+<fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="5" aria-labelledby="step-title-5">
+            <div class="card-header section-header"><h2 id="step-title-5" class="h4 mb-0">Medio ambiente</h2></div>
+            <div class="card-body">
+              <div class="question-block" data-question="23" data-yes-no="p23_separa_basura" data-label="¿Se separa la basura?"></div>
+              <div class="question-block" data-question="24" data-yes-no="p24_responsable_ambiental" data-label="¿Hay una persona encargada de protección ambiental?" data-detail="p24_nombre_responsable" data-detail-label="Nombre de la persona responsable"></div>
+            </div>
+          </fieldset>
+
+<fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="6" aria-labelledby="step-title-6">
+            <div class="card-header section-header"><h2 id="step-title-6" class="h4 mb-0">Calidad</h2></div>
+            <div class="card-body">
+              <div class="question-block" data-question="25" data-yes-no="p25_responsable_calidad" data-label="¿Hay una persona encargada de calidad?" data-detail="p25_nombre_responsable" data-detail-label="Nombre de la persona responsable"></div>
+              <div class="question-block" data-question="26" data-yes-no="p26_pruebas_calidad" data-label="¿Se aplican pruebas de calidad antes de la entrega final de los servicios?"></div>
+              <div class="question-block" data-question="27" data-yes-no="p27_documentan_pruebas" data-label="¿Se documentan los resultados de las pruebas?"></div>
+              <div class="question-block" data-question="28" data-yes-no="p28_auditorias_proveedores" data-label="¿Se llevan a cabo auditorías frecuentes o evaluaciones de proveedores?"></div>
+              <div class="question-block" data-question="29" data-yes-no="p29_exige_certificados" data-label="¿Pide a sus proveedores que estén certificados?"></div>
+              <div class="question-block" data-question="30" data-yes-no="p30_estandares" data-label="¿Puede asegurar que siempre está trabajando de acuerdo con los estándares y normas internacionales actuales?"></div>
+            </div>
+          </fieldset>
+
+<fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="7" aria-labelledby="step-title-7">
+            <div class="card-header section-header"><h2 id="step-title-7" class="h4 mb-0">Envío</h2></div>
+            <div class="card-body">
+              <div class="question-block" data-question="31" data-yes-no="p31_reclamos_servicios" data-label="¿Tiene un proceso definido para procesar reclamos de servicios?"></div>
+            </div>
+          </fieldset>
+
+<fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="8" aria-labelledby="step-title-8">
+            <div class="card-header section-header">
+              <h2 id="step-title-8" class="h4 mb-0"><i class="bi bi-lock me-2"></i>Seguridad de la Información</h2>
+            </div>
+            <div class="card-body">
+
+              <div class="alert alert-info border-0 score-scale-info mb-4" role="note">
+                <h3 class="h6 alert-heading">Escala de evaluación</h3>
+                <p class="mb-2">Para esta sección la contestación debe ser de la siguiente forma; debe elegir cuando el proceso en su empresa está:</p>
+                <ul class="mb-2 score-scale-list">
+                  <li><strong>10</strong> — Determinado por escrito y también efectivamente probado</li>
+                  <li><strong>8</strong> — No se establece por escrito, pero se demuestra con eficacia</li>
+                  <li><strong>6</strong> — Determinado por escrito y eficacia predominante probada</li>
+                  <li><strong>4</strong> — No se establece por escrito y es eficaz en su mayoría*</li>
+                  <li><strong>0</strong> — No está probado como efectivo o no existente</li>
+                </ul>
+                <p class="small mb-0">* Significa que más de la mitad de todas las determinaciones están efectivamente probadas y no existe riesgo específico.</p>
+              </div>
+
+              <div class="question-block" data-question="32">
+                <label for="p32_puntuacion_confidencialidad_empleados" class="form-label fw-semibold">32. ¿Están todos los empleados obligados por contrato a mantener la confidencialidad? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select si-score" id="p32_puntuacion_confidencialidad_empleados" name="p32_puntuacion_confidencialidad_empleados" required>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
+                </select>
+                <div class="invalid-feedback">Seleccione una puntuación válida.</div>
+              </div>
+
+              <div class="question-block" data-question="33">
+                <label for="p33_puntuacion_capacitacion_seguridad_informacion" class="form-label fw-semibold">33. ¿Son instruidos todos los trabajadores regularmente sobre la seguridad de la información y protección de datos? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select si-score" id="p33_puntuacion_capacitacion_seguridad_informacion" name="p33_puntuacion_capacitacion_seguridad_informacion" required>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
+                </select>
+                <div class="invalid-feedback">Seleccione una puntuación válida.</div>
+              </div>
+
+              <div class="question-block" data-question="34">
+                <label for="p34_puntuacion_zonas_seguridad_acceso" class="form-label fw-semibold">34. ¿Se han implementado zonas de seguridad y reglas de acceso en la empresa? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select si-score" id="p34_puntuacion_zonas_seguridad_acceso" name="p34_puntuacion_zonas_seguridad_acceso" required>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
+                </select>
+                <div class="invalid-feedback">Seleccione una puntuación válida.</div>
+              </div>
+
+              <div class="question-block" data-question="35">
+                <label for="p35_puntuacion_permisos_datos_clientes" class="form-label fw-semibold">35. ¿Se otorgan permisos de acceso a los datos de clientes según cada proyecto y se revisan regularmente? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select si-score" id="p35_puntuacion_permisos_datos_clientes" name="p35_puntuacion_permisos_datos_clientes" required>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
+                </select>
+                <div class="invalid-feedback">Seleccione una puntuación válida.</div>
+              </div>
+
+              <div class="question-block" data-question="36">
+                <label for="p36_puntuacion_clasificacion_informacion" class="form-label fw-semibold">36. ¿La información se clasifica según su nivel de confidencialidad y se protege de acuerdo a ello? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select si-score" id="p36_puntuacion_clasificacion_informacion" name="p36_puntuacion_clasificacion_informacion" required>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
+                </select>
+                <div class="invalid-feedback">Seleccione una puntuación válida.</div>
+              </div>
+
+              <div class="question-block" data-question="37">
+                <label for="p37_puntuacion_copias_seguridad" class="form-label fw-semibold">37. ¿Existe un proceso de copias de seguridad definido e implementado en la empresa? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select si-score" id="p37_puntuacion_copias_seguridad" name="p37_puntuacion_copias_seguridad" required>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
+                </select>
+                <div class="invalid-feedback">Seleccione una puntuación válida.</div>
+              </div>
+
+              <div class="question-block" data-question="38">
+                <label for="p38_puntuacion_confidencialidad_proveedores" class="form-label fw-semibold">38. ¿Los proveedores que participan en proyectos específicos están obligados a mantener la confidencialidad? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select si-score" id="p38_puntuacion_confidencialidad_proveedores" name="p38_puntuacion_confidencialidad_proveedores" required>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
+                </select>
+                <div class="invalid-feedback">Seleccione una puntuación válida.</div>
+              </div>
+
+              <div class="question-block" data-question="39">
+                <label for="p39_puntuacion_firewall" class="form-label fw-semibold">39. ¿El acceso a internet está protegido mediante un Firewall contra accesos no autorizados y software malicioso? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select si-score" id="p39_puntuacion_firewall" name="p39_puntuacion_firewall" required>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
+                </select>
+                <div class="invalid-feedback">Seleccione una puntuación válida.</div>
+              </div>
+
+              <div class="subtotal-box mt-4">
+                <label for="subtotal_seguridad_informacion" class="form-label fw-semibold mb-1">Suma / Subtotal Seguridad de la Información</label>
+                <div class="input-group input-group-lg">
+                  <input type="number" class="form-control" id="subtotal_seguridad_informacion" name="subtotal_seguridad_informacion" value="0" readonly tabindex="-1" aria-live="polite">
+                  <span class="input-group-text">/ 80</span>
+                </div>
+                <div class="form-text">Se calcula automáticamente con las puntuaciones 32 a 39.</div>
+              </div>
+
+            </div>
+          </fieldset>
+
+          <div class="form-navigation d-flex justify-content-between align-items-center gap-3 mt-4">
+            <button type="button" id="btnPrev" class="btn btn-outline-secondary btn-lg d-none"><i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Anterior</button>
+            <div class="ms-auto d-flex gap-2">
+              <button type="button" id="btnNext" class="btn btn-primary btn-lg">Siguiente<i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></button>
+              <button type="submit" id="btnSubmit" class="btn btn-success btn-lg d-none"><span class="spinner-border spinner-border-sm submit-spinner d-none" aria-hidden="true"></span><span class="submit-label">Enviar autoevaluación</span></button>
+            </div>
+          </div>
+        </form>
+      </div></div>
+    </section>
+  </main>
+  <footer class="text-center py-4"><p class="mb-0 small text-muted">© <span id="footerYear"></span> FFT México · Autoevaluación de proveedores de servicios · 08015p21 Rev. 5</p></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="../../assets/js/security-score.js"></script>
+  <script src="main.js"></script>
+  <script src="../../assets/js/certifications.js"></script>
+</body>
+</html>

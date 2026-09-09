@@ -1,6 +1,6 @@
 # Modelo común de autoevaluación
 
-**Versión:** 1.1
+**Versión:** 1.2
 **Fecha:** 2026-09-09
 
 ## 1. Entidad principal
@@ -33,6 +33,8 @@ Una pregunta condicional nunca debe enviarse si su condición no está activa. A
 
 En certificaciones, `p06_ninguno` es una respuesta explícita y excluyente con los certificados; no requiere vigencia. El plan de certificación solicita primero Sí/No y sólo requiere la fecha cuando se responde Sí. Se conservan los nombres de las fechas existentes; se añaden `p08_planea_certificarse` en Maquinados y `p07_planea_certificarse` en Distribuidores. Fabricantes conserva `p07_planea_certificarse_iso9001`.
 
+Servicios conserva la numeración de su PDF: certificaciones `p04_*`, opción `p04_ninguno`, plan `p05_planea_certificarse` y fecha `p05_fecha_certificacion`. Cada certificado seleccionado exige vigencia y archivo; Otros exige además nombre. La persona que completa Servicios se registra en `empresa_contacto` y su puesto en `empresa_puesto`.
+
 ## 3. Archivos de evidencia
 
 Las evidencias aceptan documentos e imágenes de trabajo (`pdf`, `doc`, `docx`, `xls`, `xlsx`, `jpg`, `jpeg`, `png`). Cuando el documento oficial dice “favor de anexar”, la evidencia es requerida únicamente si la respuesta que la origina es afirmativa, salvo que la matriz indique que el anexo es obligatorio para todo envío.
@@ -57,4 +59,4 @@ Si el endpoint está pendiente, el formulario debe detenerse localmente con un m
 
 ## 6. Seguridad de la Información
 
-Cuando una autoevaluación contiene esta sección, las respuestas permitidas son `0`, `4`, `6`, `8` y `10`. El subtotal se calcula en el navegador y también se incluye como campo del envío. Fabricantes y Maquinados tienen ocho reactivos y un máximo de 80 puntos.
+Los cuatro formularios contienen ocho reactivos de Seguridad de la Información. Las respuestas permitidas son `0`, `4`, `6`, `8` y `10`, sin preselección. El subtotal se calcula en el navegador y se incluye como `subtotal_seguridad_informacion`, con máximo de 80 puntos. La numeración es 55–62 en Fabricantes, 47–54 en Maquinados, 43–50 en Distribuidores y 32–39 en Servicios. Los dos últimos se incorporan según Spec 003 y recalculan el subtotal antes de construir el payload, aunque el campo visible haya sido alterado.

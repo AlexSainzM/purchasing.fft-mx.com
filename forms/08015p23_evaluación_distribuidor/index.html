@@ -21,8 +21,8 @@
       <div class="row"><div class="col-lg-10 mx-auto">
         <h1 class="display-5 fw-bold mb-4">Autoevaluación de distribuidores</h1>
         <div class="alert alert-info border-0 shadow-sm"><strong>Evaluación de proveedores FFT México.</strong> Formulario para empresas distribuidoras.</div>
-        <p class="lead">Recopila información sobre la empresa, su personal, gestión ambiental, calidad y procesos de envío.</p>
-        <p class="text-muted">Complete las seis secciones con información actual y verificable. Los campos marcados con asterisco son obligatorios.</p>
+        <p class="lead">Recopila información sobre la empresa, su personal, gestión ambiental, calidad, procesos de envío y seguridad de la información.</p>
+        <p class="text-muted">Complete todas las secciones con información actual y verificable. Los campos marcados con asterisco son obligatorios.</p>
         <p class="small text-muted doc-meta">Documento: <strong>08015p23</strong> · Revisión: <strong>5</strong> · Fecha origen: <strong>20.06.2024</strong> · Clasificación: <strong>Interna</strong></p>
       </div></div>
     </div>
@@ -40,10 +40,10 @@
 
           <div class="form-progress-card card border-0 shadow-sm mb-4"><div class="card-body">
             <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
-              <div><span id="stepIndicator" class="fw-semibold">Paso 1 de 6</span><span class="text-muted mx-2">|</span><span id="stepName" class="text-muted">Datos de la empresa</span></div>
-              <span id="progressPercent" class="badge bg-fft-green">17%</span>
+              <div><span id="stepIndicator" class="fw-semibold">Paso 1 de 7</span><span class="text-muted mx-2">|</span><span id="stepName" class="text-muted">Datos de la empresa</span></div>
+              <span id="progressPercent" class="badge bg-fft-green">14%</span>
             </div>
-            <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="17" aria-labelledby="stepIndicator"><div id="progressBar" class="progress-bar" style="width:17%"></div></div>
+            <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="14" aria-labelledby="stepIndicator"><div id="progressBar" class="progress-bar" style="width:14%"></div></div>
             <ol class="step-list list-unstyled d-none d-lg-flex mt-3 mb-0" aria-label="Secciones del formulario">
               <li class="step-item active" data-step-label="0" aria-current="step"><span>1</span><small>Empresa</small></li>
               <li class="step-item" data-step-label="1"><span>2</span><small>General</small></li>
@@ -51,6 +51,7 @@
               <li class="step-item" data-step-label="3"><span>4</span><small>Ambiente</small></li>
               <li class="step-item" data-step-label="4"><span>5</span><small>Calidad</small></li>
               <li class="step-item" data-step-label="5"><span>6</span><small>Envío</small></li>
+              <li class="step-item" data-step-label="6"><span>7</span><small>Información</small></li>
             </ol>
           </div></div>
 
@@ -170,7 +171,141 @@
                 <div class="col-md-6"><label class="form-check"><input class="form-check-input" type="checkbox" name="p42_documentacion_envio" value="Hoja de datos de fabricación"> Hoja de datos de fabricación</label></div>
                 <div class="col-md-6"><label class="form-check"><input id="p42_otro" class="form-check-input" type="checkbox" name="p42_documentacion_envio" value="Otro" data-conditional-trigger="p42_otro_documento"> Otro</label></div>
               </div><div class="checkbox-group-feedback invalid-feedback d-none">Seleccione al menos una opción.</div><div class="conditional-field d-none mt-3" data-conditional="p42_otro_documento"><label for="p42_otro_documento" class="form-label">Especifique otro documento *</label><input class="form-control" id="p42_otro_documento" name="p42_otro_documento" data-required="true" disabled></div></fieldset></div>
-              <div class="alert alert-warning mb-0"><strong>Configuración pendiente:</strong> el endpoint exclusivo de Formspree para Distribuidores debe configurarse antes de habilitar envíos reales.</div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-step card border-0 shadow-sm mb-4 d-none" data-step="6" aria-labelledby="step-title-6">
+            <div class="card-header section-header">
+              <h2 id="step-title-6" class="h4 mb-0"><i class="bi bi-lock me-2"></i>Seguridad de la Información</h2>
+            </div>
+            <div class="card-body">
+
+              <div class="alert alert-info border-0 score-scale-info mb-4" role="note">
+                <h3 class="h6 alert-heading">Escala de evaluación</h3>
+                <p class="mb-2">Para esta sección la contestación debe ser de la siguiente forma; debe elegir cuando el proceso en su empresa está:</p>
+                <ul class="mb-2 score-scale-list">
+                  <li><strong>10</strong> — Determinado por escrito y también efectivamente probado</li>
+                  <li><strong>8</strong> — No se establece por escrito, pero se demuestra con eficacia</li>
+                  <li><strong>6</strong> — Determinado por escrito y eficacia predominante probada</li>
+                  <li><strong>4</strong> — No se establece por escrito y es eficaz en su mayoría*</li>
+                  <li><strong>0</strong> — No está probado como efectivo o no existente</li>
+                </ul>
+                <p class="small mb-0">* Significa que más de la mitad de todas las determinaciones están efectivamente probadas y no existe riesgo específico.</p>
+              </div>
+
+              <div class="question-block" data-question="43">
+                <label for="p43_puntuacion_confidencialidad_empleados" class="form-label fw-semibold">43. ¿Están todos los empleados obligados por contrato a mantener la confidencialidad? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select si-score" id="p43_puntuacion_confidencialidad_empleados" name="p43_puntuacion_confidencialidad_empleados" required>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
+                </select>
+                <div class="invalid-feedback">Seleccione una puntuación válida.</div>
+              </div>
+
+              <div class="question-block" data-question="44">
+                <label for="p44_puntuacion_capacitacion_seguridad_informacion" class="form-label fw-semibold">44. ¿Son instruidos todos los trabajadores regularmente sobre la seguridad de la información y protección de datos? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select si-score" id="p44_puntuacion_capacitacion_seguridad_informacion" name="p44_puntuacion_capacitacion_seguridad_informacion" required>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
+                </select>
+                <div class="invalid-feedback">Seleccione una puntuación válida.</div>
+              </div>
+
+              <div class="question-block" data-question="45">
+                <label for="p45_puntuacion_zonas_seguridad_acceso" class="form-label fw-semibold">45. ¿Se han implementado zonas de seguridad y reglas de acceso en la empresa? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select si-score" id="p45_puntuacion_zonas_seguridad_acceso" name="p45_puntuacion_zonas_seguridad_acceso" required>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
+                </select>
+                <div class="invalid-feedback">Seleccione una puntuación válida.</div>
+              </div>
+
+              <div class="question-block" data-question="46">
+                <label for="p46_puntuacion_permisos_datos_clientes" class="form-label fw-semibold">46. ¿Se otorgan permisos de acceso a los datos de clientes según cada proyecto y se revisan regularmente? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select si-score" id="p46_puntuacion_permisos_datos_clientes" name="p46_puntuacion_permisos_datos_clientes" required>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
+                </select>
+                <div class="invalid-feedback">Seleccione una puntuación válida.</div>
+              </div>
+
+              <div class="question-block" data-question="47">
+                <label for="p47_puntuacion_clasificacion_informacion" class="form-label fw-semibold">47. ¿La información se clasifica según su nivel de confidencialidad y se protege de acuerdo a ello? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select si-score" id="p47_puntuacion_clasificacion_informacion" name="p47_puntuacion_clasificacion_informacion" required>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
+                </select>
+                <div class="invalid-feedback">Seleccione una puntuación válida.</div>
+              </div>
+
+              <div class="question-block" data-question="48">
+                <label for="p48_puntuacion_copias_seguridad" class="form-label fw-semibold">48. ¿Existe un proceso de copias de seguridad definido e implementado en la empresa? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select si-score" id="p48_puntuacion_copias_seguridad" name="p48_puntuacion_copias_seguridad" required>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
+                </select>
+                <div class="invalid-feedback">Seleccione una puntuación válida.</div>
+              </div>
+
+              <div class="question-block" data-question="49">
+                <label for="p49_puntuacion_confidencialidad_proveedores" class="form-label fw-semibold">49. ¿Los proveedores que participan en proyectos específicos están obligados a mantener la confidencialidad? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select si-score" id="p49_puntuacion_confidencialidad_proveedores" name="p49_puntuacion_confidencialidad_proveedores" required>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
+                </select>
+                <div class="invalid-feedback">Seleccione una puntuación válida.</div>
+              </div>
+
+              <div class="question-block" data-question="50">
+                <label for="p50_puntuacion_firewall" class="form-label fw-semibold">50. ¿El acceso a internet está protegido mediante un Firewall contra accesos no autorizados y software malicioso? <span class="text-danger" aria-hidden="true">*</span></label>
+                <select class="form-select si-score" id="p50_puntuacion_firewall" name="p50_puntuacion_firewall" required>
+                  <option value="">Seleccione una puntuación</option>
+                  <option value="10">10 — Determinado por escrito y también efectivamente probado</option>
+                  <option value="8">8 — No se establece por escrito, pero se demuestra con eficacia</option>
+                  <option value="6">6 — Determinado por escrito y eficacia predominante probada</option>
+                  <option value="4">4 — No se establece por escrito y es eficaz en su mayoría</option>
+                  <option value="0">0 — No está probado como efectivo o no existente</option>
+                </select>
+                <div class="invalid-feedback">Seleccione una puntuación válida.</div>
+              </div>
+
+              <div class="subtotal-box mt-4">
+                <label for="subtotal_seguridad_informacion" class="form-label fw-semibold mb-1">Suma / Subtotal Seguridad de la Información</label>
+                <div class="input-group input-group-lg">
+                  <input type="number" class="form-control" id="subtotal_seguridad_informacion" name="subtotal_seguridad_informacion" value="0" readonly tabindex="-1" aria-live="polite">
+                  <span class="input-group-text">/ 80</span>
+                </div>
+                <div class="form-text">Se calcula automáticamente con las puntuaciones 43 a 50.</div>
+              </div>
+
             </div>
           </fieldset>
 
@@ -187,6 +322,7 @@
   </main>
   <footer class="text-center py-4"><p class="mb-0 small text-muted">© <span id="footerYear"></span> FFT México · Autoevaluación de distribuidores · 08015p23 Rev. 5</p></footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="../../assets/js/security-score.js"></script>
   <script src="main.js"></script>
   <script src="../../assets/js/certifications.js"></script>
 </body>
