@@ -1,5 +1,5 @@
 // Read-only prototype credentials; visible in the browser.
 window.VIEWER_CONFIG = Object.freeze({
-  "formId": "mvkppyry",
-  "readOnlyKey": "dcf6296a8f25b085beae26442f1d9c8a38d62ed8"
+  "formId": "mbgjqzka",
+  "readOnlyKey": "ee187c8af8a90a7b56d203b88cb96415ef9103dc"
 });
