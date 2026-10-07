@@ -1,0 +1,63 @@
+﻿Numero o Id de pregunta,Pregunta
+1,¿Cuántas personas están trabajando en su empresa?
+2,¿Cuántas sucursales tiene su empresa?
+3,¿En qué giro(s) trabaja su empresa?
+4,¿En cuál(es) país(es) están fabricando sus productos?
+5,¿De cuánto tiempo son sus plazos de entrega en promedio?
+6,Por favor indique si su empresa está certificada de acuerdo con alguno de los siguientes certificados y la vigencia de cada certificación:
+7,¿Tiene planeado certificarse en ISO 9001?
+8,¿Es posible visitar su empresa para llevar a cabo una evaluación en piso?
+9,¿Hace cuántos años se fundó su empresa?
+10,¿Cuánta experiencia tiene con la fabricación de los productos solicitados?
+11,¿Tiene un organigrama que enseña las responsabilidades en su empresa? Favor de anexar.
+12,¿Cuenta con referencias / clientes / proyectos para los trabajos que provee? Favor de anexar.
+13,¿Participa su personal en capacitaciones frecuentes?
+14,¿Tiene su personal acceso a normas y leyes actuales?
+15,¿Recibe su personal con regularidad cursos de seguridad?
+16,¿Está su personal asegurado en el IMSS (seguro social)?
+17,¿Proporciona la empresa equipo de seguridad para su personal?
+18,¿Qué tan alto es el porcentaje de satisfacción de su personal?
+19,¿Da mantenimiento en periodos consecutivos a su maquinaria?
+20,¿Existen planos de mantenimiento de las máquinas?
+21,¿Es capaz de reaccionar flexiblemente y a corto plazo a solicitudes urgentes?
+22,¿Sus máquinas cumplen con las señaléticas y barreras mecánicas necesarias para evitar accidentes?
+23,¿Cada máquina tiene su manual e instrucción de operación?
+24,¿Productos con sustancias químicas y peligrosas están identificados de acuerdo a las leyes vigentes de seguridad?
+25,¿Tiene su empresa metas e indicadores que midan el desempeño de seguridad y la accidentabilidad?
+26,¿En el año calendario pasado cuál ha sido su índice de accidentes laborales?
+27,¿En su empresa se clasifican los residuos?
+28,¿Indique la cantidad de residuos peligrosos / de manejo especial (reciclables) y urbanos que produce su empresa cada año en toneladas (estimación)?
+29,¿Cuenta su empresa con un número de registro ambiental (NRA) por parte de SEMARNAT como generador de residuos peligrosos (aplica solo para empresas mexicanas)?
+30,"¿Está inscrito su empresa en algún programa de protección ambiental (requerido por alguna ley local, federal o nacional)?"
+31,¿Tiene su empresa un seguro para posibles daños al medio ambiente?
+32,¿Provee a FFT alguna sustancia o material peligroso?
+33,"Si la respuesta en 32. es sí, ¿cuáles materiales son?"
+34,¿Hay una persona encargada de protección ambiental?
+35,¿Cuenta con algún programa de reciclaje?
+36,"¿Los materiales peligrosos se almacenan, procesan adecuadamente hasta y durante su uso?"
+37,¿Usa su empresa productos biodegradables?
+38,¿Hay una persona encargada de calidad?
+39,¿Existen instrucciones de trabajo en las áreas correspondientes?
+40,¿Se aplican pruebas de calidad antes de la entrega final de los servicios/materiales?
+41,¿Se documentan los resultados de las pruebas?
+42,¿Existe un sistema de calidad que evita la equivocación de materiales antes de su salida?
+43,¿Da mantenimiento en periodos consecutivos a los instrumentos de medición?
+44,Si la respuesta es sí en 43. ¿Está documentado este mantenimiento?
+45,¿Se llevan a cabo auditorías frecuentes / evaluaciones de proveedores?
+46,¿Ustedes pide a sus proveedores que sean certificados?
+47,¿Puede asegurar que siempre está trabajando de acuerdo a los estándares y normas internacionales actuales de calidad?
+48,¿Se puede rastrear el origen de sus productos?
+49,¿Sus productos están empaquetados correctamente para evitar daños de envío?
+50,¿Se usan empaques ecológicos o reciclables?
+51,¿Tiene un proceso definido para la selección del transportista?
+52,¿Qué tipo de documentación provee su empresa con el envío de cada producto?
+53,¿Tiene un proceso definido para atender reclamos y garantías de materiales?
+54,¿Ofrece servicios de mantenimiento y/o técnico para sus productos (sólo aplica a productos de alta tecnología que requieran mantenimiento/capacitación especial)?
+55,¿Están todos los empleados obligados por contrato a mantener la confidencialidad?
+56,¿Son instruidos todos los trabajadores regularmente sobre la seguridad de la información y protección de datos?
+57,¿Se han implementado zonas de seguridad y reglas de acceso en la empresa?
+58,¿Se otorgan permisos de acceso a los datos de clientes según cada proyecto y se revisan regularmente?
+59,¿La información se clasifica según su nivel de confidencialidad y se protege de acuerdo a ello?
+60,¿Existe un proceso de copias de seguridad definido e implementado en la empresa?
+61,¿Los proveedores que participan en proyectos específicos están obligados a mantener la confidencialidad?
+62,¿El acceso a internet está protegido mediante un Firewall contra accesos no autorizados y software malicioso?

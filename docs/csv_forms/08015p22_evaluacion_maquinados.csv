@@ -1,0 +1,55 @@
+﻿Numero o Id de pregunta,Pregunta
+1,¿Cuántas personas están trabajando en su empresa?
+2,¿Cuántas sucursales tiene su empresa?
+3,¿En qué giro(s) trabaja su empresa?
+4,Favor de enlistar la maquinaria con la que cuenta.
+5,¿Con cuántas horas máquina por semana cuenta su empresa?
+6,Indique si su empresa cuenta con alguna de las siguientes certificaciones y su vigencia
+7,"Si no cuenta con un sistema de calidad certificado y seleccionó “Otros”, describa cómo controla la calidad en su empresa."
+8,"En caso de no estar certificado, ¿planea certificarse?"
+9,¿Es posible visitar su empresa para llevar a cabo una evaluación en piso?
+10,¿Se encuentra un manual de operaciones para cada máquina?
+11,¿Calibra con regularidad sus máquinas?
+12,El mantenimiento de sus máquinas es
+13,¿En qué periodo se da mantenimiento a las máquinas?
+14,¿Cuenta su empresa con máquinas controladas CNC?
+15,"¿Cuánta gente de su empresa sabe manejar esta(s) máquina(s) CNC de forma ""automática""?"
+16,¿Cuál programa CNC está operando en sus máquinas?
+17,¿Hay una persona encargada de calidad?
+18,¿Existen instrucciones de trabajo en las áreas correspondientes?
+19,¿Se aplican pruebas de calidad antes de la entrega final de los servicios?
+20,¿Se documentan los resultados de las pruebas de medición?
+21,¿Existe un sistema de calidad que evita la equivocación de materiales antes de su salida?
+22,¿Da mantenimiento en periodos consecutivos a los instrumentos de medición?
+23,¿Sus máquinas cumplen con las señaléticas y barreras mecánicas necesarias para evitar accidentes?
+24,¿Subcontratan proveedores para lograr el servicio entregable para FFT?
+25,¿Puede asegurar que siempre está trabajando de acuerdo a los estándares y normas internacionales actuales?
+26,¿Su personal puede leer e entender dibujos en inglés?
+27,"¿Tiene un sistema y proceso definido (captura de pedidos, control de proveedores, control de fechas, etc.) para asegurar el cumplimiento de la entrega en las fechas acordadas con FFT?"
+28,Favor de describir el sistema de la pregunta 27.
+29,¿Cuándo se fundó su empresa? (años de operación)
+30,¿Cuánta experiencia tiene con la fabricación de los productos solicitados?
+31,¿Tiene un organigrama que enseña las responsabilidades en su empresa?
+32,¿Cuenta con referencias / clientes / proyectos para los trabajos que provee?
+33,¿Participa su personal en capacitaciones frecuentes?
+34,¿Recibe su personal con regularidad cursos de seguridad y está documentado?
+35,¿Está su personal asegurado en el IMSS (seguro social)?
+36,¿Proporciona la empresa equipo de seguridad para su personal?
+37,¿Qué tan alto es el porcentaje de fluctuación de personal en su empresa?
+38,Favor de indicar la formación/educación más alta de cada trabajador
+39,¿Se reutiliza material de empaque para los envíos a FFT?
+40,"¿Su empresa cumple con las normas de seguridad e higiene (extintores, botiquín, rutas de evacuación)?"
+41,"¿Los materiales peligrosos se almacenan, procesan y eliminan adecuadamente?"
+42,¿Tiene su empresa metas e indicadores que midan el desempeño de seguridad y la accidentabilidad?
+43,"Durante el año pasado, ¿cuál fue su índice de accidentes laborales?"
+44,¿Sus productos están empaquetados correctamente para evitar daños de envío?
+45,¿El transporte está realizado por su empresa o un tercero?
+46,¿Tiene un proceso definido para procesar reclamos de materiales?
+47,¿Están todos los empleados obligados por contrato a mantener la confidencialidad?
+48,¿Son instruidos todos los trabajadores regularmente sobre la seguridad de la información y protección de datos?
+49,¿Se han implementado zonas de seguridad y reglas de acceso en la empresa?
+50,¿Se otorgan permisos de acceso a los datos de clientes según cada proyecto y se revisan regularmente?
+51,¿La información se clasifica según su nivel de confidencialidad y se protege de acuerdo a ello?
+52,¿Existe un proceso de copias de seguridad definido e implementado en la empresa?
+53,¿Los proveedores que participan en proyectos específicos están obligados a mantener la confidencialidad?
+54,¿El acceso a internet está protegido mediante un Firewall contra accesos no autorizados y software malicioso?
