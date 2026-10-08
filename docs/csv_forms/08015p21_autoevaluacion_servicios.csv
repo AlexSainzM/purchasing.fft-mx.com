@@ -1,40 +1,40 @@
-﻿Numero o Id de pregunta,Pregunta
-1,¿Cuántas personas trabajan en su empresa?
-2,¿Cuántas sucursales tiene su empresa?
-3,¿Cuál(es) servicio(s) ofrece su empresa?
-4,Indique si su empresa cuenta con alguna de las siguientes certificaciones y su vigencia
-5,"En caso de no estar certificado, ¿planea certificarse?"
-6,¿Es posible visitar su empresa para llevar a cabo una evaluación en piso?
-7,¿Hace cuántos años se fundó su empresa?
-8,¿Cuántos años de experiencia tiene con los servicios que solicitamos?
-9,¿Tiene un organigrama que muestre las responsabilidades en su empresa?
-10,"¿Cuenta con referencias, clientes o proyectos para los trabajos que provee?"
-11,¿Participa su personal en capacitaciones frecuentes?
-12,¿Tiene su personal acceso a normas y leyes actuales?
-13,¿Recibe su personal con regularidad cursos de seguridad?
-14,¿Está su personal asegurado en el IMSS (Seguro Social)?
-15,¿Proporciona la empresa equipo de seguridad para su personal?
-16,¿Cuál es el porcentaje de satisfacción de su personal?
-17,¿Tiene personal calificado con conocimiento de inglés para el trabajo que provee?
-18,¿Tiene personal calificado con experiencia en el extranjero para el trabajo que provee?
-19,¿Tiene personal dispuesto a viajar?
-20,¿De qué forma registra su personal sus horas trabajadas?
-21,¿Trabaja con software para prestar sus servicios?
-22,¿Es capaz de reaccionar flexiblemente y a corto plazo a solicitudes urgentes?
-23,¿Se separa la basura?
-24,¿Hay una persona encargada de protección ambiental?
-25,¿Hay una persona encargada de calidad?
-26,¿Se aplican pruebas de calidad antes de la entrega final de los servicios?
-27,¿Se documentan los resultados de las pruebas?
-28,¿Se llevan a cabo auditorías frecuentes o evaluaciones de proveedores?
-29,¿Pide a sus proveedores que estén certificados?
-30,¿Puede asegurar que siempre está trabajando de acuerdo con los estándares y normas internacionales actuales?
-31,¿Tiene un proceso definido para procesar reclamos de servicios?
-32,¿Están todos los empleados obligados por contrato a mantener la confidencialidad?
-33,¿Son instruidos todos los trabajadores regularmente sobre la seguridad de la información y protección de datos?
-34,¿Se han implementado zonas de seguridad y reglas de acceso en la empresa?
-35,¿Se otorgan permisos de acceso a los datos de clientes según cada proyecto y se revisan regularmente?
-36,¿La información se clasifica según su nivel de confidencialidad y se protege de acuerdo a ello?
-37,¿Existe un proceso de copias de seguridad definido e implementado en la empresa?
-38,¿Los proveedores que participan en proyectos específicos están obligados a mantener la confidencialidad?
-39,¿El acceso a internet está protegido mediante un Firewall contra accesos no autorizados y software malicioso?
+﻿Numero o Id de pregunta,Pregunta,Tiene pregunta adicional,Pregunta adicional
+1,¿Cuántas personas trabajan en su empresa?,No,
+2,¿Cuántas sucursales tiene su empresa?,No,
+3,¿Cuál(es) servicio(s) ofrece su empresa?,Sí,Al seleccionar Otros: Especifique otros servicios
+4,Indique si su empresa cuenta con alguna de las siguientes certificaciones y su vigencia,Sí,Al seleccionar una certificación: Vigencia (mes y año); Adjunte el certificado. Al seleccionar Otros: Nombre de la certificación. Si no selecciona ninguna certificación: pregunta 5
+5,"En caso de no estar certificado, ¿planea certificarse?",Sí,Si responde Sí: ¿Hasta cuándo está planeado certificarse?
+6,¿Es posible visitar su empresa para llevar a cabo una evaluación en piso?,No,
+7,¿Hace cuántos años se fundó su empresa?,No,
+8,¿Cuántos años de experiencia tiene con los servicios que solicitamos?,No,
+9,¿Tiene un organigrama que muestre las responsabilidades en su empresa?,Sí,Si responde Sí: Adjunte el organigrama
+10,"¿Cuenta con referencias, clientes o proyectos para los trabajos que provee?",Sí,"Si responde Sí: Adjunte referencias, clientes o proyectos"
+11,¿Participa su personal en capacitaciones frecuentes?,Sí,Si responde Sí: Indique las capacitaciones
+12,¿Tiene su personal acceso a normas y leyes actuales?,Sí,Si responde Sí: Indique las normas y leyes a las que tiene acceso
+13,¿Recibe su personal con regularidad cursos de seguridad?,Sí,Si responde Sí: Indique los cursos de seguridad
+14,¿Está su personal asegurado en el IMSS (Seguro Social)?,No,
+15,¿Proporciona la empresa equipo de seguridad para su personal?,No,
+16,¿Cuál es el porcentaje de satisfacción de su personal?,No,
+17,¿Tiene personal calificado con conocimiento de inglés para el trabajo que provee?,No,
+18,¿Tiene personal calificado con experiencia en el extranjero para el trabajo que provee?,No,
+19,¿Tiene personal dispuesto a viajar?,No,
+20,¿De qué forma registra su personal sus horas trabajadas?,No,
+21,¿Trabaja con software para prestar sus servicios?,Sí,Si responde Sí: Indique con cuál software trabaja
+22,¿Es capaz de reaccionar flexiblemente y a corto plazo a solicitudes urgentes?,No,
+23,¿Se separa la basura?,No,
+24,¿Hay una persona encargada de protección ambiental?,Sí,Si responde Sí: Nombre de la persona responsable
+25,¿Hay una persona encargada de calidad?,Sí,Si responde Sí: Nombre de la persona responsable
+26,¿Se aplican pruebas de calidad antes de la entrega final de los servicios?,No,
+27,¿Se documentan los resultados de las pruebas?,No,
+28,¿Se llevan a cabo auditorías frecuentes o evaluaciones de proveedores?,No,
+29,¿Pide a sus proveedores que estén certificados?,No,
+30,¿Puede asegurar que siempre está trabajando de acuerdo con los estándares y normas internacionales actuales?,No,
+31,¿Tiene un proceso definido para procesar reclamos de servicios?,No,
+32,¿Están todos los empleados obligados por contrato a mantener la confidencialidad?,No,
+33,¿Son instruidos todos los trabajadores regularmente sobre la seguridad de la información y protección de datos?,No,
+34,¿Se han implementado zonas de seguridad y reglas de acceso en la empresa?,No,
+35,¿Se otorgan permisos de acceso a los datos de clientes según cada proyecto y se revisan regularmente?,No,
+36,¿La información se clasifica según su nivel de confidencialidad y se protege de acuerdo a ello?,No,
+37,¿Existe un proceso de copias de seguridad definido e implementado en la empresa?,No,
+38,¿Los proveedores que participan en proyectos específicos están obligados a mantener la confidencialidad?,No,
+39,¿El acceso a internet está protegido mediante un Firewall contra accesos no autorizados y software malicioso?,No,
