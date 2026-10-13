@@ -48,7 +48,7 @@ function render(rows){
   });
 }
 async function load(){
-  controls.forEach(button=>button.disabled=true);records.setAttribute('aria-busy','true');records.replaceChildren();document.querySelector('#count').textContent='—';status.className='';status.textContent='Consultando Formspree…';
+  controls.forEach(button=>button.disabled=true);records.setAttribute('aria-busy','true');records.replaceChildren();document.querySelector('#count').textContent='—';status.className='';status.textContent='Consultando ...';
   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),15000);
   try{
     const config=window.VIEWER_CONFIG||{};
@@ -56,10 +56,10 @@ async function load(){
     const url=`https://formspree.io/api/0/forms/${encodeURIComponent(config.formId)}/submissions`;
     const headers={Accept:'application/json'};headers.Authorization=`Bearer ${config.readOnlyKey}`;
     const response=await fetch(url,{method:'GET',headers,signal:controller.signal,cache:'no-store',credentials:'omit',redirect:'error'});
-    if(!response.ok)throw new Error(response.status===401||response.status===403?'Acceso rechazado. Revisa la clave y la habilitación de la API en Formspree.':`No se pudo consultar la información (HTTP ${response.status}). Intenta de nuevo.`);
+    if(!response.ok)throw new Error(response.status===401||response.status===403?'Acceso rechazado. Revisa la clave y la habilitación de la API.':`No se pudo consultar la información (HTTP ${response.status}). Intenta de nuevo.`);
     const payload=await response.json();if(!payload||!Array.isArray(payload.submissions)||payload.submissions.some(row=>!row||typeof row!=='object'||Array.isArray(row)))throw new Error('La respuesta no contiene una lista válida de registros.');
-    render(payload.submissions);status.textContent=`Formspree · ${payload.submissions.length} registros recibidos en esta consulta · Actualizado a las ${new Intl.DateTimeFormat('es-MX',{timeStyle:'short'}).format(new Date())} · Fechas en horario de Ciudad de México.`;
-  }catch(error){status.className='error';status.textContent=error.name==='AbortError'?'La consulta tardó demasiado. Intenta actualizar de nuevo.':error instanceof TypeError?'No se pudo conectar. Revisa la conexión y el acceso CORS de Formspree. Abre el prototipo desde un servidor HTTP.':error.message;document.querySelector('#count').textContent='0';records.append(el('p','No se cargaron registros. Puedes reintentar con “Actualizar registros”.','empty'));}
+    render(payload.submissions);status.textContent=`F · ${payload.submissions.length} registros recibidos en esta consulta · Actualizado a las ${new Intl.DateTimeFormat('es-MX',{timeStyle:'short'}).format(new Date())} · Fechas en horario de Ciudad de México.`;
+  }catch(error){status.className='error';status.textContent=error.name==='AbortError'?'La consulta tardó demasiado. Intenta actualizar de nuevo.':error instanceof TypeError?'No se pudo conectar. Revisa la conexión y el acceso CORS. Abre el prototipo desde un servidor HTTP.':error.message;document.querySelector('#count').textContent='0';records.append(el('p','No se cargaron registros. Puedes reintentar con “Actualizar registros”.','empty'));}
   finally{clearTimeout(timer);controls.forEach(button=>button.disabled=false);records.setAttribute('aria-busy','false');}
 }
 document.querySelector('#refresh').addEventListener('click',()=>load());
