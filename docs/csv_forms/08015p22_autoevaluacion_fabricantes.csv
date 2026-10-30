@@ -1,63 +1,63 @@
-﻿Numero o Id de pregunta,Pregunta,Tiene pregunta adicional,Pregunta adicional
-1,¿Cuántas personas están trabajando en su empresa?,No,
-2,¿Cuántas sucursales tiene su empresa?,No,
-3,¿En qué giro(s) trabaja su empresa?,Sí,Al seleccionar Otros: Especifique otro giro
-4,¿En cuál(es) país(es) están fabricando sus productos?,No,
-5,¿De cuánto tiempo son sus plazos de entrega en promedio?,No,
-6,Por favor indique si su empresa está certificada de acuerdo con alguno de los siguientes certificados y la vigencia de cada certificación:,Sí,Al seleccionar una certificación: Vigente hasta (MM/AA). Al seleccionar Otros: Especifique otros certificados. Si no selecciona ISO 9001: pregunta 7
-7,¿Tiene planeado certificarse en ISO 9001?,Sí,Si responde Sí: Mes y año estimados para obtener la certificación ISO 9001
-8,¿Es posible visitar su empresa para llevar a cabo una evaluación en piso?,No,
-9,¿Hace cuántos años se fundó su empresa?,No,
-10,¿Cuánta experiencia tiene con la fabricación de los productos solicitados?,No,
-11,¿Tiene un organigrama que enseña las responsabilidades en su empresa? Favor de anexar.,Sí,Si responde Sí: Anexe el organigrama
-12,¿Cuenta con referencias / clientes / proyectos para los trabajos que provee? Favor de anexar.,Sí,"Si responde Sí: Anexe referencias, clientes o proyectos"
-13,¿Participa su personal en capacitaciones frecuentes?,No,
-14,¿Tiene su personal acceso a normas y leyes actuales?,No,
-15,¿Recibe su personal con regularidad cursos de seguridad?,No,
-16,¿Está su personal asegurado en el IMSS (seguro social)?,No,
-17,¿Proporciona la empresa equipo de seguridad para su personal?,No,
-18,¿Qué tan alto es el porcentaje de satisfacción de su personal?,No,
-19,¿Da mantenimiento en periodos consecutivos a su maquinaria?,No,
-20,¿Existen planos de mantenimiento de las máquinas?,No,
-21,¿Es capaz de reaccionar flexiblemente y a corto plazo a solicitudes urgentes?,No,
-22,¿Sus máquinas cumplen con las señaléticas y barreras mecánicas necesarias para evitar accidentes?,No,
-23,¿Cada máquina tiene su manual e instrucción de operación?,No,
-24,¿Productos con sustancias químicas y peligrosas están identificados de acuerdo a las leyes vigentes de seguridad?,No,
-25,¿Tiene su empresa metas e indicadores que midan el desempeño de seguridad y la accidentabilidad?,Sí,Si responde Sí: Cuál; Favor de mandar evidencia
-26,¿En el año calendario pasado cuál ha sido su índice de accidentes laborales?,No,
-27,¿En su empresa se clasifican los residuos?,No,
-28,¿Indique la cantidad de residuos peligrosos / de manejo especial (reciclables) y urbanos que produce su empresa cada año en toneladas (estimación)?,No,
-29,¿Cuenta su empresa con un número de registro ambiental (NRA) por parte de SEMARNAT como generador de residuos peligrosos (aplica solo para empresas mexicanas)?,Sí,Si responde Sí: ¿Cuál es el número?
-30,"¿Está inscrito su empresa en algún programa de protección ambiental (requerido por alguna ley local, federal o nacional)?",Sí,Si responde Sí: Nombre del programa
-31,¿Tiene su empresa un seguro para posibles daños al medio ambiente?,No,
-32,¿Provee a FFT alguna sustancia o material peligroso?,Sí,Si responde Sí: pregunta 33
-33,"Si la respuesta en 32. es sí, ¿cuáles materiales son?",No,
-34,¿Hay una persona encargada de protección ambiental?,Sí,Si responde Sí: Nombre
-35,¿Cuenta con algún programa de reciclaje?,No,
-36,"¿Los materiales peligrosos se almacenan, procesan adecuadamente hasta y durante su uso?",No,
-37,¿Usa su empresa productos biodegradables?,Sí,Si responde Sí: Cuáles
-38,¿Hay una persona encargada de calidad?,Sí,Si responde Sí: Nombre
-39,¿Existen instrucciones de trabajo en las áreas correspondientes?,No,
-40,¿Se aplican pruebas de calidad antes de la entrega final de los servicios/materiales?,No,
-41,¿Se documentan los resultados de las pruebas?,No,
-42,¿Existe un sistema de calidad que evita la equivocación de materiales antes de su salida?,No,
-43,¿Da mantenimiento en periodos consecutivos a los instrumentos de medición?,Sí,Si responde Sí: pregunta 44
-44,Si la respuesta es sí en 43. ¿Está documentado este mantenimiento?,Sí,Si responde Sí: Anexar evidencia
-45,¿Se llevan a cabo auditorías frecuentes / evaluaciones de proveedores?,No,
-46,¿Ustedes pide a sus proveedores que sean certificados?,No,
-47,¿Puede asegurar que siempre está trabajando de acuerdo a los estándares y normas internacionales actuales de calidad?,No,
-48,¿Se puede rastrear el origen de sus productos?,No,
-49,¿Sus productos están empaquetados correctamente para evitar daños de envío?,No,
-50,¿Se usan empaques ecológicos o reciclables?,No,
-51,¿Tiene un proceso definido para la selección del transportista?,No,
-52,¿Qué tipo de documentación provee su empresa con el envío de cada producto?,Sí,Al seleccionar otro: Especifique otro documento
-53,¿Tiene un proceso definido para atender reclamos y garantías de materiales?,No,
-54,¿Ofrece servicios de mantenimiento y/o técnico para sus productos (sólo aplica a productos de alta tecnología que requieran mantenimiento/capacitación especial)?,No,
-55,¿Están todos los empleados obligados por contrato a mantener la confidencialidad?,No,
-56,¿Son instruidos todos los trabajadores regularmente sobre la seguridad de la información y protección de datos?,No,
-57,¿Se han implementado zonas de seguridad y reglas de acceso en la empresa?,No,
-58,¿Se otorgan permisos de acceso a los datos de clientes según cada proyecto y se revisan regularmente?,No,
-59,¿La información se clasifica según su nivel de confidencialidad y se protege de acuerdo a ello?,No,
-60,¿Existe un proceso de copias de seguridad definido e implementado en la empresa?,No,
-61,¿Los proveedores que participan en proyectos específicos están obligados a mantener la confidencialidad?,No,
-62,¿El acceso a internet está protegido mediante un Firewall contra accesos no autorizados y software malicioso?,No,
+﻿Numero o Id de pregunta,Pregunta,Reactivo Puntuable,Ponderación,Tiene pregunta adicional,Pregunta adicional
+1,¿Cuántas personas están trabajando en su empresa?,No,,No,
+2,¿Cuántas sucursales tiene su empresa?,No,,No,
+3,¿En qué giro(s) trabaja su empresa?,No,,Sí,Al seleccionar Otros: Especifique otro giro
+4,¿En cuál(es) país(es) están fabricando sus productos?,No,,No,
+5,¿De cuánto tiempo son sus plazos de entrega en promedio?,No,,No,
+6,Por favor indique si su empresa está certificada de acuerdo con alguno de los siguientes certificados y la vigencia de cada certificación:,No,,Sí,Al seleccionar una certificación: Vigente hasta (MM/AA). Al seleccionar Otros: Especifique otros certificados. Si no selecciona ISO 9001: pregunta 7
+7,¿Tiene planeado certificarse en ISO 9001?,Si,"Si está certificado en ISO 9001 o planea certificarse en ISO 9001 = 1, si no 0",Sí,Si responde Sí: Mes y año estimados para obtener la certificación ISO 9001
+8,¿Es posible visitar su empresa para llevar a cabo una evaluación en piso?,Si,"Si contesta sí = 1, si no 0",No,
+9,¿Hace cuántos años se fundó su empresa?,Si,<2años=0 / 2-5años=0.25 / 6-20años=0.75 / >20=1,No,
+10,¿Cuánta experiencia tiene con la fabricación de los productos solicitados?,Si,<2años=0 / 2-5años=0.25 / 6-20años=0.75 / >20=1,No,
+11,¿Tiene un organigrama que enseña las responsabilidades en su empresa? Favor de anexar.,Si,"Si contesta sí y adjunta referencia = 1, si no 0. ",Sí,Si responde Sí: Anexe el organigrama
+12,¿Cuenta con referencias / clientes / proyectos para los trabajos que provee? Favor de anexar.,Si,"Si contesta sí y adjunta referencia = 1, si no 0. ",Sí,"Si responde Sí: Anexe referencias, clientes o proyectos"
+13,¿Participa su personal en capacitaciones frecuentes?,Si,"Si contesta sí = 1, si no 0",No,
+14,¿Tiene su personal acceso a normas y leyes actuales?,Si,"Si contesta sí = 1, si no 0",No,
+15,¿Recibe su personal con regularidad cursos de seguridad?,Si,"Si contesta sí = 1, si no 0",No,
+16,¿Está su personal asegurado en el IMSS (seguro social)?,Si,"Si contesta sí = 1, si no 0",No,
+17,¿Proporciona la empresa equipo de seguridad para su personal?,Si,"Si contesta sí = 1, si no 0",No,
+18,¿Qué tan alto es el porcentaje de satisfacción de su personal?,Si,">=0.95 = 1 / >=0.85 = 0.75 / >=0.75 = 0.5 / >=0.5 = 0.25, si no 0",No,
+19,¿Da mantenimiento en periodos consecutivos a su maquinaria?,Si,"Si contesta sí = 1, si no 0",No,
+20,¿Existen planos de mantenimiento de las máquinas?,Si,"Si contesta sí = 1, si no 0",No,
+21,¿Es capaz de reaccionar flexiblemente y a corto plazo a solicitudes urgentes?,Si,"Si contesta sí = 1, si no 0",No,
+22,¿Sus máquinas cumplen con las señaléticas y barreras mecánicas necesarias para evitar accidentes?,Si,"Si contesta sí = 1, si no 0",No,
+23,¿Cada máquina tiene su manual e instrucción de operación?,Si,"Si contesta sí = 1, si no 0",No,
+24,¿Productos con sustancias químicas y peligrosas están identificados de acuerdo a las leyes vigentes de seguridad?,Si,"Si contesta sí = 1, si no 0",No,
+25,¿Tiene su empresa metas e indicadores que midan el desempeño de seguridad y la accidentabilidad?,Si,"Si contesta sí, indica las metas e indicadores y adjunta evidencia = 1, si no 0",Sí,Si responde Sí: Cuál; Favor de mandar evidencia
+26,¿En el año calendario pasado cuál ha sido su índice de accidentes laborales?,No,,No,
+27,¿En su empresa se clasifican los residuos?,Si,"Si contesta sí = 1, si no 0",No,
+28,¿Indique la cantidad de residuos peligrosos / de manejo especial (reciclables) y urbanos que produce su empresa cada año en toneladas (estimación)?,No,,No,
+29,¿Cuenta su empresa con un número de registro ambiental (NRA) por parte de SEMARNAT como generador de residuos peligrosos (aplica solo para empresas mexicanas)?,Si,"Si contesta sí e indica el número de registro ambiental = 1, si no 0",Sí,Si responde Sí: ¿Cuál es el número?
+30,"¿Está inscrito su empresa en algún programa de protección ambiental (requerido por alguna ley local, federal o nacional)?",Si,"Si contesta sí e indica el nombre del programa = 1, si no 0",Sí,Si responde Sí: Nombre del programa
+31,¿Tiene su empresa un seguro para posibles daños al medio ambiente?,Si,"Si contesta sí = 1, si no 0",No,
+32,¿Provee a FFT alguna sustancia o material peligroso?,No,,Sí,Si responde Sí: pregunta 33
+33,"Si la respuesta en 32. es sí, ¿cuáles materiales son?",No,,No,
+34,¿Hay una persona encargada de protección ambiental?,Si,Si contesta sí = 1 solo si indica el nombre del responsable ,Sí,Si responde Sí: Nombre
+35,¿Cuenta con algún programa de reciclaje?,Si,"Si contesta sí = 1, si no 0",No,
+36,"¿Los materiales peligrosos se almacenan, procesan adecuadamente hasta y durante su uso?",Si,"Si contesta sí = 1, si no 0",No,
+37,¿Usa su empresa productos biodegradables?,Si,"Si contesta sí = 1, si no 0",Sí,Si responde Sí: Cuáles
+38,¿Hay una persona encargada de calidad?,Si,Si contesta sí = 1 solo si indica el nombre del responsable ,Sí,Si responde Sí: Nombre
+39,¿Existen instrucciones de trabajo en las áreas correspondientes?,Si,"Si contesta sí = 1, si no 0",No,
+40,¿Se aplican pruebas de calidad antes de la entrega final de los servicios/materiales?,Si,"Si contesta sí = 1, si no 0",No,
+41,¿Se documentan los resultados de las pruebas?,Si,"Si contesta sí = 1, si no 0",No,
+42,¿Existe un sistema de calidad que evita la equivocación de materiales antes de su salida?,Si,"Si contesta sí = 1, si no 0",No,
+43,¿Da mantenimiento en periodos consecutivos a los instrumentos de medición?,Si,"Si contesta sí = 1, si no 0",Sí,Si responde Sí: pregunta 44
+44,Si la respuesta es sí en 43. ¿Está documentado este mantenimiento?,Si,"Si contesta sí en las preguntas 43 y 44 y adjunta evidencia = 1, si no 0",Sí,Si responde Sí: Anexar evidencia
+45,¿Se llevan a cabo auditorías frecuentes / evaluaciones de proveedores?,Si,"Si contesta sí = 1, si no 0",No,
+46,¿Ustedes pide a sus proveedores que sean certificados?,Si,"Si contesta sí = 1, si no 0",No,
+47,¿Puede asegurar que siempre está trabajando de acuerdo a los estándares y normas internacionales actuales de calidad?,Si,"Si contesta sí = 1, si no 0",No,
+48,¿Se puede rastrear el origen de sus productos?,Si,"Si contesta sí = 1, si no 0",No,
+49,¿Sus productos están empaquetados correctamente para evitar daños de envío?,Si,"Si contesta sí = 1, si no 0",No,
+50,¿Se usan empaques ecológicos o reciclables?,Si,"Si contesta sí = 1, si no 0",No,
+51,¿Tiene un proceso definido para la selección del transportista?,Si,"Si contesta sí = 1, si no 0",No,
+52,¿Qué tipo de documentación provee su empresa con el envío de cada producto?,No,,Sí,Al seleccionar otro: Especifique otro documento
+53,¿Tiene un proceso definido para atender reclamos y garantías de materiales?,Si,"Si contesta sí = 1, si no 0",No,
+54,¿Ofrece servicios de mantenimiento y/o técnico para sus productos (sólo aplica a productos de alta tecnología que requieran mantenimiento/capacitación especial)?,Si,"Si contesta sí = 1, si no 0",No,
+55,¿Están todos los empleados obligados por contrato a mantener la confidencialidad?,Si,Del 0 al 10,No,
+56,¿Son instruidos todos los trabajadores regularmente sobre la seguridad de la información y protección de datos?,Si,Del 0 al 10,No,
+57,¿Se han implementado zonas de seguridad y reglas de acceso en la empresa?,Si,Del 0 al 10,No,
+58,¿Se otorgan permisos de acceso a los datos de clientes según cada proyecto y se revisan regularmente?,Si,Del 0 al 10,No,
+59,¿La información se clasifica según su nivel de confidencialidad y se protege de acuerdo a ello?,Si,Del 0 al 10,No,
+60,¿Existe un proceso de copias de seguridad definido e implementado en la empresa?,Si,Del 0 al 10,No,
+61,¿Los proveedores que participan en proyectos específicos están obligados a mantener la confidencialidad?,Si,Del 0 al 10,No,
+62,¿El acceso a internet está protegido mediante un Firewall contra accesos no autorizados y software malicioso?,Si,Del 0 al 10,No,

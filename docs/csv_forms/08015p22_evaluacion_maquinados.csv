@@ -1,55 +1,55 @@
-﻿Numero o Id de pregunta,Pregunta,Tiene pregunta adicional,Pregunta adicional
-1,¿Cuántas personas están trabajando en su empresa?,No,
-2,¿Cuántas sucursales tiene su empresa?,No,
-3,¿En qué giro(s) trabaja su empresa?,Sí,Al seleccionar Otros: Especifique el giro
-4,Favor de enlistar la maquinaria con la que cuenta.,Sí,Si un tratamiento térmico o termoquímico está disponible: Dimensiones de piezas. Si una herramienta de medición está disponible: Cantidad. Si selecciona Otros: Nombre de la herramienta y Cantidad
-5,¿Con cuántas horas máquina por semana cuenta su empresa?,No,
-6,Indique si su empresa cuenta con alguna de las siguientes certificaciones y su vigencia,Sí,Al seleccionar una certificación: Vigencia (mes y año). Al seleccionar Otros: Nombre de la certificación. Si no hay ISO 9001 y se selecciona Otros: pregunta 7. Si no hay ISO 9001: pregunta 8
-7,"Si no cuenta con un sistema de calidad certificado y seleccionó “Otros”, describa cómo controla la calidad en su empresa.",No,
-8,"En caso de no estar certificado, ¿planea certificarse?",Sí,Si responde Sí: ¿Hasta cuándo está planeado certificarse?
-9,¿Es posible visitar su empresa para llevar a cabo una evaluación en piso?,No,
-10,¿Se encuentra un manual de operaciones para cada máquina?,No,
-11,¿Calibra con regularidad sus máquinas?,Sí,Si responde Sí: Último reporte de calibración; Penúltimo reporte de calibración
-12,El mantenimiento de sus máquinas es,No,
-13,¿En qué periodo se da mantenimiento a las máquinas?,No,
-14,¿Cuenta su empresa con máquinas controladas CNC?,Sí,Si responde Sí: preguntas 15 y 16
-15,"¿Cuánta gente de su empresa sabe manejar esta(s) máquina(s) CNC de forma ""automática""?",No,
-16,¿Cuál programa CNC está operando en sus máquinas?,No,
-17,¿Hay una persona encargada de calidad?,Sí,Si responde Sí: Nombre de la persona encargada de calidad
-18,¿Existen instrucciones de trabajo en las áreas correspondientes?,No,
-19,¿Se aplican pruebas de calidad antes de la entrega final de los servicios?,No,
-20,¿Se documentan los resultados de las pruebas de medición?,No,
-21,¿Existe un sistema de calidad que evita la equivocación de materiales antes de su salida?,No,
-22,¿Da mantenimiento en periodos consecutivos a los instrumentos de medición?,Sí,Si responde Sí: Evidencia del mantenimiento de instrumentos de medición
-23,¿Sus máquinas cumplen con las señaléticas y barreras mecánicas necesarias para evitar accidentes?,No,
-24,¿Subcontratan proveedores para lograr el servicio entregable para FFT?,Sí,Si responde Sí: Nombre de la empresa; Tipo de servicio; Porcentaje del volumen de trabajo de FFT México subcontratado
-25,¿Puede asegurar que siempre está trabajando de acuerdo a los estándares y normas internacionales actuales?,No,
-26,¿Su personal puede leer e entender dibujos en inglés?,No,
-27,"¿Tiene un sistema y proceso definido (captura de pedidos, control de proveedores, control de fechas, etc.) para asegurar el cumplimiento de la entrega en las fechas acordadas con FFT?",No,
-28,Favor de describir el sistema de la pregunta 27.,No,
-29,¿Cuándo se fundó su empresa? (años de operación),No,
-30,¿Cuánta experiencia tiene con la fabricación de los productos solicitados?,No,
-31,¿Tiene un organigrama que enseña las responsabilidades en su empresa?,Sí,Si responde Sí: Organigrama de la empresa
-32,¿Cuenta con referencias / clientes / proyectos para los trabajos que provee?,Sí,"Si responde Sí: Evidencia de referencias, clientes o proyectos"
-33,¿Participa su personal en capacitaciones frecuentes?,No,
-34,¿Recibe su personal con regularidad cursos de seguridad y está documentado?,No,
-35,¿Está su personal asegurado en el IMSS (seguro social)?,No,
-36,¿Proporciona la empresa equipo de seguridad para su personal?,No,
-37,¿Qué tan alto es el porcentaje de fluctuación de personal en su empresa?,No,
-38,Favor de indicar la formación/educación más alta de cada trabajador,No,
-39,¿Se reutiliza material de empaque para los envíos a FFT?,No,
-40,"¿Su empresa cumple con las normas de seguridad e higiene (extintores, botiquín, rutas de evacuación)?",No,
-41,"¿Los materiales peligrosos se almacenan, procesan y eliminan adecuadamente?",No,
-42,¿Tiene su empresa metas e indicadores que midan el desempeño de seguridad y la accidentabilidad?,Sí,Si responde Sí: Describa las metas e indicadores
-43,"Durante el año pasado, ¿cuál fue su índice de accidentes laborales?",No,
-44,¿Sus productos están empaquetados correctamente para evitar daños de envío?,No,
-45,¿El transporte está realizado por su empresa o un tercero?,No,
-46,¿Tiene un proceso definido para procesar reclamos de materiales?,No,
-47,¿Están todos los empleados obligados por contrato a mantener la confidencialidad?,No,
-48,¿Son instruidos todos los trabajadores regularmente sobre la seguridad de la información y protección de datos?,No,
-49,¿Se han implementado zonas de seguridad y reglas de acceso en la empresa?,No,
-50,¿Se otorgan permisos de acceso a los datos de clientes según cada proyecto y se revisan regularmente?,No,
-51,¿La información se clasifica según su nivel de confidencialidad y se protege de acuerdo a ello?,No,
-52,¿Existe un proceso de copias de seguridad definido e implementado en la empresa?,No,
-53,¿Los proveedores que participan en proyectos específicos están obligados a mantener la confidencialidad?,No,
-54,¿El acceso a internet está protegido mediante un Firewall contra accesos no autorizados y software malicioso?,No,
+﻿Numero o Id de pregunta,Pregunta,Reactivo Puntuable,Ponderación,Tiene pregunta adicional,Pregunta adicional
+1,¿Cuántas personas están trabajando en su empresa?,No,,No,
+2,¿Cuántas sucursales tiene su empresa?,No,,No,
+3,¿En qué giro(s) trabaja su empresa?,No,,Sí,Al seleccionar Otros: Especifique el giro
+4,Favor de enlistar la maquinaria con la que cuenta.,No,,Sí,Si un tratamiento térmico o termoquímico está disponible: Dimensiones de piezas. Si una herramienta de medición está disponible: Cantidad. Si selecciona Otros: Nombre de la herramienta y Cantidad
+5,¿Con cuántas horas máquina por semana cuenta su empresa?,No,,No,
+6,Indique si su empresa cuenta con alguna de las siguientes certificaciones y su vigencia,No,,Sí,Al seleccionar una certificación: Vigencia (mes y año). Al seleccionar Otros: Nombre de la certificación. Si no hay ISO 9001 y se selecciona Otros: pregunta 7. Si no hay ISO 9001: pregunta 8
+7,"Si no cuenta con un sistema de calidad certificado y seleccionó “Otros”, describa cómo controla la calidad en su empresa.",No,,No,
+8,"En caso de no estar certificado, ¿planea certificarse?",Si,"Si está certificado o planea certificarse = 1, si no 0",Sí,Si responde Sí: ¿Hasta cuándo está planeado certificarse?
+9,¿Es posible visitar su empresa para llevar a cabo una evaluación en piso?,Si,"Si contesta sí = 1, si no 0",No,
+10,¿Se encuentra un manual de operaciones para cada máquina?,Si,"Si contesta sí = 1, si no 0",No,
+11,¿Calibra con regularidad sus máquinas?,Si,"Si contesta sí y adjunta el último y penúltimo reporte de calibración = 1, si no 0",Sí,Si responde Sí: Último reporte de calibración; Penúltimo reporte de calibración
+12,El mantenimiento de sus máquinas es,Si,Si el mantenimiento es preventivo = 1; si es correctivo = 0,No,
+13,¿En qué periodo se da mantenimiento a las máquinas?,No,,No,
+14,¿Cuenta su empresa con máquinas controladas CNC?,Si,"Si contesta sí = 1, si no 0",Sí,Si responde Sí: preguntas 15 y 16
+15,"¿Cuánta gente de su empresa sabe manejar esta(s) máquina(s) CNC de forma ""automática""?",No,,No,
+16,¿Cuál programa CNC está operando en sus máquinas?,No,,No,
+17,¿Hay una persona encargada de calidad?,Si,Si contesta sí = 1 solo si indica el nombre del responsable ,Sí,Si responde Sí: Nombre de la persona encargada de calidad
+18,¿Existen instrucciones de trabajo en las áreas correspondientes?,Si,"Si contesta sí = 1, si no 0",No,
+19,¿Se aplican pruebas de calidad antes de la entrega final de los servicios?,Si,"Si contesta sí = 1, si no 0",No,
+20,¿Se documentan los resultados de las pruebas de medición?,Si,"Si contesta sí = 1, si no 0",No,
+21,¿Existe un sistema de calidad que evita la equivocación de materiales antes de su salida?,Si,"Si contesta sí = 1, si no 0",No,
+22,¿Da mantenimiento en periodos consecutivos a los instrumentos de medición?,Si,"Si contesta sí y adjunta evidencia = 1, si no 0",Sí,Si responde Sí: Evidencia del mantenimiento de instrumentos de medición
+23,¿Sus máquinas cumplen con las señaléticas y barreras mecánicas necesarias para evitar accidentes?,Si,"Si contesta sí = 1, si no 0",No,
+24,¿Subcontratan proveedores para lograr el servicio entregable para FFT?,No,,Sí,Si responde Sí: Nombre de la empresa; Tipo de servicio; Porcentaje del volumen de trabajo de FFT México subcontratado
+25,¿Puede asegurar que siempre está trabajando de acuerdo a los estándares y normas internacionales actuales?,Si,"Si contesta sí = 1, si no 0",No,
+26,¿Su personal puede leer e entender dibujos en inglés?,Si,"Si contesta sí = 1, si no 0",No,
+27,"¿Tiene un sistema y proceso definido (captura de pedidos, control de proveedores, control de fechas, etc.) para asegurar el cumplimiento de la entrega en las fechas acordadas con FFT?",Si,"Si contesta sí = 1, si no 0",No,
+28,Favor de describir el sistema de la pregunta 27.,No,,No,
+29,¿Cuándo se fundó su empresa? (años de operación),Si,<2años=0 / 2-5años=0.25 / 6-20años=0.75 / >20=1,No,
+30,¿Cuánta experiencia tiene con la fabricación de los productos solicitados?,Si,<2años=0 / 2-5años=0.25 / 6-20años=0.75 / >20=1,No,
+31,¿Tiene un organigrama que enseña las responsabilidades en su empresa?,Si,"Si contesta sí y adjunta referencia = 1, si no 0. ",Sí,Si responde Sí: Organigrama de la empresa
+32,¿Cuenta con referencias / clientes / proyectos para los trabajos que provee?,Si,"Si contesta sí y adjunta referencia = 1, si no 0. ",Sí,"Si responde Sí: Evidencia de referencias, clientes o proyectos"
+33,¿Participa su personal en capacitaciones frecuentes?,Si,"Si contesta sí = 1, si no 0",No,
+34,¿Recibe su personal con regularidad cursos de seguridad y está documentado?,Si,"Si contesta sí = 1, si no 0",No,
+35,¿Está su personal asegurado en el IMSS (seguro social)?,Si,"Si contesta sí = 1, si no 0",No,
+36,¿Proporciona la empresa equipo de seguridad para su personal?,Si,"Si contesta sí = 1, si no 0",No,
+37,¿Qué tan alto es el porcentaje de fluctuación de personal en su empresa?,No,,No,
+38,Favor de indicar la formación/educación más alta de cada trabajador,No,,No,
+39,¿Se reutiliza material de empaque para los envíos a FFT?,Si,"Si contesta sí = 1, si no 0",No,
+40,"¿Su empresa cumple con las normas de seguridad e higiene (extintores, botiquín, rutas de evacuación)?",Si,"Si contesta sí = 1, si no 0",No,
+41,"¿Los materiales peligrosos se almacenan, procesan y eliminan adecuadamente?",Si,"Si contesta sí = 1, si no 0",No,
+42,¿Tiene su empresa metas e indicadores que midan el desempeño de seguridad y la accidentabilidad?,Si,"Si contesta sí e indica las metas e indicadores = 1, si no 0",Sí,Si responde Sí: Describa las metas e indicadores
+43,"Durante el año pasado, ¿cuál fue su índice de accidentes laborales?",No,,No,
+44,¿Sus productos están empaquetados correctamente para evitar daños de envío?,Si,"Si contesta sí = 1, si no 0",No,
+45,¿El transporte está realizado por su empresa o un tercero?,No,,No,
+46,¿Tiene un proceso definido para procesar reclamos de materiales?,Si,"Si contesta sí = 1, si no 0",No,
+47,¿Están todos los empleados obligados por contrato a mantener la confidencialidad?,Si,Del 0 al 10,No,
+48,¿Son instruidos todos los trabajadores regularmente sobre la seguridad de la información y protección de datos?,Si,Del 0 al 10,No,
+49,¿Se han implementado zonas de seguridad y reglas de acceso en la empresa?,Si,Del 0 al 10,No,
+50,¿Se otorgan permisos de acceso a los datos de clientes según cada proyecto y se revisan regularmente?,Si,Del 0 al 10,No,
+51,¿La información se clasifica según su nivel de confidencialidad y se protege de acuerdo a ello?,Si,Del 0 al 10,No,
+52,¿Existe un proceso de copias de seguridad definido e implementado en la empresa?,Si,Del 0 al 10,No,
+53,¿Los proveedores que participan en proyectos específicos están obligados a mantener la confidencialidad?,Si,Del 0 al 10,No,
+54,¿El acceso a internet está protegido mediante un Firewall contra accesos no autorizados y software malicioso?,Si,Del 0 al 10,No,
