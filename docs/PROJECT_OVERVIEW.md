@@ -3,8 +3,8 @@
 ## PROJECT_OVERVIEW
 
 **Estado:** Activo
-**Versión:** 0.4
-**Fecha:** 2026-09-09
+**Versión:** 0.5
+**Fecha:** 2026-10-30
 
 ---
 
@@ -24,7 +24,7 @@ Las reglas específicas relacionadas con qué representa una inspección y cómo
 
 `docs/INSPECTION_MODEL.md`
 
-Las particularidades de cada checklist oficial deberán documentarse posteriormente en:
+Las particularidades de cada checklist oficial están documentadas en:
 
 `docs/FORM_LOGIC_MATRIX.md`
 
@@ -38,7 +38,7 @@ FFT México utiliza diferentes formatos para evaluar a nuevos proveedores. Los f
 
 # 3. Objetivo general
 
-Digitalizar los formualrios de autoevaluación de los nuevos proveedores de FFT México mediante una aplicación web que permita:
+Digitalizar los formularios de autoevaluación de los nuevos proveedores de FFT México mediante una aplicación web que permita:
 
 1. contestar cualquiera de los cuatro formularios: Fabricantes, Maquinados, Distribuidores y Servicios;
 2. adjuntar evidencia cuando sea requerido;
@@ -51,7 +51,7 @@ La primera versión debe priorizar la funcionalidad antes que la administración
 
 # 4. Principios del proyecto
 
-## 4.3 Frontend primero
+## 4.1 Frontend primero
 
 La V1 debe funcionar principalmente como una aplicación frontend estática.
 
@@ -69,7 +69,7 @@ No debe introducirse un framework frontend si no existe una necesidad claramente
 
 ---
 
-## 4.4 Formspree como persistencia inicial
+## 4.2 Formspree como persistencia inicial
 
 Cada formulario tendrá su propio endpoint de Formspree. Un endpoint no configurado debe producir un mensaje local claro y nunca intentar un envío a un destino alterno.
 
@@ -77,7 +77,7 @@ La existencia de endpoints separados NO debe provocar contratos de datos complet
 
 Los formularios deben conservar el conjunto común de conceptos definido en `INSPECTION_MODEL.md`.
 
-## 4.5 Plantilla y harness
+## 4.3 Plantilla y harness
 
 Existen plantillas en `assets/templetes/form_v1` y `assets/templetes/form_v2`. Los cuatro formularios implementan el agradecimiento de `form_v2/thanks` en su propia carpeta `thanks/`, con redirección JavaScript después del envío AJAX exitoso.
 
@@ -102,4 +102,8 @@ Estado constatado en el código el 2026-09-09; no implica una prueba real de rec
 
 ## Consulta de evaluaciones — Spec 004 (2026-09-18)
 
-Los cuatro formularios cuentan con visores estáticos en `submissions_viewer/`, con catálogo en `submissions_viewer/index.html`. Cada visor conserva su configuración Formspree y esquema de campos; comparten presentación y lógica. Fabricantes consulta exclusivamente Formspree y el JSON de ejemplo se reserva para QA. Ejecución local, rutas y pruebas: [README de visores](../submissions_viewer/README.md). Resultados: [validación Spec 004](VALIDATION_SPEC004_2026-09-18.md).
+Los cuatro formularios cuentan con visores estáticos en `submissions_viewer/`, con catálogo en `submissions_viewer/index.html`. Cada visor conserva su configuración Formspree y esquema de campos; comparten presentación y lógica. Fabricantes consulta exclusivamente Formspree y el JSON de ejemplo se reserva para QA. Ejecución local, rutas y pruebas: [README de visores](../submissions_viewer/README.md). Resultados: [validación Spec 004](reports/2026-09-18-validacion-spec-004.md).
+
+## Seguimiento documental
+
+Consulta el [índice](README.md) y el [seguimiento](TRACKING.md). Esta actualización documental no constituye una nueva validación de la aplicación.

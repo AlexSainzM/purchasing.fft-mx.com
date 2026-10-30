@@ -32,4 +32,8 @@ El solicitante proporcionó `https://formspree.io/f/mbgjqzka` durante la impleme
 
 La prueba sin CDN detectó que la clase `d-none` dependía de Bootstrap. Los estilos de Distribuidores, heredados por Servicios, añaden el respaldo de visibilidad, etiquetas, ancho de controles y mensajes de validación. Los otros dos formularios no se modifican en esta ampliación.
 
-Resultados y comandos reproducibles: `docs/VALIDATION_SPEC003_2026-09-09.md`.
+Resultados y comandos reproducibles: `docs/reports/2026-09-09-validacion-spec-003.md`.
+
+## Seguimiento documental
+
+[Evidencia de esta iteración](../reports/2026-09-09-validacion-spec-003.md) · [Registro de specs](README.md). Los requisitos corresponden a esta iteración histórica.

@@ -1,5 +1,7 @@
 # Verificación de Spec 003 — 2026-09-09
 
+> Registro histórico: los resultados corresponden a la fecha del informe, no a una ejecución actual. Consulta el [seguimiento](../TRACKING.md).
+
 ## Resultado
 
 Servicios implementa las 39 preguntas del PDF 08015p21 Rev. 5 (03.06.2026), con anexos y condiciones. Distribuidores conserva todos los nombres existentes y añade Seguridad de la Información como 43–50. El catálogo contiene cuatro formularios. El endpoint de Servicios fue proporcionado por el solicitante y está configurado como `https://formspree.io/f/mbgjqzka`.

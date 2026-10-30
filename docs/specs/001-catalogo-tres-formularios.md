@@ -12,7 +12,7 @@ El repositorio contiene dos formularios web, un tercer cuestionario sólo en PDF
 * publicar una portada que permita elegir entre los tres formularios;
 * digitalizar `08015p23_evaluación_distribuidor_español.pdf`;
 * conservar la numeración y el sentido de las 42 preguntas;
-* implementar las condiciones de `FORM_LOGIC_MATRIX.md`;
+* implementar las condiciones de [matriz de lógica](../FORM_LOGIC_MATRIX.md);
 * eliminar dependencias a imágenes inexistentes;
 * exponer de forma segura cualquier endpoint pendiente;
 * añadir un harness estático reproducible.
@@ -34,3 +34,7 @@ El repositorio contiene dos formularios web, un tercer cuestionario sólo en PDF
 6. Ningún HTML de producción contiene placeholders de plantilla `{{...}}` ni imágenes locales rotas.
 7. Un endpoint pendiente bloquea el envío antes de cualquier solicitud de red.
 8. `tests/verify_forms.py` termina con código 0 y valida los contratos anteriores.
+
+## Seguimiento documental
+
+[Evidencia de esta iteración](../reports/2026-08-26-auditoria-spec-001.md) · [Registro de specs](README.md). Los requisitos corresponden a esta iteración histórica.

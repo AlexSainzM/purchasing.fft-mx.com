@@ -1,4 +1,10 @@
-# ITERACIÓN — Submission Viewers + Catálogo General
+# Spec 004 — Submission Viewers y catálogo general
+
+**Estado:** Implementada y verificada según el informe de 2026-09-18.
+**Actualización documental:** 2026-10-30
+**Evidencia:** [Validación Spec 004](../reports/2026-09-18-validacion-spec-004.md).
+
+> Se conserva el encargo original como antecedente. «Actualmente» se refiere al inicio de aquella iteración. Estas instrucciones no constituyen trabajo pendiente ni autorización para una nueva spec.
 
 ## ===== CONTEXTO GENERAL =====
 
@@ -605,3 +611,6 @@ Al terminar, entrega un resumen indicando:
 8. cualquier limitación o deuda técnica encontrada.
 
 No te limites a describir cambios: realiza la implementación completa.
+## Seguimiento documental
+
+[Evidencia de esta iteración](../reports/2026-09-18-validacion-spec-004.md) · [Registro de specs](README.md). Los requisitos corresponden a esta iteración histórica.

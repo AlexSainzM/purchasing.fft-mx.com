@@ -103,15 +103,20 @@ Seguridad de la Información se añade como 43–50 (Spec 003): mismos ocho reac
 
 El PDF contiene cinco páginas aunque el pie dice «de 3». Se conserva toda la información de las preguntas y se usa navegación por pasos. No se trasladan placeholders de Word ni la instrucción F9 del subtotal. La instrucción de envío por correo/plazo de tres días se adapta a Formspree y al formulario permanente, como los demás formularios.
 
+## Configuración documentada
+
+Maquinados y Distribuidores tienen endpoints configurados según la [Spec 002](specs/002-certificaciones-agradecimiento-maquinados.md). Servicios quedó configurado según la [Spec 003](specs/003-servicios-seguridad-distribuidores.md). No son pendientes de configuración.
+
 ## Datos pendientes de FFT México
 
-1. Endpoint Maquinados configurado en el código (ver Spec 002).
-2. Endpoint Distribuidores configurado en el código (ver Spec 002).
-   Endpoint Servicios proporcionado por el solicitante y configurado: `https://formspree.io/f/mbgjqzka` (Spec 003).
-3. Política de conservación, responsable y plazo de borrado de respuestas/evidencias en Formspree.
-4. Límites máximos de tamaño y cantidad de archivos.
-5. Confirmación de si los plazos de “3 días” de los PDFs siguen vigentes; la web actual los describe como formularios permanentes.
+1. Política de conservación, responsable y plazo de borrado de respuestas/evidencias en Formspree.
+2. Límites máximos de tamaño y cantidad de archivos.
+3. Confirmación de si los plazos de “3 días” de los PDFs siguen vigentes; la web actual los describe como formularios permanentes.
 
 ## Actualización 2026-09-09 — Spec 002
 
-Todos los envíos AJAX satisfactorios redirigen a thanks/index.html del formulario. Los errores conservan la captura. Maquinados usa selects Tipo en ambas tablas de pregunta 4 y la frase «Durante el año pasado» en 43. Seguridad 47–54 conserva nombres y replica las opciones descriptivas de Fabricantes 55–62. Véase specs/002-certificaciones-agradecimiento-maquinados.md.
+Todos los envíos AJAX satisfactorios redirigen a thanks/index.html del formulario. Los errores conservan la captura. Maquinados usa selects Tipo en ambas tablas de pregunta 4 y la frase «Durante el año pasado» en 43. Seguridad 47–54 conserva nombres y replica las opciones descriptivas de Fabricantes 55–62. Véase la [Spec 002](specs/002-certificaciones-agradecimiento-maquinados.md).
+
+## Revisión documental — 2026-10-30
+
+Se separan configuraciones resueltas de decisiones pendientes, sin modificar reglas funcionales.

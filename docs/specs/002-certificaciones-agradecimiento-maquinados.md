@@ -21,4 +21,8 @@ La plantilla referencia un logotipo local inexistente: sus copias usan la marca 
 
 ## Verificación
 
-Ver `docs/VALIDATION_2026-09-09.md` para los comandos reproducibles, resultados y límites de las pruebas. El informe de auditoría de agosto permanece como registro histórico.
+Ver `docs/reports/2026-09-09-validacion-spec-002.md` para los comandos reproducibles, resultados y límites de las pruebas. El informe de auditoría de agosto permanece como registro histórico.
+
+## Seguimiento documental
+
+[Evidencia de esta iteración](../reports/2026-09-09-validacion-spec-002.md) · [Registro de specs](README.md). Los requisitos corresponden a esta iteración histórica.

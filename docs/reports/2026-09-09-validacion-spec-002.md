@@ -1,5 +1,7 @@
 # Verificación — 2026-09-09
 
+> Registro histórico: los resultados corresponden a la fecha del informe, no a una ejecución actual. Consulta el [seguimiento](../TRACKING.md).
+
 Alcance: Spec 002, certificaciones, agradecimiento y Maquinados.
 
 ## Comandos
