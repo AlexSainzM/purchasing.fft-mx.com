@@ -4,7 +4,7 @@ Aplicación 100 % frontend: HTML, CSS y JavaScript; Formspree es la única persi
 
 ## Rutas y arquitectura
 
-La carpeta existente se llama `submissions_viewer` (plural) y se conserva para no romper enlaces. `submission_viewer/index.html` también ofrece el catálogo solicitado por la Spec 004 y enlaza a los mismos visores mediante rutas relativas.
+Los visores y el catálogo viven en `submissions_viewer/`. El catálogo está en `index.html` y enlaza a los cuatro formularios.
 
 | Carpeta en submissions_viewer | Form ID | Documento |
 | --- | --- | --- |
@@ -39,7 +39,7 @@ Desde la raíz del proyecto:
 node submissions_viewer/serve.cjs
 ```
 
-Abrir `http://127.0.0.1:8765/submissions_viewer/` o `http://127.0.0.1:8765/submission_viewer/`. El comando anterior de Fabricantes también inicia este servidor. Servir la raíz completa permite resolver navegación y recursos compartidos. En despliegue basta un servidor estático; no usar file://.
+Abrir `http://127.0.0.1:8765/submissions_viewer/`. El comando anterior de Fabricantes también inicia este servidor. Servir la raíz completa permite resolver navegación y recursos compartidos. En despliegue basta un servidor estático; no usar file://.
 
 ## QA
 

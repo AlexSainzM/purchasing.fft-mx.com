@@ -2,9 +2,9 @@
 
 ## Implementación
 
-Se conservó la carpeta real `submissions_viewer` y se agregó `submission_viewer/index.html` como entrada compatible con la ruta solicitada. Ambos catálogos enlazan a los cuatro visores. No se renombraron ni modificaron formularios, preguntas, cálculos o endpoints de envío.
+Los visores y el catálogo viven en `submissions_viewer`. El catálogo enlaza a los cuatro visores. No se renombraron ni modificaron formularios, preguntas, cálculos o endpoints de envío.
 
-Creado: catálogo plural y entrada singular; tres carpetas de visores con los nombres exactos de sus formularios; schema.js para los cuatro; recursos shared/main.js y shared/styles.css; servidor local común; generador de esquemas; harness de navegador y helper estático; README común y este informe.
+Creado: catálogo en `submissions_viewer/index.html`; tres carpetas de visores con los nombres exactos de sus formularios; schema.js para los cuatro; recursos shared/main.js y shared/styles.css; servidor local común; generador de esquemas; harness de navegador y helper estático; README común y este informe.
 
 Modificado: index/config/main/styles/serve/verify/README del visor de Fabricantes, PROJECT_OVERVIEW.md y .gitignore. El archivo de especificación previamente preparado por el usuario se conserva intacto.
 

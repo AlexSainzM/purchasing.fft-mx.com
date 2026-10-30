@@ -14,7 +14,7 @@ const fixture=JSON.parse(fs.readFileSync(path.join(root,'submissions_viewer/0801
   page.on('request',r=>requests.push(r.url()));
   fs.mkdirSync(path.join(root,'tmp/viewers-qa'),{recursive:true});
   async function responsive(name){for(const width of [1440,768,390]){await page.setViewportSize({width,height:950});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.screenshot({path:path.join(root,`tmp/viewers-qa/${name}-${width}.png`)});}}
-  for(const alias of ['submission_viewer','submissions_viewer']){await page.goto(`${base}/${alias}/`);assert.equal(await page.locator('.catalog-card').count(),4);await responsive(alias);}
+  await page.goto(`${base}/submissions_viewer/`);assert.equal(await page.locator('.catalog-card').count(),4);await responsive('submissions_viewer');
   for(const folder of fs.readdirSync(path.join(root,'forms'))){
    const ctx={window:{}};for(const file of ['config.js','schema.js'])vm.runInNewContext(fs.readFileSync(path.join(root,'submissions_viewer',folder,file),'utf8'),ctx);
    const {formId,readOnlyKey}=ctx.window.VIEWER_CONFIG,schema=ctx.window.VIEWER_SCHEMA;

@@ -102,4 +102,4 @@ Estado constatado en el código el 2026-09-09; no implica una prueba real de rec
 
 ## Consulta de evaluaciones — Spec 004 (2026-09-18)
 
-Los cuatro formularios cuentan con visores estáticos en `submissions_viewer/`, con catálogo en `submissions_viewer/index.html` y acceso compatible en `submission_viewer/index.html`. Cada visor conserva su configuración Formspree y esquema de campos; comparten presentación y lógica. Fabricantes consulta exclusivamente Formspree y el JSON de ejemplo se reserva para QA. Ejecución local, rutas y pruebas: [README de visores](../submissions_viewer/README.md). Resultados: [validación Spec 004](VALIDATION_SPEC004_2026-09-18.md).
+Los cuatro formularios cuentan con visores estáticos en `submissions_viewer/`, con catálogo en `submissions_viewer/index.html`. Cada visor conserva su configuración Formspree y esquema de campos; comparten presentación y lógica. Fabricantes consulta exclusivamente Formspree y el JSON de ejemplo se reserva para QA. Ejecución local, rutas y pruebas: [README de visores](../submissions_viewer/README.md). Resultados: [validación Spec 004](VALIDATION_SPEC004_2026-09-18.md).

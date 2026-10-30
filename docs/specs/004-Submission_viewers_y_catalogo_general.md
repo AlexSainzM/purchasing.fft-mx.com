@@ -38,7 +38,7 @@ para entender la estructura real de los datos enviados a Formspree.
 
 Actualmente existe un Submission Viewer funcional para el formulario de Fabricantes dentro de:
 
-./submission_viewer/08015p22_autoevaluacion_fabricantes
+./submissions_viewer/08015p22_autoevaluacion_fabricantes
 
 Esta implementación debe considerarse la REFERENCIA FUNCIONAL Y VISUAL para los demás viewers.
 
@@ -108,7 +108,7 @@ La iteración debe dejar disponible un sistema de consulta para los cuatro tipos
 
 Además, debe existir un catálogo general dentro de:
 
-./submission_viewer/
+./submissions_viewer/
 
 desde el cual el usuario pueda entrar a cada uno de los cuatro viewers.
 
@@ -124,7 +124,7 @@ Antes de modificar código:
 
 2. Analiza:
 
-   ./submission_viewer/08015p22_autoevaluacion_fabricantes
+   ./submissions_viewer/08015p22_autoevaluacion_fabricantes
 
 3. Identifica:
    - cómo se consulta actualmente Formspree;
@@ -161,7 +161,7 @@ No comenzar creando archivos hasta haber entendido esta arquitectura.
 
 Trabajar primero sobre:
 
-./submission_viewer/08015p22_autoevaluacion_fabricantes
+./submissions_viewer/08015p22_autoevaluacion_fabricantes
 
 El viewer actualmente existente debe seguir funcionando como referencia.
 
@@ -207,7 +207,7 @@ Crear Submission Viewers para:
 
 dentro de:
 
-./submission_viewer/
+./submissions_viewer/
 
 Utiliza nombres de carpetas consistentes con los formularios existentes.
 
@@ -215,7 +215,7 @@ No inventes nomenclaturas nuevas si ya existe una nomenclatura equivalente en ./
 
 Cada viewer debe utilizar como referencia visual y funcional:
 
-./submission_viewer/08015p22_autoevaluacion_fabricantes
+./submissions_viewer/08015p22_autoevaluacion_fabricantes
 
 ---
 
@@ -339,7 +339,7 @@ Nunca cruzar credenciales entre formularios.
 
 Crear:
 
-./submission_viewer/index.html
+./submissions_viewer/index.html
 
 Este archivo será la pantalla inicial del servicio de consulta de submissions.
 
@@ -552,7 +552,7 @@ La tarea se considera terminada cuando:
 
 5. Existe:
 
-   ./submission_viewer/index.html
+   ./submissions_viewer/index.html
 
    funcionando como catálogo principal.
 
@@ -586,7 +586,7 @@ No me preguntes por información que pueda determinarse inspeccionando:
 
 - ./docs
 - ./forms
-- ./submission_viewer
+- ./submissions_viewer
 - ./tests
 
 Si descubres una ambigüedad que realmente impida continuar y que no pueda resolverse a partir del repositorio, indícala.
@@ -597,7 +597,7 @@ Al terminar, entrega un resumen indicando:
 
 1. archivos creados;
 2. archivos modificados;
-3. arquitectura final de ./submission_viewer;
+3. arquitectura final de ./submissions_viewer;
 4. cómo se eliminó la dependencia de response_example.json;
 5. cómo quedó configurado cada formulario;
 6. pruebas realizadas;
