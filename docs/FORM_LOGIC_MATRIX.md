@@ -120,3 +120,9 @@ Todos los envíos AJAX satisfactorios redirigen a thanks/index.html del formular
 ## Revisión documental — 2026-10-30
 
 Se separan configuraciones resueltas de decisiones pendientes, sin modificar reglas funcionales.
+
+## Evaluación de Servicios en el visor — Spec 005
+
+Reglas exclusivas de consulta, sin cambiar captura: general = suma de P5–19 y P21–31 /26; Seguridad = suma de P32–39 /80. Ambos porcentajes se multiplican por 100 y clasifican por separado (C ≤60; B >60–75; AB >75–90; A >90). No hay suma ni promedio entre bloques.
+
+P5 concede un punto por declaración de certificado o plan afirmativo; certificación junto con Ninguno es inválida. P7/P8 usan intervalos continuos <2, <6, ≤20 y >20. P9/P10 requieren evidencia HTTPS reconocible para el punto; P24/P25 requieren nombre. Ausencia de evidencia/nombre vale cero con Sí; formato desconocido requiere revisión. P16 conserva escala de entrada 0–100. Seguridad admite 0, 4, 6, 8 y 10. Respuestas principales ausentes o inválidas dejan puntos parciales sin clasificación únicamente en su bloque. [Detalle de cálculo y límites](specs/005-calculo-evaluacion-servicios.md).

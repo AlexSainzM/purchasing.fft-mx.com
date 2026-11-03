@@ -1,6 +1,6 @@
 # Documentación del proyecto
 
-**Actualización:** 2026-10-30
+**Actualización:** 2026-11-02
 
 ## Ruta de lectura
 
@@ -23,7 +23,7 @@
 | `templates/` | Plantillas para nuevas iteraciones. |
 | `csv_forms/` | Material fuente conservado sin cambios. |
 
-Los archivos `AUDIT_REPORT_2026-08-26.md` y `VALIDATION_SPEC004_2026-09-18.md` son enlaces de compatibilidad: pruebas y documentación fuera de `docs` aún usan esas rutas. Sus informes se mantienen en `reports/`.
+Los informes se mantienen en `reports/`; las pruebas y el README de visores utilizan esas rutas.
 
 ## Convenciones de mantenimiento
 
@@ -36,4 +36,4 @@ Los archivos `AUDIT_REPORT_2026-08-26.md` y `VALIDATION_SPEC004_2026-09-18.md` s
 
 ## Próxima iteración
 
-La siguiente numeración prevista es **005**. Su funcionalidad aún no está definida. Utilizar la [plantilla](templates/spec-template.md) cuando se acuerde el alcance; no hay una Spec 005 aprobada ni lista para implementar.
+La [Spec 005](specs/005-calculo-evaluacion-servicios.md) está implementada y verificada localmente; véase el [informe](reports/2026-11-02-validacion-spec-005.md). La siguiente numeración disponible es **006**. Utilizar la [plantilla](templates/spec-template.md) cuando se acuerde el nuevo alcance.

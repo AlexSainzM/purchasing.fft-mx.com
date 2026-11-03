@@ -60,3 +60,7 @@ Si el endpoint está pendiente, el formulario debe detenerse localmente con un m
 ## 6. Seguridad de la Información
 
 Los cuatro formularios contienen ocho reactivos de Seguridad de la Información. Las respuestas permitidas son `0`, `4`, `6`, `8` y `10`, sin preselección. El subtotal se calcula en el navegador y se incluye como `subtotal_seguridad_informacion`, con máximo de 80 puntos. La numeración es 55–62 en Fabricantes, 47–54 en Maquinados, 43–50 en Distribuidores y 32–39 en Servicios. Los dos últimos se incorporan según Spec 003 y recalculan el subtotal antes de construir el payload, aunque el campo visible haya sido alterado.
+
+## 7. Resultados derivados en el visor de Servicios
+
+La Spec 005 deriva en memoria dos bloques independientes: Evaluación general (P5–19 y P21–31, máximo 26) y Seguridad (P32–39, máximo 80). Cada bloque contiene puntos, porcentaje sin redondear, clasificación, reactivos e incidencias; los datos incompletos o inválidos solo bloquean su propia clasificación. El subtotal recibido se conserva como reportado y nunca reemplaza respuestas faltantes. No hay campos persistidos nuevos ni cambios al contrato de envío. Véase [Spec 005](specs/005-calculo-evaluacion-servicios.md).

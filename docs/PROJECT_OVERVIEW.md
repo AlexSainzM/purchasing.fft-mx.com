@@ -104,6 +104,10 @@ Estado constatado en el código el 2026-09-09; no implica una prueba real de rec
 
 Los cuatro formularios cuentan con visores estáticos en `submissions_viewer/`, con catálogo en `submissions_viewer/index.html`. Cada visor conserva su configuración Formspree y esquema de campos; comparten presentación y lógica. Fabricantes consulta exclusivamente Formspree y el JSON de ejemplo se reserva para QA. Ejecución local, rutas y pruebas: [README de visores](../submissions_viewer/README.md). Resultados: [validación Spec 004](reports/2026-09-18-validacion-spec-004.md).
 
+## Cálculo de Servicios — Spec 005 (2026-11-02)
+
+Solo el visor de Servicios calcula dos bloques independientes: general /26 y Seguridad de la Información /80, con porcentaje y clasificación por bloque. `evaluation.js` separa el cálculo del DOM; la configuración del visor activa el renderizado en los recursos compartidos. Los registros originales y otros visores conservan su comportamiento. No hay cambios de captura ni persistencia; no existe calificación conjunta ni autorización de compra. [Reglas](specs/005-calculo-evaluacion-servicios.md) y [validación local](reports/2026-11-02-validacion-spec-005.md).
+
 ## Seguimiento documental
 
 Consulta el [índice](README.md) y el [seguimiento](TRACKING.md). Esta actualización documental no constituye una nueva validación de la aplicación.

@@ -1,12 +1,12 @@
 # Spec 005 — Cálculo y clasificación de proveedores de Servicios
 
-**Estado:** Borrador para revisión; no implementar todavía
+**Estado:** Implementada y verificada localmente
 
 **Fecha:** 2026-11-02
 
 **Responsable de validación de negocio:** Solicitante / FFT México
 
-**Decisión para iniciar:** Pendiente de revisión y autorización para la siguiente iteración
+**Decisión para iniciar:** Solicitud explícita del usuario del 2026-11-02: «Implementa "005-calculo-evaluacion-servicios.md"».
 
 **Specs relacionadas:** [003 — Servicios](003-servicios-seguridad-distribuidores.md) y [004 — Visores](004-submission-viewers-catalogo-general.md)
 
@@ -16,7 +16,7 @@ El visor de Servicios muestra las respuestas y el subtotal de seguridad reportad
 
 Ejemplo: un registro con 22 puntos generales y 68 de Seguridad mostrará **Evaluación general: 22/26 — 84.62 % — Clasificación AB** y **Seguridad de la Información: 68/80 — 85.00 % — Clasificación AB**, con un desglose que permita explicar ambos resultados. No se calcula una calificación global, suma ni promedio de los porcentajes de ambos bloques. Se evalúa cada registro individualmente; no se consolidan envíos de una empresa ni se infiere autorización de compra.
 
-Esta iteración únicamente prepara esta Spec. La implementación y validación funcional se realizarán en una iteración posterior.
+La iteración documental quedó concluida. La solicitud posterior autoriza implementar esta Spec; resultados y límites en el [informe de validación](../reports/2026-11-02-validacion-spec-005.md).
 
 ## 2. Contexto y fuentes
 
@@ -35,7 +35,7 @@ El CSV define los puntos; el formulario y su esquema identifican los campos envi
 4. Manejar datos incompletos, inválidos y evidencias necesarias para puntuar.
 5. Verificar cálculo, presentación y ausencia de cambios funcionales en los otros visores.
 
-La futura implementación podrá modificar el visor de Servicios y los recursos compartidos estrictamente necesarios. Se propone un módulo de cálculo propio dentro de `submissions_viewer/08015p21_autoevaluacion_servicios/`, separado del renderizado y comprobable con datos sintéticos.
+La implementación utiliza `submissions_viewer/08015p21_autoevaluacion_servicios/evaluation.js`, independiente del DOM, y se activa mediante `VIEWER_CONFIG.evaluation = "services-spec-005"`. Los recursos compartidos conservan el comportamiento anterior para los otros visores.
 
 ## 4. Fuera de alcance y restricciones
 
@@ -79,7 +79,7 @@ Estas reglas aplican a entradas válidas; la sección 5.4 distingue respuestas n
 | 1–4, 20 | Informativos; certificaciones alimentan P5 | Sin puntos propios. |
 | 5 | `p04_iso9001`, `p04_vda64`, `p04_iso45001`, `p04_iso14001`, `p04_tisax`, `p04_otros`; `p04_ninguno`; `p05_planea_certificarse` | 1 si declara al menos una certificación o, sin certificaciones, responde Sí al plan; 0 si declara Ninguno y responde No al plan. Máximo 1 aunque existan varias certificaciones. |
 | 6 | `p06_visita_evaluacion` | Sí = 1; No = 0. |
-| 7 | `p07_antiguedad_empresa` | Menos de 2 años = 0; de 2 a 5 = 0.25; de 6 a 20 = 0.75; más de 20 = 1. Ver propuesta para decimales en sección 10. |
+| 7 | `p07_antiguedad_empresa` | Menos de 2 años = 0; de 2 a 5 = 0.25; de 6 a 20 = 0.75; más de 20 = 1. Ver decisión para decimales en sección 10. |
 | 8 | `p08_experiencia_servicios` | Mismos intervalos y puntos que P7. |
 | 9 | `p09_organigrama`, `p09_archivo_organigrama` | Sí y evidencia adjunta reconocible = 1; No o Sí sin evidencia = 0. |
 | 10 | `p10_referencias`, `p10_archivos_referencias` | Sí y al menos una evidencia adjunta reconocible = 1; No o Sí sin evidencia = 0. Varios archivos no multiplican los puntos. |
@@ -109,7 +109,7 @@ Aplicar los límites confirmados a cada porcentaje por separado. Cada bloque tie
 
 El solicitante confirmó que exactamente 60 % es C, 75 % es B y 90 % es AB. Clasificar antes de redondear. Mostrar dos decimales de porcentaje y conservar cuartos de punto en las puntuaciones. Si el redondeo visual coincide con un límite, aclarar que la clase utiliza el porcentaje sin redondear.
 
-### 5.4 Datos incompletos e inválidos — propuesta para revisión
+### 5.4 Datos incompletos e inválidos
 
 - Aceptar números y cadenas numéricas completas no vacías; rechazar texto parcial, infinitos, booleanos, objetos y valores fuera de rango. No convertir vacío en cero ni ajustar valores a los límites.
 - En Sí/No, normalizar espacios exteriores, mayúsculas y acento de Sí; rechazar otros valores. No inferir Sí por mera presencia de un campo.
@@ -117,7 +117,7 @@ El solicitante confirmó que exactamente 60 % es C, 75 % es B y 90 % es AB. Clas
 - Mostrar **Evaluación general — Puntos parciales: X / 26** o **Seguridad de la Información — Puntos parciales: Y / 80**, según el bloque afectado, indicando sus reactivos pendientes; no mostrar porcentaje final ni asignar C por defecto a ese bloque. No reducir los denominadores. Si ambos bloques tienen incidencias, mostrar el estado y las causas de cada uno por separado.
 - Excepciones del CSV: P9/P10 con Sí sin evidencia y P24/P25 con Sí sin nombre valen cero, explicando la condición incumplida; no quedan indeterminadas por esa ausencia.
 - P5 sin plan es válida si existe certificación seleccionada. Sin certificación ni declaración explícita Ninguno, requiere revisión. Ninguno junto con una certificación es contradictorio y deja Evaluación general sin clasificación. Una certificación seleccionada prevalece sobre un plan residual, que debería estar inactivo.
-- Evidencia reconocible propuesta: URL HTTPS sin credenciales, individual o lista con al menos una URL válida, en el campo correspondiente. No descargar documentos para puntuar. Un nombre de archivo u objeto desconocido no acredita por sí solo un adjunto: marcar evidencia no interpretable y dejar el reactivo pendiente, distinguiéndolo de una ausencia que vale cero.
+- Evidencia reconocible: URL HTTPS sin credenciales, individual o lista con al menos una URL válida, en el campo correspondiente. No descargar documentos para puntuar. Un nombre de archivo u objeto desconocido no acredita por sí solo un adjunto: marcar evidencia no interpretable y dejar el reactivo pendiente, distinguiéndolo de una ausencia que vale cero.
 - Recalcular Seguridad desde sus ocho respuestas. Un subtotal reportado ausente o discrepante no impide clasificar si las respuestas son válidas; mostrar discrepancias. Nunca usar el subtotal como sustituto de respuestas faltantes.
 - Los campos informativos ausentes no impiden clasificar salvo cuando sean necesarios para resolver una regla, como certificaciones para P5.
 
@@ -158,47 +158,45 @@ Aplicar las mismas reglas a registros históricos evaluables. Conservar datos or
 | CA-10 | RF-02/03/06 | Lista y detalle muestran ambos bloques con sus puntos/máximo, porcentajes, clasificaciones o estados parciales y razones en escritorio y móvil, con teclado y texto seguro; respuestas y evidencias siguen disponibles. |
 | CA-11 | RF-07/08 | Carga, vacío, errores y recuperación funcionan; los otros visores no muestran nuevas calificaciones. No hay escrituras externas. |
 
-## 8. Plan de validación de la futura implementación
+## 8. Plan de validación y ejecución
 
 1. Preparar fixtures sintéticos de Servicios con mínimos, máximos, clases intermedias, evidencias, incompletos e inválidos por bloque. Incluir bloques con resultados opuestos y un bloque completo junto a otro incompleto para verificar su independencia. No guardar respuestas personales reales como fixtures.
-2. Añadir pruebas unitarias de cálculo y límites; establecer el comando reproducible al crear el módulo. Contrastar la matriz con el CSV para detectar omisiones o doble conteo.
+2. Añadir pruebas unitarias de cálculo y límites; ejecutar `node tests/verify_services_evaluation.cjs`. Contrastar la matriz con el CSV para detectar omisiones o doble conteo.
 3. Ampliar [tests/verify_viewers.cjs](../../tests/verify_viewers.cjs) y ejecutar `node tests/verify_viewers.cjs` con Formspree interceptado. Verificar los cuatro visores, detalle, actualización, seguridad de texto, escritorio y móvil.
 4. Ejecutar `python tests/verify_forms.py` como regresión estructural y `git diff --check`.
 5. Revisar capturas y documentar resultados en `docs/reports/AAAA-MM-DD-validacion-spec-005.md` después de validar.
 
-No regenerar esquemas si los campos no cambian. No se programan consultas LIVE, envíos ni escrituras externas en esta iteración documental. Estos comandos son trabajo futuro, no pruebas ya ejecutadas.
+No regenerar esquemas si los campos no cambian. No se programan consultas LIVE, envíos ni escrituras externas en esta iteración documental. Los resultados ejecutados se documentan en el informe; las pruebas de navegador interceptan Formspree.
 
 ## 9. Documentación y rutas afectadas
 
-**Esta iteración:** únicamente `docs/specs/005-calculo-evaluacion-servicios.md`.
+**Implementación:** módulo `evaluation.js`, carga y configuración del visor de Servicios, renderizado y estilos compartidos limitados al modo Servicios; fixtures sintéticos, pruebas unitarias y ampliación del harness de visores. Sin cambios de formulario, CSV, esquema ni endpoints.
 
-**Futura implementación:** visor de Servicios, módulo de cálculo propuesto, recursos compartidos necesarios y pruebas. Actualizar `submissions_viewer/README.md`, `docs/specs/README.md`, `docs/TRACKING.md` y, cuando corresponda, `docs/PROJECT_OVERVIEW.md`, `docs/INSPECTION_MODEL.md` y `docs/FORM_LOGIC_MATRIX.md`. Documentar la excepción de Servicios al comportamiento actual sin calificación y crear informe de validación al finalizar.
+**Documentación:** README de visores, registro de specs, seguimiento, índice, arquitectura, modelo y matriz. Informe: [validación Spec 005](../reports/2026-11-02-validacion-spec-005.md).
 
-El registro y seguimiento todavía describen la 005 como pendiente de definición; sincronizarlos en la siguiente iteración. Esta entrega se limita al archivo solicitado.
+## 10. Decisiones aplicadas y límites
 
-## 10. Decisiones abiertas y riesgos
+La solicitud de implementación del 2026-11-02 se tomó como autorización para aplicar las propuestas de esta Spec. No se alteraron ponderaciones ni captura.
 
-Las propuestas siguientes completan vacíos del CSV y requieren revisión antes de declarar la Spec lista para implementar. No son cambios aprobados.
+| ID | Regla implementada | Fundamento y límite |
+| --- | --- | --- |
+| D-01 | Años: 0 ≤ años <2 → 0; 2 ≤ años <6 → 0.25; 6 ≤ años ≤20 → 0.75; años >20 → 1. | Intervalos continuos propuestos; 5.5 = 0.25 y 20.1 = 1. |
+| D-02 | Seguridad admite únicamente 0, 4, 6, 8 y 10, también en registros históricos. | Coincide con opciones de captura; otros números quedan inválidos. |
+| D-03 | Faltantes e inválidos dejan puntos parciales sin clasificación solo en el bloque afectado. | Las excepciones de evidencia/nombre ausente conservan cero; se muestran preguntas y causas. |
+| D-04 | P5 puntúa declaración de certificación o plan; no audita vigencia ni anexos. | Máximo un punto; Ninguno junto con certificación es contradictorio. |
+| D-05 | Evidencia: URL HTTPS sin credenciales, individual o lista con al menos una URL válida. Ausencia = cero; estructura desconocida = pendiente. | El fixture existente de Formspree de Fabricantes confirma listas de URLs para adjuntos. Se verificó ese contrato con fixtures sintéticos de Servicios; no se consultaron respuestas reales de Servicios ni se descargaron documentos. Objetos o nombres de archivo aislados requieren revisión. |
 
-| ID | Tema y propuesta | Decisión necesaria | Responsable | ¿Bloquea implementación? |
-| --- | --- | --- | --- | --- |
-| D-01 | P7/P8 admiten decimales; CSV omite valores entre 5 y 6. Propuesta: 0 ≤ años <2 → 0; 2 ≤ años <6 → 0.25; 6 ≤ años ≤20 → 0.75; años >20 → 1. Así, 5.5 = 0.25 y 20.1 = 1. | Confirmar intervalos continuos sin cambiar captura. | Solicitante | Sí, para años decimales. |
-| D-02 | CSV dice seguridad «Del 0 al 10»; captura ofrece 0, 4, 6, 8, 10. Propuesta: aceptar solo estas cinco opciones, también históricas. | Confirmar si valores históricos intermedios son inválidos o se admiten. | Solicitante | Sí, para seguridad histórica. |
-| D-03 | Incompletos e inválidos: puntos parciales sin clasificación solo en el bloque afectado, con excepciones expresas de evidencia/nombre de 5.4. | Confirmar tratamiento de faltantes y contradicciones. | Solicitante | Sí, para registros incompletos. |
-| D-04 | P5 no exige en el CSV revisar vigencia o anexos. Propuesta: basta declaración de certificación o plan; no descontar por vencimiento ni fecha/archivo ausente. | Confirmar que se puntúa la declaración, sin auditar certificación. | Solicitante | Sí, para P5. |
-| D-05 | Evidencias P9/P10: URL HTTPS individual o lista; código actual no demuestra todos los formatos de archivos de Servicios. | Confirmar contrato con fixture anonimizado disponible o documentación al implementar; adaptar estructuras conocidas sin confundir texto con archivo. | Implementación | Sí, antes de cerrar pruebas de evidencias. |
+Se conservan los puntos por pregunta y los límites de clasificación. La evaluación queda separada en dos bloques con denominadores 26 y 80, sin ponderación conjunta ni calificación global. El resultado es reproducible desde los datos recibidos; cambios futuros de reglas requerirán nueva versión documentada.
 
-Se conservan los puntos por pregunta y los límites de clasificación. La evaluación queda separada en dos bloques con denominadores 26 y 80, sin ponderación conjunta ni calificación global. El resultado debe ser reproducible desde los datos recibidos; cambios futuros de reglas requerirán nueva versión documentada.
+## 11. Cierre de implementación
 
-## 11. Cierre de la iteración documental
-
-**Estado final:** Borrador preparado para revisión.
+**Estado final:** Implementada y verificada localmente; sin despliegue.
 
 **Verificación documental:** CSV, campos de captura, esquema y funcionamiento actual del visor revisados; recuento del CSV: 39 preguntas, 34 puntuables, máximos independientes de 26 puntos generales y 80 de Seguridad. Revisión documental del 2026-11-02: fórmulas, interfaz y criterios de aceptación alineados con los dos bloques.
 
-**Validación funcional:** No aplica todavía; no se ha implementado ni ejecutado el cálculo.
+**Validación funcional:** Pruebas unitarias, navegador con Formspree interceptado, regresión estructural y revisión visual; ver [informe](../reports/2026-11-02-validacion-spec-005.md).
 
-**Pendientes:** Resolver D-01 a D-04 con el solicitante; verificar D-05 al implementar; autorizar inicio de la siguiente iteración.
+**Límites:** Sin validación LIVE ni envío de registros. Los formatos de adjuntos desconocidos se reportan para revisión, sin presumir evidencia válida.
 
 ## 12. Historial de decisiones
 
@@ -208,5 +206,6 @@ Se conservan los puntos por pregunta y los límites de clasificación. La evalua
 | 2026-10-30 | Conservar máximo 106 y ponderación 80/106 de seguridad. **Sustituida por la decisión del 2026-11-02.** | Confirmación inicial del solicitante. |
 | 2026-10-30 | C ≤60 %; B >60–75 %; AB >75–90 %; A >90–100 %. | Confirmación explícita: 75 % pertenece a B y 90 % a AB. |
 | 2026-11-02 | Separar Evaluación general (puntos/26) y Seguridad de la Información (puntos/80), mostrando ambos resultados en lista y detalle, con porcentaje y clasificación por bloque. Conservar puntos por pregunta y eliminar el cálculo combinado. | Solicitud del usuario para evitar que Seguridad tenga más peso sobre las demás preguntas. Solo modificar esta Spec; no iniciar implementación. |
+| 2026-11-02 | Implementar ambos bloques, aplicando las propuestas D-01 a D-04 y el contrato conservador D-05; validar localmente. | Solicitud posterior explícita de implementación del usuario. Sustituye la restricción de la iteración documental. |
 
 [Registro de specs](README.md) · [Índice documental](../README.md)

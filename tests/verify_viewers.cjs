@@ -1,13 +1,14 @@
 const {chromium}=require('playwright');
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const server=require('./viewer_server.cjs')();
+const servicesFixtures=require('./fixtures/services.cjs');
 const root=path.resolve(__dirname,'..'),live=process.env.VIEWER_LIVE==='1';
 const fixture=JSON.parse(fs.readFileSync(path.join(root,'submissions_viewer/08015p22_autoevaluacion_fabricantes/response_example.json')));
 (async()=>{
  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
  const base=`http://127.0.0.1:${server.address().port}`;let browser;
  try{
-  browser=await chromium.launch({headless:true,channel:'msedge'});
+  browser=await chromium.launch({headless:true,...(process.env.VIEWER_BROWSER?{executablePath:process.env.VIEWER_BROWSER}:{channel:'msedge'})});
   const page=await browser.newPage(),errors=[],broken=[],requests=[];
   page.on('pageerror',e=>errors.push(e.message));
   page.on('response',r=>{if(r.url().startsWith(base)&&r.status()>=400)broken.push(r.url());});
@@ -22,12 +23,14 @@ const fixture=JSON.parse(fs.readFileSync(path.join(root,'submissions_viewer/0801
    assert.ok(source.includes('https://formspree.io/f/'+formId));
    const row=Object.fromEntries(Object.keys(schema.fields).map(key=>[key,'Respuesta QA']));
    Object.assign(row,{empresa_nombre:'PRUEBA QA',empresa_contacto:'Contacto QA',subtotal_seguridad_informacion:'40',_date:'2026-09-18T12:00:00',evidencia:['https://example.com/evidence.pdf']});
+   const services=folder.includes('servicios');
+   if(services)Object.assign(row,servicesFixtures.complete());
    if(folder.includes('maquinados'))row.p04_cnc_12_tipo='Fresadora';
    const payload=folder.includes('fabricantes')?fixture:{submissions:[row]};let mode='ok';
    if(!live)await page.route('https://formspree.io/**',async route=>{
     assert.equal(route.request().url(),`https://formspree.io/api/0/forms/${formId}/submissions`);assert.equal(route.request().headers().authorization,`Bearer ${readOnlyKey}`);assert.equal(route.request().method(),'GET');
     if(mode==='network')return route.abort();if(mode==='slow')await new Promise(resolve=>setTimeout(resolve,400));
-    const body=mode==='empty'?{submissions:[]}:mode==='invalid'?{submissions:[null]}:mode==='unsafe'?{submissions:[{empresa_nombre:'<img src=x onerror=alert(1)>',evidence:'javascript:alert(1)',extra:{nested:'value'},subtotal_seguridad_informacion:100},{}]}:payload;
+    const body=mode==='services'?{submissions:servicesFixtures.cases()}:mode==='empty'?{submissions:[]}:mode==='invalid'?{submissions:[null]}:mode==='unsafe'?{submissions:[{empresa_nombre:'<img src=x onerror=alert(1)>',evidence:'javascript:alert(1)',extra:{nested:'value'},subtotal_seguridad_informacion:100},{}]}:payload;
     return route.fulfill({status:mode==='auth'?403:mode==='server'?500:200,contentType:'application/json',body:JSON.stringify(body)});
    });
    await page.goto(base+'/submissions_viewer/');await page.locator(`.catalog-card a[href="${encodeURIComponent(folder)}/index.html"]`).click();
@@ -43,11 +46,30 @@ const fixture=JSON.parse(fs.readFileSync(path.join(root,'submissions_viewer/0801
     if(folder.includes('maquinados'))assert.match(await page.locator('[data-field="p04_cnc_12_tipo"] dt').innerText(),/Tipo CNC 12/);
     for(const key of Object.keys(schema.fields)){if(!key.startsWith('p')||folder.includes('fabricantes'))continue;assert.equal(await page.locator(`[data-field="${key}"] dt`).innerText(),schema.fields[key].label);}
     await responsive(formId);
+    if(services){
+     assert.match(await page.locator('summary [data-block="general"]').innerText(),/26 \/ 26 · 100.00 %/);
+     assert.match(await page.locator('summary [data-block="security"]').innerText(),/80 \/ 80 · 100.00 %/);
+     assert.equal(await page.locator('.evaluation-items li').count(),34);
+     assert.match(await page.locator('.evaluation-detail h3').innerText(),/Servicios — Spec 005/);
+     mode='services';await page.locator('#refresh').click();await settled();
+     const rows=page.locator('.record');assert.equal(await rows.count(),4);
+     assert.match(await rows.nth(1).locator('summary [data-block="general"]').innerText(),/Clasificación A/);
+     assert.match(await rows.nth(1).locator('summary [data-block="security"]').innerText(),/0 \/ 80 · 0.00 %.*Clasificación C/s);
+     assert.match(await rows.nth(1).locator('.evaluation-warning').textContent(),/difiere/);
+     assert.match(await rows.nth(2).locator('summary [data-block="general"]').innerText(),/Puntos parciales: 25 \/ 26.*Sin clasificación — Datos incompletos.*P6/s);
+     assert.match(await rows.nth(2).locator('summary [data-block="security"]').innerText(),/Clasificación A/);
+     assert.match(await rows.nth(3).locator('summary [data-block="general"]').innerText(),/Clasificación A/);
+     assert.match(await rows.nth(3).locator('summary [data-block="security"]').innerText(),/Sin clasificación — Datos inválidos/);
+     await rows.nth(2).locator('summary').focus();await page.keyboard.press('Enter');
+     assert.match(await rows.nth(2).locator('[data-question="6"]').innerText(),/Respuesta ausente/);
+     await responsive('services-partial');
+    }else assert.equal(await page.locator('.evaluation-score,.evaluation-detail').count(),0);
     for(const scenario of ['empty','auth','server','invalid','network','unsafe','slow']){
      mode=scenario;await page.locator('#refresh').click();if(scenario==='slow'){assert.equal(await page.locator('#records').getAttribute('aria-busy'),'true');assert.equal(await page.locator('#refresh').isDisabled(),true);}await settled();
      if(scenario==='empty')assert.match(await page.locator('#records').innerText(),/No hay registros/);
      if(['auth','server','invalid','network'].includes(scenario))assert.equal(await page.locator('#status').getAttribute('class'),'error');
-     if(scenario==='unsafe'){assert.equal(await page.locator('#records img, #records a').count(),0);assert.match(await page.locator('.company').first().innerText(),/<img/);assert.match(await page.locator('.score').first().innerText(),/Sin subtotal válido/);}
+     if(scenario==='unsafe'){assert.equal(await page.locator('#records img, #records a').count(),0);assert.match(await page.locator('.company').first().innerText(),/<img/);assert.match(await page.locator('.score').first().innerText(),services?/Sin clasificación/:/Sin subtotal válido/);
+      if(services){assert.equal(await page.locator('.evaluation-items li').count(),68);assert.equal(await page.locator('.evaluation-detail img').count(),0);}}
     }
     assert.equal(await page.locator('.record').count(),payload.submissions.length);await page.unroute('https://formspree.io/**');
    }

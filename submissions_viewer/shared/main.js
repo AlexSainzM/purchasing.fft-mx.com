@@ -29,17 +29,58 @@ function appendValue(parent,value){
   if(text.startsWith('https://')){try{const url=new URL(text);if(url.protocol==='https:'&&!url.username&&!url.password){let name=url.pathname.split('/').pop()||url.hostname;try{name=decodeURIComponent(name);}catch{}const link=el('a','↗ '+name);link.href=url.href;link.target='_blank';link.rel='noopener noreferrer';parent.append(link);return;}}catch{}}
   parent.append(el('span',text,text==='Sí'?'answer-yes':text==='No'?'answer-no':undefined));
 }
+function evaluationScore(block){
+  const node=el('span',undefined,'score evaluation-score');
+  node.dataset.block=block.id;
+  node.append(el('small',block.title,'block-title'));
+  if(block.complete){
+    node.append(el('span',`${block.points} / ${block.maximum} · ${block.percentage.toFixed(2)} %`));
+    node.append(el('small',`Clasificación ${block.classification}`,'classification'));
+    if([60,75,90].includes(Number(block.percentage.toFixed(2)))&&Number(block.percentage.toFixed(2))!==block.percentage)node.append(el('small','La clasificación utiliza el porcentaje sin redondear.'));
+  }else{
+    node.append(el('span',`Puntos parciales: ${block.points} / ${block.maximum}`));
+    const causes=[];
+    if(block.issues.some(item=>item.issue==='incomplete'))causes.push('Datos incompletos');
+    if(block.issues.some(item=>item.issue==='invalid'))causes.push('Datos inválidos');
+    node.append(el('small','Sin clasificación — '+causes.join(' y '),'classification'));
+    node.append(el('small','Pendientes: '+block.issues.map(item=>'P'+item.question).join(', ')));
+  }
+  return node;
+}
+function evaluationDetail(evaluation){
+  const container=el('section',undefined,'evaluation-detail');
+  container.append(el('h3',evaluation.version));
+  const blocks=el('div',undefined,'evaluation-blocks');
+  [evaluation.general,evaluation.security].forEach(block=>{
+    const section=el('section');section.append(el('h4',block.title),evaluationScore(block));
+    const list=el('ol',undefined,'evaluation-items');
+    block.items.forEach(item=>{
+      const entry=el('li');entry.dataset.question=item.question;
+      entry.append(el('strong',`P${item.question}: ${item.points===null?'Pendiente':item.points}/${item.maximum} — ${label(item.key)}`),el('span',item.reason));
+      list.append(entry);
+    });
+    section.append(list);blocks.append(section);
+  });
+  container.append(blocks);
+  evaluation.warnings.forEach(warning=>container.append(el('p',warning,'evaluation-warning')));
+  container.append(el('p','Clasificación de autoevaluación; no sustituye la revisión de documentos ni autoriza compras.','footnote'));
+  return container;
+}
 function render(rows){
   records.replaceChildren();document.querySelector('#count').textContent=rows.length;
   if(!rows.length){records.append(el('p','No hay registros recibidos.','empty'));return;}
   const sorted=[...rows].sort((a,b)=>(dateValue(b._date)||dateValue(b.fecha_envio)||0)-(dateValue(a._date)||dateValue(a.fecha_envio)||0));
   sorted.forEach(row=>{
+    const evaluation=window.VIEWER_CONFIG.evaluation==='services-spec-005'?window.ServicesEvaluation.evaluate(row):null;
     const detail=el('details',undefined,'record'),summary=el('summary');
     const company=el('span',undefined,'company-cell');company.append(el('span',row.empresa_nombre||'Empresa sin nombre','company'),el('span',row.empresa_contacto||'Contacto no recibido','contact'));
     const raw=row.subtotal_seguridad_informacion;const score=raw!==undefined&&raw!==null&&String(raw).trim()!==''&&Number.isFinite(Number(raw))&&Number(raw)>=0&&Number(raw)<=80?`${raw} / 80`:'Sin subtotal válido';
     const scoreNode=el('span',score,'score');scoreNode.append(el('small','Subtotal reportado'));
-    const arrow=el('span','⌄','chevron');arrow.setAttribute('aria-hidden','true');summary.append(company,el('span',dateLabel(row),'date'),scoreNode,arrow);detail.append(summary);
+    const arrow=el('span','⌄','chevron');arrow.setAttribute('aria-hidden','true');summary.append(company,el('span',dateLabel(row),'date'));
+    if(evaluation)summary.append(evaluationScore(evaluation.general),evaluationScore(evaluation.security));else summary.append(scoreNode);
+    summary.append(arrow);detail.append(summary);
     const body=el('div',undefined,'detail');
+    if(evaluation)body.append(evaluationDetail(evaluation));
     [...window.VIEWER_SCHEMA.groups,'Datos del registro'].forEach(title=>{
       const entries=Object.entries(row).filter(([key])=>group(key)===title).sort(([a],[b])=>a.localeCompare(b,'es',{numeric:true}));if(!entries.length)return;
       const section=el('section'),list=el('dl',undefined,'fields');section.append(el('h3',title));

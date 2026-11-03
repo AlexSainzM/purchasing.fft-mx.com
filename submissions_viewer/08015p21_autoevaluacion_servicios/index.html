@@ -8,9 +8,10 @@
   <link rel="stylesheet" href="../shared/styles.css">
   <script src="config.js" defer></script>
   <script src="schema.js" defer></script>
+  <script src="evaluation.js" defer></script>
   <script src="../shared/main.js" defer></script>
 </head>
-<body>
+<body class="services-evaluation">
   <header class="navbar"><div class="container nav-inner"><a href="../../index.html" class="brand">FFT México</a><span>Compras · Consulta de proveedores</span></div></header>
   <main class="container">
     <a class="back-link" href="../index.html">← Volver al catálogo</a>
@@ -22,7 +23,7 @@
         <div class="actions"><button id="refresh" type="button">Actualizar registros</button></div>
       </div>
       <p id="status" role="status" aria-live="polite">Preparando consulta…</p>
-      <div class="list-head" aria-hidden="true"><span>Empresa / contacto</span><span>Fecha de recepción</span><span>Seguridad de la información</span><span></span></div>
+      <div class="list-head" aria-hidden="true"><span>Empresa / contacto</span><span>Fecha de recepción</span><span>Evaluación general</span><span>Seguridad de la Información</span><span></span></div>
       <div id="records" aria-busy="false"></div>
     </section>
     <p class="footnote">El detalle muestra las respuestas recibidas y sus evidencias. Una respuesta ausente no equivale a “No”.</p>

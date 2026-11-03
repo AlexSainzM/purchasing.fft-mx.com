@@ -1,10 +1,10 @@
 # Seguimiento documental
 
-**Fecha de revisión:** 2026-10-30
+**Fecha de revisión:** 2026-11-02
 
 ## Estado y siguiente paso
 
-Las Specs 001–004 cuentan con informes históricos en el [registro](specs/README.md). La siguiente iteración será la **005**, con funcionalidad pendiente de definición. Se deja únicamente la [plantilla](templates/spec-template.md), conforme a lo solicitado; no se asignan requisitos ni fechas de implementación.
+Las Specs 001–004 cuentan con informes históricos en el [registro](specs/README.md). La **005** está implementada y verificada localmente: Evaluación general /26 y Seguridad de la Información /80, con resultados independientes. Véase el [informe](reports/2026-11-02-validacion-spec-005.md). Sin despliegue ni consultas LIVE; siguiente numeración disponible: **006**.
 
 ## Decisiones de negocio pendientes de confirmación
 
@@ -30,5 +30,6 @@ El [informe](reports/2026-09-18-validacion-spec-004.md) registra frontend con cl
 | Fecha | Cambio | Verificación realizada |
 | --- | --- | --- |
 | 2026-10-30 | Índice, registro de specs, seguimiento y plantilla; informes agrupados en `reports/`; nombre de Spec 004 normalizado; referencias actualizadas; rutas de compatibilidad conservadas. | 53 enlaces locales válidos; cambios limitados a `docs`; SHA-256 de los cuatro CSV idéntico al inventario inicial; `git diff --check` sin errores. |
+| 2026-11-02 | Spec 005: cálculo y visualización de Servicios en dos bloques; actualización documental y ruta obsoleta del informe en la prueba estructural. | Pruebas de cálculo, cuatro visores con Formspree simulado, regresión estructural y capturas; ver informe 005. |
 
-La reorganización conserva los resultados históricos y no modifica la aplicación. [Volver al índice](README.md).
+La reorganización documental anterior conserva los resultados históricos. [Volver al índice](README.md).

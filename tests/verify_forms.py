@@ -78,7 +78,7 @@ class CatalogContractTests(unittest.TestCase):
             ROOT / "docs/PROJECT_OVERVIEW.md",
             ROOT / "docs/INSPECTION_MODEL.md",
             ROOT / "docs/FORM_LOGIC_MATRIX.md",
-            ROOT / "docs/AUDIT_REPORT_2026-08-26.md",
+            ROOT / "docs/reports/2026-08-26-auditoria-spec-001.md",
             ROOT / "docs/specs/001-catalogo-tres-formularios.md",
             ROOT / "docs/specs/003-servicios-seguridad-distribuidores.md",
         ]
