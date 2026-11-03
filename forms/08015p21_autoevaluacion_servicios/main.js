@@ -258,6 +258,15 @@ function validateStep(step, focusInvalid) {
     valid = fieldValid && valid;
   });
 
+  const certificationGroup = step.querySelector('[data-question="4"]');
+  if (certificationGroup) {
+    const choices = Array.from(certificationGroup.querySelectorAll('input[type="checkbox"]'));
+    const selected = choices.some(field => field.checked);
+    choices.forEach(field => { field.classList.toggle('is-invalid', !selected); field.setAttribute('aria-invalid', String(!selected)); });
+    certificationGroup.querySelector('.certification-feedback').classList.toggle('d-none', selected);
+    valid = selected && valid;
+  }
+
   const radioNames = new Set(Array.from(step.querySelectorAll('input[type="radio"]:not(:disabled)')).map(function (radio) {
     return radio.name;
   }));
